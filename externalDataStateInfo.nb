@@ -1,0 +1,716 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32942,        708]
+NotebookOptionsPosition[     31681,        679]
+NotebookOutlinePosition[     32036,        695]
+CellTagsIndexPosition[     31993,        692]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Extra info about states for convenience", "Subsection",
+ CellChangeTimes->{{3.742862820248248*^9, 
+  3.7428628342719927`*^9}},ExpressionUUID->"6b928c99-d631-41cd-bf70-\
+7727040d30d5"],
+
+Cell["\<\
+\[Bullet] https : // www.archives.gov/federal - register/electoral - \
+college/allocation.html
+\[Bullet] https://www.bkacontent.com/ap-style-spelling-out-state-names/
+\[Bullet] \
+http://about.usps.com/who-we-are/postal-history/state-abbreviations.htm\
+\>", "Text",
+ CellChangeTimes->{{3.742862891551456*^9, 3.742862917610983*^9}, {
+  3.742862994458802*^9, 3.742862999840845*^9}, {3.74286358858906*^9, 
+  3.742863613414201*^9}},ExpressionUUID->"46e0f1bb-172b-4a7d-b95c-\
+f315cd7d0e54"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"states", " ", "=", " ", 
+   RowBox[{"{", "\n", "\t", 
+    RowBox[{
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Alabama\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "9"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<AL\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ala.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Alaska\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<AK\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Alaska\>\""}]}], " ", 
+      "|>"}], ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Arizona\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "11"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<AZ\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ariz.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Arkansas\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<AR\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ark.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<California\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "55"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<CA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Calif.\>\""}]}], " ", 
+      "|>"}], ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Colorado\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "9"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<CO\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Colo.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Connecticut\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "7"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<CT\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Conn.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Delaware\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<DE\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Del.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{
+       "\"\<name\>\"", " ", "->", " ", "\"\<District of Columbia\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<DC\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<D.C.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Florida\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "29"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<FL\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Fla.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Georgia\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "16"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<GA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ga.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Hawaii\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "4"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<HI\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Hawaii\>\""}]}], " ", 
+      "|>"}], ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Idaho\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "4"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<ID\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Idaho\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Illinois\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "20"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<IL\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ill.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Indiana\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "11"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<IN\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ind.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Iowa\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<IA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Iowa\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Kansas\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<KS\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Kan.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Kentucky\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "8"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<KY\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ky.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Louisiana\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "8"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<LA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<La.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Maine\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "4"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<ME\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Maine\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Maryland\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "10"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MD\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Md.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Massachusetts\>\""}], ",",
+        " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "11"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Mass.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Michigan\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "16"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MI\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Mich.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Minnesota\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "10"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MN\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Minn.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Mississippi\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MS\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Miss.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Missouri\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "10"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MO\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Mo.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Montana\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<MT\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Mont.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Nebraska\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "5"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NE\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Neb.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Nevada\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NV\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Nev.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<New Hampshire\>\""}], ",",
+        " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "4"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NH\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.H.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<New Jersey\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "14"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NJ\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.J.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<New Mexico\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "5"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NM\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.M.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<New York\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "29"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NY\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.Y.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<North Carolina\>\""}], 
+       ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "15"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<NC\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.C.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<North Dakota\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<ND\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<N.D.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Ohio\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "18"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<OH\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ohio\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Oklahoma\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "7"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<OK\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Okla.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Oregon\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "7"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<OR\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Ore.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Pennsylvania\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "20"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<PA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Pa.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Rhode Island\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "4"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<RI\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<R.I.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<South Carolina\>\""}], 
+       ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "9"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<SC\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<S.C.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<South Dakota\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<SD\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<S.D.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Tennessee\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "11"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<TN\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Tenn.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Texas\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "38"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<TX\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Texas\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Utah\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "6"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<UT\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Utah\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Vermont\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<VT\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Vt.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Virginia\>\""}], ",", " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "13"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<VA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Va.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Washington\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "12"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<WA\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Wash.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<West Virginia\>\""}], ",",
+        " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "5"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<WV\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<W.Va.\>\""}]}], " ", "|>"}],
+      ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Wisconsin\>\""}], ",", 
+       " ", 
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "10"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<WI\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Wis.\>\""}]}], " ", "|>"}], 
+     ",", "\n", "\t", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "->", " ", "\"\<Wyoming\>\""}], ",", " ", 
+       
+       RowBox[{"\"\<ev\>\"", " ", "->", " ", "3"}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "->", " ", "\"\<WY\>\""}], ",", " ", 
+       RowBox[{"\"\<ap\>\"", " ", "->", " ", "\"\<Wyo.\>\""}]}], " ", 
+      "|>"}]}], "\n", "}"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.742860244506105*^9, 3.742860258346797*^9}, {
+  3.742860333262289*^9, 3.7428603436141243`*^9}, {3.742860559973061*^9, 
+  3.742860615206398*^9}, {3.7428639647344723`*^9, 3.742863967641954*^9}, {
+  3.7428640638110237`*^9, 3.742864064276134*^9}},
+ CellLabel->
+  "In[509]:=",ExpressionUUID->"39edb2e4-285f-4b16-aad4-f15363242e6b"],
+
+Cell["Add entities", "Text",
+ CellChangeTimes->{{3.743122433886643*^9, 3.743122436382554*^9}, {
+  3.743122580698406*^9, 
+  3.743122590114029*^9}},ExpressionUUID->"06d4529b-31c3-40d0-9a95-\
+74b0b41963c5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"states", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", "\n", "\t", 
+      RowBox[{
+       RowBox[{"assoc", " ", "=", " ", "#"}], ";", "\n", "\t", 
+       RowBox[{
+        RowBox[{"assoc", "[", "\"\<entity\>\"", "]"}], " ", "=", " ", 
+        RowBox[{
+         RowBox[{"Interpreter", "[", "\"\<USState\>\"", "]"}], "[", 
+         RowBox[{"#", "[", "\"\<name\>\"", "]"}], "]"}]}], ";", "\n", "\t", 
+       "assoc"}], "\n", ")"}], "&"}], " ", "/@", " ", "states"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.7431224426878242`*^9, 3.743122516942232*^9}},
+ CellLabel->
+  "In[510]:=",ExpressionUUID->"13e9f4d7-64a3-48b9-a4fe-77e72715da8c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"states", " ", "//", " ", "Shallow"}]], "Code",
+ CellChangeTimes->{{3.743122609827168*^9, 3.7431226137430973`*^9}},
+ CellLabel->
+  "In[511]:=",ExpressionUUID->"1c004aa7-6a8a-46b0-8ccd-fca6fb1d6c0d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Alabama\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "9"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AL\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Ala.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Alabama, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Alabama\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alabama\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Alaska\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "3"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AK\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Alaska\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Alaska, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Alaska\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
+        "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alaska\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Arizona\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "11"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AZ\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Ariz.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Arizona, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Arizona\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Arizona\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Arkansas\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "6"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AR\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Ark.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Arkansas, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Arkansas\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Arkansas\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"California\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "55"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CA\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Calif.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"California, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"California\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
+{\\\"California\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Colorado\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "9"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CO\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Colo.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Colorado, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Colorado\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Connecticut\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "7"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CT\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Conn.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Connecticut, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Connecticut\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
+{\\\"Connecticut\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Delaware\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "3"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"DE\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Del.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Delaware, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Delaware\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Delaware\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"District of Columbia\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "3"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"DC\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"D.C.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{
+       "\"District of Columbia, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"DistrictOfColumbia\"", ",", "\"UnitedStates\""}], 
+              "}"}]}], "]"}],
+        "\"Entity[\\\"AdministrativeDivision\\\", \
+{\\\"DistrictOfColumbia\\\", \\\"UnitedStates\\\"}]\"",
+        "\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Florida\"\>"}], ",", 
+     RowBox[{"\<\"ev\"\>", "\[Rule]", "29"}], ",", 
+     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"FL\"\>"}], ",", 
+     RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Fla.\"\>"}], ",", 
+     RowBox[{"\<\"entity\"\>", "\[Rule]", 
+      TemplateBox[{"\"Florida, United States\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"AdministrativeDivision\"", ",", 
+            RowBox[{"{", 
+              RowBox[{"\"Florida\"", ",", "\"UnitedStates\""}], "}"}]}], 
+          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+       "Entity"]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "41", "\[RightSkeleton]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.743122614191783*^9, 3.7431266660495167`*^9, 
+  3.743127144806347*^9},
+ CellLabel->
+  "Out[511]//Shallow=",ExpressionUUID->"b20a8a25-d192-4b55-a2f1-a181bb3ff652"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Save", "[", 
+   RowBox[{"\"\<./data/state_info.wl\>\"", ",", " ", "states"}], "]"}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.742751806219122*^9, 3.742751827916297*^9}, 
+   3.7427518704221888`*^9, {3.742752431698402*^9, 3.742752432416422*^9}, {
+   3.742860729214265*^9, 3.7428607331871347`*^9}, {3.7428607976631927`*^9, 
+   3.74286079921247*^9}, {3.742861175720172*^9, 3.742861176484377*^9}, {
+   3.7428626865924797`*^9, 3.7428627054310217`*^9}, {3.743122623428153*^9, 
+   3.743122624113432*^9}},
+ CellLabel->
+  "In[520]:=",ExpressionUUID->"a88f1b78-d2c8-43c5-a40a-ecb0f227fa05"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"CloudPut", "[", 
+   RowBox[{"states", ",", " ", "\"\<Data/state_info\>\""}], "]"}], " ", 
+  "*)"}]], "Code",
+ CellChangeTimes->{{3.742751910773954*^9, 3.742751946422406*^9}, 
+   3.742860739757889*^9, {3.742860789038526*^9, 3.742860791292691*^9}, {
+   3.7428627103868227`*^9, 3.742862711110684*^9}, {3.743122672868018*^9, 
+   3.743122673591817*^9}, {3.7431266838919783`*^9, 3.743126689665154*^9}, {
+   3.743126880471977*^9, 3.743126881029043*^9}, {3.7431271624078608`*^9, 
+   3.743127168428487*^9}, {3.743127968896635*^9, 
+   3.7431279718771133`*^9}},ExpressionUUID->"d40233db-2d69-45fe-b5c3-\
+ad75097bf9f8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_\
+info\"","https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_\
+info"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_info"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{
+  3.742751948636747*^9, 3.742860932900941*^9, 3.742861074475967*^9, 
+   3.7428612796759243`*^9, 3.742861717282817*^9, 3.7428627139114723`*^9, 
+   3.742864133514629*^9, {3.7431216672981663`*^9, 3.74312167364181*^9}, 
+   3.7431226779220657`*^9, 3.743126691523683*^9, 3.743126882251844*^9, {
+   3.743127145609221*^9, 3.7431271700976553`*^9}},
+ CellLabel->
+  "Out[517]=",ExpressionUUID->"9f97692d-a363-44bd-98ed-71fc31eaa90f"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1102, 751},
+WindowMargins->{{100, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 189, 3, 54, "Subsection",ExpressionUUID->"6b928c99-d631-41cd-bf70-7727040d30d5"],
+Cell[772, 27, 494, 10, 81, "Text",ExpressionUUID->"46e0f1bb-172b-4a7d-b95c-f315cd7d0e54"],
+Cell[1269, 39, 19077, 396, 1041, "Code",ExpressionUUID->"39edb2e4-285f-4b16-aad4-f15363242e6b"],
+Cell[20349, 437, 203, 4, 35, "Text",ExpressionUUID->"06d4529b-31c3-40d0-9a95-74b0b41963c5"],
+Cell[20555, 443, 682, 17, 129, "Code",ExpressionUUID->"13e9f4d7-64a3-48b9-a4fe-77e72715da8c"],
+Cell[CellGroupData[{
+Cell[21262, 464, 221, 4, 52, "Code",ExpressionUUID->"1c004aa7-6a8a-46b0-8ccd-fca6fb1d6c0d"],
+Cell[21486, 470, 7900, 151, 344, "Output",ExpressionUUID->"b20a8a25-d192-4b55-a2f1-a181bb3ff652"]
+}, Open  ]],
+Cell[29401, 624, 718, 15, 72, "Code",ExpressionUUID->"a88f1b78-d2c8-43c5-a40a-ecb0f227fa05"],
+Cell[CellGroupData[{
+Cell[30144, 643, 653, 12, 52, "Code",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"],
+Cell[30800, 657, 853, 18, 37, "Output",ExpressionUUID->"9f97692d-a363-44bd-98ed-71fc31eaa90f"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

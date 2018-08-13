@@ -1,0 +1,162 @@
+Notebook[{Cell[
+BoxData[{RowBox[{RowBox[{"Quit","[","]"}],";"}],"\n",RowBox[{RowBox[
+{"Clear","[","\"Global`*\"","]"}],";"}]}],"Code",ExpressionUUID -> "415b8350-8dcd-4427-b2d5-eb8f5f411bb7",
+CellLabel -> "In[29]:= "],Cell[
+CellGroupData[{Cell[
+TextData[{"Let's"," ","import"," ","population"," ","data"," ","from"," ","the"," ","Census"}],
+"Title",ExpressionUUID -> "a42aa1bd-e87e-4e8b-bbfa-896f7bed4a5f"],Cell[
+TextData[
+{"Mathematica"," ","entities"," ","have"," ","accurate"," ","population"," ","through"," ","2014"," ","using"," ","American"," ","Community"," ","estimates"," ","in"," ","non","-","decennial"," ","years",StyleBox[
+RowBox[{"."," "}]],"Those"," ","figures"," ","are"," ","revised"," ","in"," ","subsequent"," ","years",StyleBox[
+RowBox[{","," "}]],"so"," ","we're"," ","going"," ","to"," ","pull"," ","to"," ","most"," ","recent"," ","figures"," ","from"," ","American"," ","FactFinder",".","\n","\n","The"," ","data"," ","we"," ","need"," ","is"," ","on"," ","the"," ","page"," ","below",StyleBox[
+RowBox[{","," "}]],"but"," ","since"," ","it"," ","loads"," ","the"," ","data"," ","via"," ","JavaScript"," ","after"," ","the"," ","HTML"," ","loads",StyleBox[
+RowBox[{","," "}]],"we"," ","can't"," ","Import"," ","it"," ","like"," ","usual",StyleBox[
+RowBox[{"."," "}]],"Instead",StyleBox[RowBox[{","," "}]],"we'll"," ","be"," ","calling"," ","the"," ","JSON"," ","object"," ","that"," ","the"," ","main"," ","page"," ","loads",StyleBox[
+RowBox[{"."," "}]],"This"," ","requires"," ","us"," ","to"," ","load"," ","the"," ","main"," ","page"," ","first"," ","to"," ","authenticate","."}],
+"Text",ExpressionUUID -> "a7a041b4-db16-40bd-9f9b-29df34ee70ef"],Cell[
+BoxData[RowBox[
+{RowBox[{"baseURL"," ","="," ","\"https://factfinder.census.gov/bkmk/table/1.0/en/PEP/2017/PEPANNRES/0100000US%7C0100000US.04000%7C0200000US1%7C0200000US2%7C0200000US3%7C0200000US4\""}],";"}]],
+"Code",ExpressionUUID -> "2ee8dc6e-4999-4819-8722-22cd3b6c24e0",CellLabel -> "In[1]:= "],Cell[
+TextData[
+{"By"," ","inspecting"," ","the"," ","traffic"," ","in"," ","the"," ","browser",StyleBox[
+RowBox[{","," "}]],"we"," ","can"," ","easily"," ","find"," ","the"," ","JSON"," ","object"," ","that"," ","loads"," ","the"," ","data"," ","we"," ","need"}],
+"Text",ExpressionUUID -> "f48cb1ce-9a94-4584-adba-7c97e2bc96bd"],Cell[
+BoxData[RowBox[
+{RowBox[{"jsonURL"," ","="," ","\"https://factfinder.census.gov/tablerestful/tableServices/renderProductData?renderForMap=f&renderForChart=f&src=bkmk&log=t&_ts=\""}],";"}]],
+"Code",ExpressionUUID -> "d580a981-ad3e-4987-b1b4-b5ffbde3fd09",CellLabel -> "In[2]:= "],Cell[
+BoxData[
+{RowBox[{RowBox[{"Import","[","baseURL","]"}],";"}],"\n",RowBox[{RowBox[{"json"," ","="," ",RowBox[
+{"Import","[",RowBox[{"jsonURL",","," ","\"RawJSON\""}],"]"}]}],";"}]}],"Code",ExpressionUUID -> "c06b2015-fbcf-403d-b394-0aeda5c42842",
+CellLabel -> "In[3]:= "],Cell[
+TextData[{"If"," ","you"," ","glance"," ","at"," ","the"," ","JSON"," ","object",StyleBox[
+RowBox[{","," "}]],"you'll"," ","see"," ","it"," ","has"," ","the"," ","HTML"," ","we"," ","actually"," ","need",StyleBox[
+RowBox[{"."," "}]],"When"," ","we"," ","import"," ","that"," ","HTML"," ","as"," ","a"," ","string",StyleBox[
+RowBox[{","," "}]],"it"," ","becomes"," ","a"," ","data"," ","object"," ","we"," ","can"," ","use"," ","to"," ","make"," ","a"," ","clean"," ","set"," ","of"," ","data","."}],
+"Text",ExpressionUUID -> "c36a3a6b-b1f3-4142-9a80-b86167e8f0e7"],Cell[
+BoxData[{RowBox[
+{RowBox[{"html"," ","="," ",RowBox[{"ImportString","[",RowBox[{RowBox[{"json","[",RowBox[
+{"\"ProductData\"",","," ","\"productDataTable\""}],"]"}],","," ",RowBox[{"{",RowBox[
+{"\"HTML\"",","," ","\"Data\""}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"headers"," ","="," ",RowBox[
+{"Prepend","[",RowBox[{RowBox[{"html","[",RowBox[{"[",RowBox[{"2",",","1",",","2"}],"]"}],"]"}],","," ","\"stateName\""}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"data"," ","="," ",RowBox[{"html","[",RowBox[{"[",RowBox[{"2",",","2",",",RowBox[
+{"6",";;","56"}]}],"]"}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"Print","[","headers","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"data","[",RowBox[{"[","1","]"}],"]"}],"]"}],";"}]}],
+"Code",ExpressionUUID -> "e34ecd1b-7b2f-4288-8e8c-c4c0cb22b639",CellLabel -> "In[5]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"\"stateName\"",",","\"Census\"",",","\"Estimates Base\"",",","2010",",","2011",",","2012",",","2013",",","2014",",","2015",",","2016",",","2017"}],"}"}],
+StandardForm],"Print",ExpressionUUID -> "1b8e3c96-6f68-4d93-902a-6f7481d046ea"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"\"Alabama\"",",","\"4,779,736\"",",","\"4,780,135\"",",","\"4,785,579\"",",","\"4,798,649\"",",","\"4,813,946\"",",","\"4,827,660\"",",","\"4,840,037\"",",","\"4,850,858\"",",","\"4,860,545\"",",","\"4,874,747\""}],"}"}],
+StandardForm],"Print",ExpressionUUID -> "c4181469-1b3b-47e5-a193-ac7444be8afa"],Cell[
+TextData[
+{"Let's"," ","start"," ","by"," ","getting"," ","a"," ","list"," ","of"," ","state"," ","names"," ","and"," ","converting"," ","them"," ","to"," ","Entities",StyleBox[
+RowBox[{","," "}]],"since"," ","we'll"," ","eventually"," ","want"," ","to"," ","feed"," ","them"," ","to",StyleBox[
+RowBox[{" ","`"}]],"GeoRegionValuePlot","`"}],"Text",ExpressionUUID -> "9b909fc6-7530-4837-b8ca-4aa3908ee11c"],Cell[
+BoxData[
+{RowBox[{RowBox[{"stateNames"," ","="," ",RowBox[{"First"," ","/@"," ","data"}]}],";"}],"\n",RowBox[
+{RowBox[{"stateEntities"," ","="," ",RowBox[{RowBox[{RowBox[{RowBox[{"Interpreter","[","\"USState\"","]"}],"[","#","]"}],"&"}]," ","/@"," ","stateNames"}]}],";"}]}],
+"Code",ExpressionUUID -> "06627fc2-f2c0-4edd-8469-7baa1b7438d3",CellLabel -> "In[10]:= "],Cell[
+TextData[
+{"Organizing"," ","the"," ","data"," ","is"," ","now"," ","just"," ","a"," ","matter"," ","of"," ","mapping"," ","the"," ","header"," ","to"," ","the"," ","values",StyleBox[
+RowBox[{","," "}]],"making"," ","sure"," ","to"," ","convert"," ","them"," ","to"," ","integers"}],
+"Text",ExpressionUUID -> "251be425-e8e2-4e5f-b008-33d35709e546"],Cell[
+BoxData[RowBox[
+{RowBox[{RowBox[{"strToInteger","[","str_","]"}]," ",":="," ",RowBox[{"ToExpression","@",RowBox[
+{"StringReplace","[",RowBox[{"str",","," ",RowBox[{"\",\"","\[Rule]","\"\""}]}],"]"}]}]}],";"}]],
+"Code",ExpressionUUID -> "e2fc8568-82c4-44df-9cef-651aa2414a5d",CellLabel -> "In[12]:= "],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"makeState","[","stateData_","]"}]," ",":="," ",RowBox[{"(","\n"," ",RowBox[
+{RowBox[{"stateName"," ","="," ",RowBox[{"First","@","stateData"}]}],";","\n"," ",RowBox[
+{"numbersStr"," ","="," ",RowBox[{"Rest","@","stateData"}]}],";","\n"," ",RowBox[
+{"numbersVal"," ","="," ",RowBox[{"strToInteger"," ","/@"," ","numbersStr"}]}],";","\n"," ",RowBox[
+{"assoc"," ","="," ",RowBox[{"AssociationThread","[",RowBox[{"headers",","," ",RowBox[
+{"Prepend","[",RowBox[{"numbersVal",","," ","stateName"}],"]"}]}],"]"}]}]}],"\n",")"}]}],";"}]],
+"Code",ExpressionUUID -> "02eae2ed-418d-4f79-9091-59c964fb1c4b",CellLabel -> "In[13]:= "],Cell[
+BoxData[
+RowBox[{RowBox[{"makeAllStates","[","allStateData_","]"}]," ",":="," ",RowBox[{"(","\n"," ",RowBox[
+{RowBox[{"data"," ","="," ",RowBox[{"Map","[",RowBox[{"makeState",","," ","allStateData"}],"]"}]}],";","\n"," ",RowBox[
+{"AssociationThread","[",RowBox[{"stateEntities",","," ","data"}],"]"}]}],"\n",")"}]}]],
+"Code",ExpressionUUID -> "13ce71f8-d75f-4fa6-8acd-8fd0c13f973c",CellLabel -> "In[14]:= "],Cell[
+BoxData[
+RowBox[{"output"," ","="," ",RowBox[{"makeAllStates","[","data","]"}]}]],"Code",ExpressionUUID -> "4a9287a7-766f-4a59-a861-655fe016da5c",
+CellLabel -> "In[15]:= "],Cell[
+BoxData[InterpretationBox[TagBox[FrameBox[GridBox[
+{{ItemBox[TagBox[RowBox[{"\:f113",RowBox[{RowBox[{TemplateBox[{"\"Alabama, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Alabama\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alabama\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"],"\[Rule]",RowBox[{"\:f113",RowBox[{RowBox[{"\"stateName\"","\[Rule]","\"Alabama\""}],",",RowBox[
+{"\"Census\"","\[Rule]","4779736"}],",",RowBox[{"\"Estimates Base\"","\[Rule]","4780135"}],",",RowBox[
+{"2010","\[Rule]","4785579"}],",",RowBox[{"2011","\[Rule]","4798649"}],",",RowBox[
+{"2012","\[Rule]","4813946"}],",",RowBox[{"2013","\[Rule]","4827660"}],",",RowBox[
+{"2014","\[Rule]","4840037"}],",",RowBox[{"2015","\[Rule]","4850858"}],",",RowBox[
+{"2016","\[Rule]","4860545"}],",",RowBox[{"2017","\[Rule]","4874747"}]}],"\:f114"}]}],",",RowBox[
+{TemplateBox[{"\"Alaska, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Alaska\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alaska\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"],"\[Rule]",RowBox[{"\:f113",TemplateBox[{"1"},"OutputSizeLimit`Skeleton"],"\:f114"}]}],",",TemplateBox[
+{"47"},"OutputSizeLimit`Skeleton"],",",RowBox[{TemplateBox[{"\"Wisconsin, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Wisconsin\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Wisconsin\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"],"\[Rule]",TemplateBox[{"1"},"OutputSizeLimit`Skeleton"]}],",",RowBox[{TemplateBox[
+{"\"Wyoming, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Wyoming\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Wyoming\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"],"\[Rule]",RowBox[{"\:f113",RowBox[{RowBox[{"\"stateName\"","\[Rule]","\"Wyoming\""}],",",RowBox[
+{"\"Census\"","\[Rule]","563626"}],",",TemplateBox[{"7"},"OutputSizeLimit`Skeleton"],",",RowBox[
+{"2016","\[Rule]","584910"}],",",RowBox[{"2017","\[Rule]","579315"}]}],"\:f114"}]}]}],"\:f114"}],
+Function[Short[Slot[1],5]]],BaseStyle -> {Deployed -> False},StripOnInput -> False]},{GridBox[
+{{TagBox[TooltipBox[StyleBox[StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource[
+"FEStrings","sizeBriefExplanation"],StandardForm]],DynamicUpdating -> True,StripOnInput -> False],
+"OSLText",StripOnInput -> False],StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource[
+"FEStrings","sizeExplanation"],StandardForm]],DynamicUpdating -> True,StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[Dynamic[FEPrivate`FrontEndResource["FEStrings",
+"sizeExplanation"]],DynamicUpdating -> True],"Tooltip"]]],ButtonBox[PaneSelectorBox[
+{False -> StyleBox[StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource["FEStrings",
+"sizeShowLess"],StandardForm]],DynamicUpdating -> True,StripOnInput -> False],"OSLControl",
+StripOnInput -> False],True -> StyleBox[StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource[
+"FEStrings","sizeShowLess"],StandardForm]],DynamicUpdating -> True,StripOnInput -> False],
+"OSLControlActive",StripOnInput -> False]},Dynamic[CurrentValue["MouseOver"]],ImageSize -> {Automatic,25},
+Alignment -> Center,ImageSize -> Automatic,FrameMargins -> 0],RuleDelayed[ButtonFunction,
+OutputSizeLimit`ButtonFunction[OutputSizeLimit`Defer,15,30306462309907347293,Times[
+5,Power[2,-1]]]],Appearance -> None,Enabled -> True,BaselinePosition -> Baseline,
+Method -> "Queued",Evaluator -> Automatic],ButtonBox[PaneSelectorBox[{False -> StyleBox[
+StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource["FEStrings","sizeShowMore"],
+StandardForm]],DynamicUpdating -> True,StripOnInput -> False],"OSLControl",StripOnInput -> False],True -> StyleBox[
+StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource["FEStrings","sizeShowMore"],
+StandardForm]],DynamicUpdating -> True,StripOnInput -> False],"OSLControlActive",
+StripOnInput -> False]},Dynamic[CurrentValue["MouseOver"]],ImageSize -> {Automatic,25},
+Alignment -> Center,ImageSize -> Automatic,FrameMargins -> 0],RuleDelayed[ButtonFunction,
+OutputSizeLimit`ButtonFunction[OutputSizeLimit`Defer,15,30306462309907347293,Times[
+5,2]]],Appearance -> None,Enabled -> True,BaselinePosition -> Baseline,Method -> "Queued",
+Evaluator -> Automatic],ButtonBox[PaneSelectorBox[{False -> StyleBox[StyleBox[DynamicBox[
+ToBoxes[FEPrivate`FrontEndResource["FEStrings","sizeShowAll"],StandardForm]],DynamicUpdating -> True,
+StripOnInput -> False],"OSLControl",StripOnInput -> False],True -> StyleBox[StyleBox[
+DynamicBox[ToBoxes[FEPrivate`FrontEndResource["FEStrings","sizeShowAll"],StandardForm]],
+DynamicUpdating -> True,StripOnInput -> False],"OSLControlActive",StripOnInput -> False]},
+Dynamic[CurrentValue["MouseOver"]],ImageSize -> {Automatic,25},Alignment -> Center,
+ImageSize -> Automatic,FrameMargins -> 0],RuleDelayed[ButtonFunction,OutputSizeLimit`ButtonFunction[
+OutputSizeLimit`Defer,15,30306462309907347293,Infinity]],Appearance -> None,Enabled -> True,
+BaselinePosition -> Baseline,Method -> "Queued",Evaluator -> Automatic],ButtonBox[
+PaneSelectorBox[{False -> StyleBox[StyleBox[DynamicBox[ToBoxes[FEPrivate`FrontEndResource[
+"FEStrings","sizeChangeLimit"],StandardForm]],DynamicUpdating -> True,StripOnInput -> False],
+"OSLControl",StripOnInput -> False],True -> StyleBox[StyleBox[DynamicBox[ToBoxes[
+FEPrivate`FrontEndResource["FEStrings","sizeChangeLimit"],StandardForm]],DynamicUpdating -> True,
+StripOnInput -> False],"OSLControlActive",StripOnInput -> False]},Dynamic[CurrentValue[
+"MouseOver"]],ImageSize -> {Automatic,25},Alignment -> Center,ImageSize -> Automatic,
+FrameMargins -> 0],RuleDelayed[ButtonFunction,FrontEndExecute[{FrontEnd`SetOptions[
+FrontEnd`$FrontEnd,FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}],FrontEnd`FrontEndToken[
+"PreferencesDialog"]}]],Appearance -> None,BaselinePosition -> Baseline,Evaluator -> None,
+Method -> "Preemptive"]}},AutoDelete -> False,GridBoxDividers -> {"Columns" -> {False,{True}}},
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},GridBoxSpacings -> {"Columns" -> {{2}}},
+FrameStyle -> GrayLevel[0.85]]}},GridBoxAlignment -> {"Columns" -> {{Left}}},DefaultBaseStyle -> "Column",
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},ColumnWidths -> Automatic,
+ColumnAlignments -> Left,RowLines -> False,RowSpacings -> {3,1}],BaseStyle -> "OutputSizeLimit",
+FrameMargins -> {{12,12},{0,15}},FrameStyle -> GrayLevel[0.85],RoundingRadius -> 5,
+StripOnInput -> False],Deploy,DefaultBaseStyle -> "Deploy"],If[SameQ[30306462309907347293,
+$SessionID],Out[15],CompoundExpression[Message[MessageName[Syntax,"noinfoker"]],Missing[
+"NotAvailable"],Null]]],StandardForm],"Output",ExpressionUUID -> "1eb23bfa-2652-4eb0-9b97-930a0fdec744",
+CellLabel -> "Out[15]= "],Cell[
+BoxData[RowBox[{"CloudPut","[",RowBox[{"output",","," ","\"Data/population_data_2010_2017\""}],"]"}]],
+"Code",ExpressionUUID -> "01188463-27cc-4912-acaa-6411ccfb777f",CellLabel -> "In[16]:= "],Cell[
+BoxData[
+TagBox[InterpretationBox[RowBox[{"CloudObject","[",TemplateBox[{"\"https://www.wolframcloud.com/objects/christopher.e.wilson/Data/population_data_2010_2017\"","https://www.wolframcloud.com/objects/christopher.e.wilson/Data/population_data_2010_2017"},
+"HyperlinkURL"],"]"}],CloudObject["https://www.wolframcloud.com/objects/christopher.e.wilson/Data/population_data_2010_2017"]],
+"RawBoxes"],StandardForm],"Output",ExpressionUUID -> "9fe20440-f442-42f6-8611-b23a574d46bb",
+CellLabel -> "Out[16]= "]},Open],ExpressionUUID -> "33cac909-aee2-4c37-9494-1f472cefa92c"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "11.3 for Wolfram Cloud 1.47 (July 30, 2018)"]

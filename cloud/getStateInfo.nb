@@ -1,0 +1,208 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+"\<Extra info about states for convenience\>",
+"Subsection",CellChangeTimes -> {{3.742862820248248*^9,3.7428628342719927`*^9}},ExpressionUUID -> "6b928c99-d631-41cd-bf70-7727040d30d5"],Cell[
+
+"\<\[Bullet] https : // www.archives.gov/federal - register/electoral - college/allocation.html
+\[Bullet] https://www.bkacontent.com/ap-style-spelling-out-state-names/
+\[Bullet] http://about.usps.com/who-we-are/postal-history/state-abbreviations.htm\>",
+"Text",CellChangeTimes -> {{3.742862891551456*^9,3.742862917610983*^9},{3.742862994458802*^9,3.742862999840845*^9},{3.74286358858906*^9,3.742863613414201*^9}},
+ExpressionUUID -> "46e0f1bb-172b-4a7d-b95c-f315cd7d0e54"],Cell[
+BoxData[RowBox[{RowBox[
+{"states"," ","="," ",RowBox[{"{","\n","\t",RowBox[{RowBox[{"<|"," ",RowBox[{RowBox[
+{"\"name\""," ","->"," ","\"Alabama\""}],","," ",RowBox[{"\"ev\""," ","->"," ","9"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"AL\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Ala.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Alaska\""}],","," ",RowBox[{"\"ev\""," ","->"," ","3"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"AK\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Alaska\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Arizona\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","11"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"AZ\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Ariz.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Arkansas\""}],","," ",RowBox[{"\"ev\""," ","->"," ","6"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"AR\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Ark.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"California\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","55"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"CA\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Calif.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Colorado\""}],","," ",RowBox[{"\"ev\""," ","->"," ","9"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"CO\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Colo.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Connecticut\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","7"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"CT\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Conn.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Delaware\""}],","," ",RowBox[{"\"ev\""," ","->"," ","3"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"DE\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Del.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"District of Columbia\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","3"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"DC\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"D.C.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Florida\""}],","," ",RowBox[{"\"ev\""," ","->"," ","29"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"FL\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Fla.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Georgia\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","16"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"GA\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Ga.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Hawaii\""}],","," ",RowBox[{"\"ev\""," ","->"," ","4"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"HI\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Hawaii\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Idaho\""}],","," ",RowBox[{"\"ev\""," ","->"," ","4"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"ID\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Idaho\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Illinois\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","20"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"IL\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Ill.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Indiana\""}],","," ",RowBox[{"\"ev\""," ","->"," ","11"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"IN\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Ind.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Iowa\""}],","," ",RowBox[{"\"ev\""," ","->"," ","6"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"IA\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Iowa\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Kansas\""}],","," ",RowBox[{"\"ev\""," ","->"," ","6"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"KS\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Kan.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Kentucky\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","8"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"KY\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Ky.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Louisiana\""}],","," ",RowBox[{"\"ev\""," ","->"," ","8"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"LA\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"La.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Maine\""}],","," ",RowBox[{"\"ev\""," ","->"," ","4"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"ME\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Maine\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Maryland\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","10"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"MD\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Md.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Massachusetts\""}],","," ",RowBox[{"\"ev\""," ","->"," ","11"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"MA\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Mass.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Michigan\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","16"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"MI\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Mich.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Minnesota\""}],","," ",RowBox[{"\"ev\""," ","->"," ","10"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"MN\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Minn.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Mississippi\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","6"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"MS\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Miss.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Missouri\""}],","," ",RowBox[{"\"ev\""," ","->"," ","10"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"MO\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Mo.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Montana\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","3"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"MT\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Mont.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Nebraska\""}],","," ",RowBox[{"\"ev\""," ","->"," ","5"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"NE\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Neb.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Nevada\""}],","," ",RowBox[{"\"ev\""," ","->"," ","6"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"NV\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Nev.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"New Hampshire\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","4"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"NH\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"N.H.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"New Jersey\""}],","," ",RowBox[{"\"ev\""," ","->"," ","14"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"NJ\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"N.J.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"New Mexico\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","5"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"NM\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"N.M.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"New York\""}],","," ",RowBox[{"\"ev\""," ","->"," ","29"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"NY\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"N.Y.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"North Carolina\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","15"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"NC\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"N.C.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"North Dakota\""}],","," ",RowBox[{"\"ev\""," ","->"," ","3"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"ND\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"N.D.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Ohio\""}],","," ",RowBox[{"\"ev\""," ","->"," ","18"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"OH\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Ohio\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Oklahoma\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","7"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"OK\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Okla.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Oregon\""}],","," ",RowBox[{"\"ev\""," ","->"," ","7"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"OR\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Ore.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Pennsylvania\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","20"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"PA\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Pa.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Rhode Island\""}],","," ",RowBox[{"\"ev\""," ","->"," ","4"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"RI\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"R.I.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"South Carolina\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","9"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"SC\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"S.C.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"South Dakota\""}],","," ",RowBox[{"\"ev\""," ","->"," ","3"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"SD\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"S.D.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Tennessee\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","11"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"TN\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Tenn.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Texas\""}],","," ",RowBox[{"\"ev\""," ","->"," ","38"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"TX\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Texas\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Utah\""}],","," ",RowBox[{"\"ev\""," ","->"," ","6"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"UT\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Utah\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Vermont\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","3"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"VT\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Vt.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Virginia\""}],","," ",RowBox[{"\"ev\""," ","->"," ","13"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"VA\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Va.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Washington\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","12"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"WA\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Wash.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"West Virginia\""}],","," ",RowBox[{"\"ev\""," ","->"," ","5"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"WV\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"W.Va.\""}]}]," ","|>"}],",","\n","\t",RowBox[
+{"<|"," ",RowBox[{RowBox[{"\"name\""," ","->"," ","\"Wisconsin\""}],","," ",RowBox[
+{"\"ev\""," ","->"," ","10"}],","," ",RowBox[{"\"abbr\""," ","->"," ","\"WI\""}],","," ",RowBox[
+{"\"ap\""," ","->"," ","\"Wis.\""}]}]," ","|>"}],",","\n","\t",RowBox[{"<|"," ",RowBox[
+{RowBox[{"\"name\""," ","->"," ","\"Wyoming\""}],","," ",RowBox[{"\"ev\""," ","->"," ","3"}],","," ",RowBox[
+{"\"abbr\""," ","->"," ","\"WY\""}],","," ",RowBox[{"\"ap\""," ","->"," ","\"Wyo.\""}]}]," ","|>"}]}],"\n","}"}]}],";"}]],
+"Code",CellChangeTimes -> {{3.742860244506105*^9,3.742860258346797*^9},{3.742860333262289*^9,3.7428603436141243`*^9},{3.742860559973061*^9,3.742860615206398*^9},{3.7428639647344723`*^9,3.742863967641954*^9},{3.7428640638110237`*^9,3.742864064276134*^9}},
+ExpressionUUID -> "39edb2e4-285f-4b16-aad4-f15363242e6b",CellLabel -> "In[6]:= "],Cell[
+
+"\<Add entities\>","Text",CellChangeTimes -> {{3.743122433886643*^9,3.743122436382554*^9},{3.743122580698406*^9,3.743122590114029*^9}},
+ExpressionUUID -> "06d4529b-31c3-40d0-9a95-74b0b41963c5"],Cell[
+BoxData[RowBox[{RowBox[
+{"states"," ","="," ",RowBox[{RowBox[{RowBox[{"(","\n","\t",RowBox[{RowBox[{"assoc"," ","="," ","#"}],";","\n","\t",RowBox[
+{RowBox[{"assoc","[","\"entity\"","]"}]," ","="," ",RowBox[{RowBox[{"Interpreter","[","\"USState\"","]"}],"[",RowBox[
+{"#","[","\"name\"","]"}],"]"}]}],";","\n","\t","assoc"}],"\n",")"}],"&"}]," ","/@"," ","states"}]}],";"}]],
+"Code",CellChangeTimes -> {{3.7431224426878242`*^9,3.743122516942232*^9}},ExpressionUUID -> "13e9f4d7-64a3-48b9-a4fe-77e72715da8c",
+CellLabel -> "In[7]:= "],Cell[
+BoxData[RowBox[{"states"," ","//"," ","Shallow"}]],
+"Code",CellChangeTimes -> {{3.743122609827168*^9,3.7431226137430973`*^9}},ExpressionUUID -> "1c004aa7-6a8a-46b0-8ccd-fca6fb1d6c0d",
+CellLabel -> "In[8]:= "],Cell[
+BoxData[RowBox[{"{",RowBox[{RowBox[{"\:f113",RowBox[
+{RowBox[{"\"name\"","\[Rule]","\"Alabama\""}],",",RowBox[{"\"ev\"","\[Rule]","9"}],",",RowBox[
+{"\"abbr\"","\[Rule]","\"AL\""}],",",RowBox[{"\"ap\"","\[Rule]","\"Ala.\""}],",",RowBox[
+{"\"entity\"","\[Rule]",TemplateBox[{"\"Alabama, United States\"",RowBox[{"Entity","[",RowBox[
+{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Alabama\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alabama\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Alaska\""}],",",RowBox[
+{"\"ev\"","\[Rule]","3"}],",",RowBox[{"\"abbr\"","\[Rule]","\"AK\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Alaska\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[
+{"\"Alaska, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Alaska\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alaska\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Arizona\""}],",",RowBox[
+{"\"ev\"","\[Rule]","11"}],",",RowBox[{"\"abbr\"","\[Rule]","\"AZ\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Ariz.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[
+{"\"Arizona, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Arizona\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Arizona\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Arkansas\""}],",",RowBox[
+{"\"ev\"","\[Rule]","6"}],",",RowBox[{"\"abbr\"","\[Rule]","\"AR\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Ark.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[{"\"Arkansas, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Arkansas\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Arkansas\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"California\""}],",",RowBox[
+{"\"ev\"","\[Rule]","55"}],",",RowBox[{"\"abbr\"","\[Rule]","\"CA\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Calif.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[
+{"\"California, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"California\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"California\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Colorado\""}],",",RowBox[
+{"\"ev\"","\[Rule]","9"}],",",RowBox[{"\"abbr\"","\[Rule]","\"CO\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Colo.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[
+{"\"Colorado, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Colorado\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Colorado\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Connecticut\""}],",",RowBox[
+{"\"ev\"","\[Rule]","7"}],",",RowBox[{"\"abbr\"","\[Rule]","\"CT\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Conn.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[
+{"\"Connecticut, United States\"",RowBox[{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[
+{"{",RowBox[{"\"Connecticut\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Connecticut\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Delaware\""}],",",RowBox[
+{"\"ev\"","\[Rule]","3"}],",",RowBox[{"\"abbr\"","\[Rule]","\"DE\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Del.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[{"\"Delaware, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Delaware\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Delaware\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"District of Columbia\""}],",",RowBox[
+{"\"ev\"","\[Rule]","3"}],",",RowBox[{"\"abbr\"","\[Rule]","\"DC\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"D.C.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[{"\"District of Columbia, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"DistrictOfColumbia\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"DistrictOfColumbia\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\:f113",RowBox[{RowBox[{"\"name\"","\[Rule]","\"Florida\""}],",",RowBox[
+{"\"ev\"","\[Rule]","29"}],",",RowBox[{"\"abbr\"","\[Rule]","\"FL\""}],",",RowBox[
+{"\"ap\"","\[Rule]","\"Fla.\""}],",",RowBox[{"\"entity\"","\[Rule]",TemplateBox[{"\"Florida, United States\"",RowBox[
+{"Entity","[",RowBox[{"\"AdministrativeDivision\"",",",RowBox[{"{",RowBox[{"\"Florida\"",",","\"UnitedStates\""}],"}"}]}],"]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Florida\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
+"Entity"]}]}],"\:f114"}],",",RowBox[{"\[LeftSkeleton]","41","\[RightSkeleton]"}]}],"}"}],
+StandardForm],"Output",ExpressionUUID -> "0b8ab772-ad2e-440a-b62b-f9cfc7a5c324",CellLabel -> "Out[8]//Shallow= "],Cell[
+BoxData[
+RowBox[{"CloudPut","[",RowBox[{"states",","," ","\"Data/state_info\""}],"]"}]],"Code",
+ExpressionUUID -> "d40233db-2d69-45fe-b5c3-ad75097bf9f8",CellChangeTimes -> {{3742751910.7739544`,3742751946.4224057`},3742860739.757889`,{3742860789.038526`,3742860791.2926908`},{3742862710.3868227`,3742862711.110684`},{3743122672.8680177`,3743122673.591817`}},
+CellLabel -> "In[9]:= "],Cell[
+BoxData[TagBox[InterpretationBox[RowBox[{"CloudObject","[",TemplateBox[
+{"\"https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_info\"","https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_info"},
+"HyperlinkURL"],"]"}],CloudObject["https://www.wolframcloud.com/objects/christopher.e.wilson/Data/state_info"]],
+"RawBoxes"],StandardForm],"Output",ExpressionUUID -> "573ab903-8a0b-4d63-847f-ee6a83cc6dd7",
+CellLabel -> "Out[9]= "]},Open],ExpressionUUID -> "233729e2-000b-4e8d-ab7e-032775289974"]},
+WindowSize -> {808,751},WindowMargins -> {{76,Automatic},{36,Automatic}},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "11.3 for Wolfram Cloud 1.47 (July 30, 2018)"]
