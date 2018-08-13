@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2272810,      37429]
-NotebookOptionsPosition[   2266610,      37326]
-NotebookOutlinePosition[   2266987,      37343]
-CellTagsIndexPosition[   2266944,      37340]
+NotebookDataLength[   2341805,      39561]
+NotebookOptionsPosition[   2334983,      39450]
+NotebookOutlinePosition[   2335360,      39467]
+CellTagsIndexPosition[   2335317,      39464]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -822,12 +822,20 @@ Cell[BoxData[
       RowBox[{
       "year", ",", " ", "total", ",", " ", "min", ",", " ", "extra", ",", " ",
         "priorityFunc"}], "]"}]}], ";", "\n", "\t", 
-    RowBox[{"tally", " ", "=", " ", 
+    RowBox[{"tallyEVs", " ", "=", " ", 
      RowBox[{"<|", " ", 
       RowBox[{
        RowBox[{"\"\<D\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
-       RowBox[{"\"\<R\>\"", " ", "\[Rule]", " ", "0"}]}], " ", "|>"}]}], ";", 
-    "\n", "\t", 
+       RowBox[{"\"\<R\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<Total\>\"", " ", "\[Rule]", " ", "0"}]}], " ", "|>"}]}], 
+    ";", "\n", "\t", 
+    RowBox[{"tallyCalculatedEVs", " ", "=", " ", 
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<D\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<R\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<Total\>\"", " ", "\[Rule]", " ", "0"}]}], " ", "|>"}]}], 
+    ";", "\n", "\t", 
     RowBox[{"comparison", " ", "=", " ", 
      RowBox[{"Map", "[", 
       RowBox[{
@@ -870,15 +878,30 @@ Cell[BoxData[
                RowBox[{"info", "[", "\"\<ev\>\"", "]"}]}]}]}], "\n", "\t\t", 
             "|>"}]}], ";", "\n", "\t\t", 
           RowBox[{
-           RowBox[{"tally", "[", 
+           RowBox[{"tallyEVs", "[", 
             RowBox[{"state", "[", "\"\<winner_party\>\"", "]"}], "]"}], " ", "+=",
+            " ", 
+           RowBox[{"state", "[", "\"\<evs\>\"", "]"}]}], ";", "\n", "\t\t", 
+          RowBox[{
+           RowBox[{"tallyEVs", "[", "\"\<Total\>\"", "]"}], " ", "+=", " ", 
+           RowBox[{"state", "[", "\"\<evs\>\"", "]"}]}], ";", "\n", "\t\t", 
+          RowBox[{
+           RowBox[{"tallyCalculatedEVs", "[", 
+            RowBox[{"state", "[", "\"\<winner_party\>\"", "]"}], "]"}], " ", "+=",
+            " ", 
+           RowBox[{"state", "[", "\"\<calculated_evs\>\"", "]"}]}], ";", "\n",
+           "\t\t", 
+          RowBox[{
+           RowBox[{"tallyCalculatedEVs", "[", "\"\<Total\>\"", "]"}], " ", "+=",
             " ", 
            RowBox[{"state", "[", "\"\<calculated_evs\>\"", "]"}]}], ";", "\n",
            "\t\t", "state"}], "\n", "\t", ")"}], "&"}], ",", " ", 
        RowBox[{"Keys", "@", "calculated"}]}], "]"}]}], ";", "\n", "\t", 
     RowBox[{"<|", " ", 
      RowBox[{
-      RowBox[{"\"\<results\>\"", " ", "\[Rule]", " ", "tally"}], ",", " ", 
+      RowBox[{"\"\<results\>\"", " ", "\[Rule]", " ", "tallyCalculatedEVs"}], 
+      ",", " ", 
+      RowBox[{"\"\<actual\>\"", " ", "\[Rule]", " ", "tallyEVs"}], ",", " ", 
       RowBox[{"\"\<states\>\"", " ", "\[Rule]", " ", "comparison"}]}], " ", 
      "|>"}]}], "\n", ")"}]}]], "Code",
  CellChangeTimes->{{3.742705866446476*^9, 3.7427060251559772`*^9}, {
@@ -940,9 +963,9 @@ Cell[BoxData[
    3.743130029929842*^9, 3.74313003825891*^9}, {3.743134949442354*^9, 
    3.743134975903867*^9}, {3.743135105453209*^9, 3.743135192073081*^9}, {
    3.743162033155707*^9, 3.743162066571478*^9}, {3.743162145546666*^9, 
-   3.743162186687805*^9}},
+   3.743162186687805*^9}, {3.743167518559787*^9, 3.743167619731021*^9}},
  CellLabel->
-  "In[703]:=",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+  "In[979]:=",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
 
 Cell["Let\[CloseCurlyQuote]s test this on realistic settings for 2016.", \
 "Text",
@@ -958,6 +981,7 @@ Cell[BoxData[{
    RowBox[{"runElection", "[", 
     RowBox[{"\"\<census\>\"", ",", " ", "435", ",", " ", "1", ",", " ", "2"}],
      "]"}]}], ";"}], "\n", 
+ RowBox[{"election2016", "[", "\"\<actual\>\"", "]"}], "\n", 
  RowBox[{"election2016", "[", "\"\<results\>\"", "]"}]}], "Code",
  CellChangeTimes->{{3.743109657330909*^9, 3.7431096830785227`*^9}, {
    3.7431135517812223`*^9, 3.743113557907488*^9}, {3.743119652331917*^9, 
@@ -965,23 +989,42 @@ Cell[BoxData[{
    3.7431349782952967`*^9, {3.743135203386825*^9, 3.743135292389565*^9}, {
    3.743139700408717*^9, 3.743139746613852*^9}, {3.743145079888249*^9, 
    3.7431450831408587`*^9}, {3.743162089418542*^9, 3.7431621106164494`*^9}, {
-   3.74316227623267*^9, 3.74316228445192*^9}},
+   3.74316227623267*^9, 3.74316228445192*^9}, {3.743168473980019*^9, 
+   3.7431684790661173`*^9}},
  CellLabel->
-  "In[705]:=",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
+  "In[1015]:=",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
    RowBox[{"\<\"D\"\>", "\[Rule]", "233"}], ",", 
-   RowBox[{"\<\"R\"\>", "\[Rule]", "305"}]}], 
+   RowBox[{"\<\"R\"\>", "\[Rule]", "305"}], ",", 
+   RowBox[{"\<\"Total\"\>", "\[Rule]", "538"}]}], 
   "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{
   3.7431349791926613`*^9, {3.743135194921534*^9, 3.743135293099008*^9}, {
    3.743139701115127*^9, 3.743139747651321*^9}, 3.743145084836976*^9, {
    3.743162095474216*^9, 3.743162111401376*^9}, 3.743162195105135*^9, 
-   3.743162241036519*^9, 3.743162285414096*^9},
+   3.743162241036519*^9, 3.743162285414096*^9, 3.7431676244455767`*^9, 
+   3.743168479857098*^9},
  CellLabel->
-  "Out[706]=",ExpressionUUID->"25485680-4c5d-4428-b74e-f3670e5e92f6"]
+  "Out[1016]=",ExpressionUUID->"5f1d997f-351f-405d-b744-6f00cef55823"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"D\"\>", "\[Rule]", "233"}], ",", 
+   RowBox[{"\<\"R\"\>", "\[Rule]", "305"}], ",", 
+   RowBox[{"\<\"Total\"\>", "\[Rule]", "538"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.7431349791926613`*^9, {3.743135194921534*^9, 3.743135293099008*^9}, {
+   3.743139701115127*^9, 3.743139747651321*^9}, 3.743145084836976*^9, {
+   3.743162095474216*^9, 3.743162111401376*^9}, 3.743162195105135*^9, 
+   3.743162241036519*^9, 3.743162285414096*^9, 3.7431676244455767`*^9, 
+   3.743168479869584*^9},
+ CellLabel->
+  "Out[1017]=",ExpressionUUID->"6dd4627f-4b28-4678-a076-8661c9682fd1"]
 }, Open  ]],
 
 Cell["\<\
@@ -1006,7 +1049,55 @@ cite_note-pledged-2"},
   "HyperlinkURL"]], "Text",
  CellChangeTimes->{
   3.7431624972174273`*^9},ExpressionUUID->"384d7c01-fed1-4bde-9a74-\
-aa27b191f928"]
+aa27b191f928"],
+
+Cell["\<\
+Now let\[CloseCurlyQuote]s see what happens if we were to expand the size of \
+the House of Representatives to 1,000 members but keep everything else the \
+same\
+\>", "Text",
+ CellChangeTimes->{{3.743168491480906*^9, 3.743168514016945*^9}, {
+  3.743168555967182*^9, 
+  3.743168561751334*^9}},ExpressionUUID->"5d66cdee-c273-4e49-8627-\
+b4114315998c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"election1000", " ", "=", " ", 
+   RowBox[{"runElection", "[", 
+    RowBox[{
+    "\"\<census\>\"", ",", " ", "1000", ",", " ", "1", ",", " ", "2"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{"election1000", "[", "\"\<actual\>\"", "]"}], "\n", 
+ RowBox[{"election1000", "[", "\"\<results\>\"", "]"}]}], "Code",
+ CellChangeTimes->{{3.74316851655355*^9, 3.743168542503696*^9}},
+ CellLabel->
+  "In[1018]:=",ExpressionUUID->"561e4741-3850-49b1-84f4-d1fe34c5d64c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"D\"\>", "\[Rule]", "233"}], ",", 
+   RowBox[{"\<\"R\"\>", "\[Rule]", "305"}], ",", 
+   RowBox[{"\<\"Total\"\>", "\[Rule]", "538"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.743168544292111*^9},
+ CellLabel->
+  "Out[1019]=",ExpressionUUID->"dbabb9db-698a-415c-ae98-1cb9d3a6b4a5"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"D\"\>", "\[Rule]", "479"}], ",", 
+   RowBox[{"\<\"R\"\>", "\[Rule]", "624"}], ",", 
+   RowBox[{"\<\"Total\"\>", "\[Rule]", "1103"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7431685443052883`*^9},
+ CellLabel->
+  "Out[1020]=",ExpressionUUID->"f4d31bfb-ddd4-4ce5-8b5d-b00c7e658465"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1015,80 +1106,6 @@ Cell["A few visualization functions", "Subsection",
  CellChangeTimes->{{3.743162549392702*^9, 
   3.743162557217782*^9}},ExpressionUUID->"068d3b35-98db-46b2-a0e5-\
 8770799993ff"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"election", " ", "=", " ", "election2016"}], ";"}]], "Code",
- CellChangeTimes->{{3.743166025407548*^9, 3.7431660557790956`*^9}, {
-  3.743166142775115*^9, 3.743166151766946*^9}, {3.743166423508893*^9, 
-  3.743166430071342*^9}},
- CellLabel->
-  "In[911]:=",ExpressionUUID->"e74da7fe-da5b-462b-8fca-a7e3f75f3aee"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"colorScales", "[", "\"\<R\>\"", "]"}], "[", "30", "]"}]], "Code",
- CellChangeTimes->{{3.743166473801675*^9, 3.7431664830206633`*^9}},
- CellLabel->
-  "In[916]:=",ExpressionUUID->"02b650f7-bcca-45db-8cba-4e548e168772"],
-
-Cell[BoxData[
- InterpretationBox[
-  ButtonBox[
-   TooltipBox[
-    GraphicsBox[{
-      {GrayLevel[0], RectangleBox[{0, 0}]}, 
-      {GrayLevel[0], RectangleBox[{1, -1}]}, 
-      {RGBColor[1, 
-        Rational[5, 11], 
-        Rational[5, 11]], RectangleBox[{0, -1}, {2, 1}]}},
-     AspectRatio->1,
-     DefaultBaseStyle->"ColorSwatchGraphics",
-     Frame->True,
-     FrameStyle->RGBColor[
-      0.6666666666666666, 0.30303030303030304`, 0.30303030303030304`],
-     FrameTicks->None,
-     ImageSize->
-      Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
-        AbsoluteCurrentValue[Magnification]}],
-     PlotRangePadding->None],
-    StyleBox[
-     RowBox[{"RGBColor", "[", 
-       RowBox[{"1", ",", 
-         FractionBox["5", "11"], ",", 
-         FractionBox["5", "11"]}], "]"}], NumberMarks -> False]],
-   Appearance->None,
-   BaseStyle->{},
-   BaselinePosition->Baseline,
-   ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
-     If[
-      Not[
-       AbsoluteCurrentValue["Deployed"]], 
-      SelectionMove[Typeset`box$, All, Expression]; 
-      FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-      FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[1, 
-         Rational[5, 11], 
-         Rational[5, 11]]; FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-      MathLink`CallFrontEnd[
-        FrontEnd`AttachCell[Typeset`box$, 
-         FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
-         Left, Top}, 
-         "ClosingActions" -> {
-          "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
-   DefaultBaseStyle->{},
-   Evaluator->Automatic,
-   Method->"Preemptive"],
-  RGBColor[1, 
-   Rational[5, 11], 
-   Rational[5, 11]],
-  Editable->False,
-  Selectable->False]], "Output",
- CellChangeTimes->{{3.743166480215719*^9, 3.743166483439159*^9}},
- CellLabel->
-  "Out[916]=",ExpressionUUID->"17307615-0e91-4cd4-82e7-df0063a8b1a7"]
-}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1105,13 +1122,29 @@ Cell[BoxData[{
        " ", 
        RowBox[{"election", "[", "\"\<states\>\"", "]"}]}], "]"}]}], ";", "\n",
      "\t", 
-    RowBox[{"maxDiff", " ", "=", " ", 
-     RowBox[{"Max", "[", 
+    RowBox[{"minMaxDiff", " ", "=", " ", 
+     RowBox[{"MinMax", "[", 
       RowBox[{
        RowBox[{
         RowBox[{"#", "[", "\"\<diff\>\"", "]"}], "&"}], " ", "/@", " ", 
        RowBox[{"election", "[", "\"\<states\>\"", "]"}]}], "]"}]}], ";", "\n",
-     "\t", "\n", "\t", 
+     "\t", 
+    RowBox[{"minDiff", " ", "=", " ", 
+     RowBox[{"-", 
+      RowBox[{"Max", "[", 
+       RowBox[{"Abs", " ", "/@", " ", "minMaxDiff"}], "]"}]}]}], ";", " ", 
+    "\n", "\t", 
+    RowBox[{"maxDiff", " ", "=", " ", 
+     RowBox[{"-", "minDiff"}]}], ";", "\n", "\t\t", "\n", "\t", 
+    RowBox[{"blue", " ", "=", " ", 
+     RowBox[{"RGBColor", "[", "\"\<#00B2FF\>\"", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"red", " ", "=", " ", 
+     RowBox[{"RGBColor", "[", "\"\<#F15C53\>\"", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"green", " ", "=", " ", 
+     RowBox[{"RGBColor", "[", "\"\<#47C045\>\"", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"orange", " ", "=", " ", 
+     RowBox[{"RGBColor", "[", "\"\<#FFBC2D\>\"", "]"}]}], ";", "\n", "\t", 
+    "\n", "\t", 
     RowBox[{"colorScales", " ", "=", " ", 
      RowBox[{"<|", "\n", "\t\t", 
       RowBox[{
@@ -1126,10 +1159,8 @@ Cell[BoxData[{
                RowBox[{"{", 
                 RowBox[{"0", ",", " ", "maxEV"}], "}"}], ",", " ", 
                RowBox[{"{", " ", 
-                RowBox[{"White", ",", " ", 
-                 RowBox[{"RGBColor", "[", "\"\<#00B2FF\>\"", "]"}]}], " ", 
-                "}"}]}], "}"}], "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], 
-       ",", "\n", "\t\t", 
+                RowBox[{"White", ",", " ", "blue"}], " ", "}"}]}], "}"}], 
+             "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], ",", "\n", "\t\t", 
        RowBox[{"\"\<R\>\"", " ", "\[Rule]", " ", 
         RowBox[{"Function", "[", 
          RowBox[{"ev", ",", " ", 
@@ -1141,10 +1172,8 @@ Cell[BoxData[{
                RowBox[{"{", 
                 RowBox[{"0", ",", " ", "maxEV"}], "}"}], ",", " ", 
                RowBox[{"{", " ", 
-                RowBox[{"White", ",", " ", 
-                 RowBox[{"RGBColor", "[", "\"\<#F15C53\>\"", "]"}]}], " ", 
-                "}"}]}], "}"}], "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], 
-       ",", "\n", "\t\t", 
+                RowBox[{"White", ",", " ", "red"}], " ", "}"}]}], "}"}], 
+             "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], ",", "\n", "\t\t", 
        RowBox[{"\"\<Diff\>\"", " ", "\[Rule]", " ", 
         RowBox[{"Function", "[", 
          RowBox[{"d", ",", " ", 
@@ -1154,11 +1183,12 @@ Cell[BoxData[{
              RowBox[{"{", 
               RowBox[{
                RowBox[{"{", 
-                RowBox[{"0", ",", " ", "maxDiff"}], "}"}], ",", " ", 
+                RowBox[{"minDiff", ",", " ", "0", ",", " ", "maxDiff"}], 
+                "}"}], ",", " ", 
                RowBox[{"{", " ", 
-                RowBox[{"White", ",", " ", "Yellow"}], " ", "}"}]}], "}"}], 
-             "]"}], ",", " ", "d"}], "]"}]}], "]"}]}]}], "\n", "\t", "|>"}]}],
-     ";", "\n", "\t", "\n", "\t", 
+                RowBox[{"orange", ",", " ", "White", ",", " ", "green"}], " ",
+                 "}"}]}], "}"}], "]"}], ",", " ", "d"}], "]"}]}], "]"}]}]}], 
+      "\n", "\t", "|>"}]}], ";", "\n", "\t", "\n", "\t", 
     RowBox[{"cols", " ", "=", " ", 
      RowBox[{
       RowBox[{
@@ -1170,9 +1200,8 @@ Cell[BoxData[{
            RowBox[{"#", "[", "\"\<evs\>\"", "]"}], ",", "\n", "\t ", 
            RowBox[{"#", "[", "\"\<calculated_evs\>\"", "]"}], ",", "\n", 
            "\t ", 
-           RowBox[{"#", "[", "\"\<diff\>\"", "]"}], ",", "\n", "\t ", 
-           RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}]}], "\n", "\t", 
-          "}"}], ",", " ", 
+           RowBox[{"#", "[", "\"\<diff\>\"", "]"}]}], "\n", "\t", "}"}], ",", 
+         " ", 
          RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
          RowBox[{"Alignment", "\[Rule]", "\"\<Center\>\""}], ",", " ", 
          RowBox[{"Spacings", "\[Rule]", " ", 
@@ -1180,7 +1209,13 @@ Cell[BoxData[{
            RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
          RowBox[{"ItemSize", "\[Rule]", " ", 
           RowBox[{"{", 
-           RowBox[{"1", ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"#", "[", "\"\<calculated_evs\>\"", "]"}], " ", 
+               "\[GreaterEqual]", " ", "100"}], ",", " ", "2", ",", " ", 
+              "1"}], "]"}], ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
          RowBox[{"Background", "\[Rule]", 
           RowBox[{"{", "\n", "\t\t\t", 
            RowBox[{"White", ",", "\n", "\t\t\t", 
@@ -1196,11 +1231,232 @@ Cell[BoxData[{
             "\n", "\t\t\t", 
             RowBox[{
              RowBox[{"colorScales", "[", "\"\<Diff\>\"", "]"}], "[", 
-             RowBox[{"#", "[", "\"\<diff\>\"", "]"}], "]"}], ",", "\n", 
-            "\t\t\t", "Yellow"}], "}"}]}]}], "\n", "\t", "]"}], "&"}], " ", "/@",
-       " ", 
+             RowBox[{"#", "[", "\"\<diff\>\"", "]"}], "]"}]}], "}"}]}]}], 
+        "\n", "\t", "]"}], "&"}], " ", "/@", " ", 
       RowBox[{"election", "[", "\"\<states\>\"", "]"}]}]}], ";", "\n", "\t", 
     "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
+     RowBox[{"Append", "[", 
+      RowBox[{"cols", ",", " ", 
+       RowBox[{"Column", "[", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"{", " ", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<R\>\"", ",", " ", "Bold"}], "]"}], ",", "\n", 
+           "\t\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+              "\"\<R\>\"", "]"}], ",", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                 "\"\<R\>\"", "]"}], " ", ">", " ", 
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                 "\"\<D\>\"", "]"}]}], ",", " ", "Bold"}], "]"}]}], "]"}], 
+           ",", "\n", "\t\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+              "\"\<R\>\"", "]"}], ",", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                 "\"\<R\>\"", "]"}], " ", ">", " ", 
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                 "\"\<D\>\"", "]"}]}], ",", " ", "Bold"}], "]"}]}], "]"}], 
+           ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+             "\"\<R\>\"", "]"}], " ", "-", " ", 
+            RowBox[{
+             RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+             "\"\<R\>\"", "]"}]}]}], "\n", "\t\t", "}"}], ",", "\n", "\t\t", 
+         RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
+         RowBox[{"Alignment", "\[Rule]", "\"\<Center\>\""}], ",", " ", 
+         RowBox[{"Spacings", "\[Rule]", " ", 
+          RowBox[{"{", " ", 
+           RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"2", ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
+         RowBox[{"Background", "\[Rule]", 
+          RowBox[{"{", "\n", "\t\t\t", 
+           RowBox[{"red", ",", " ", "\n", "\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                "\"\<R\>\"", "]"}], " ", ">", " ", 
+               RowBox[{
+                RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                "\"\<D\>\"", "]"}]}], ",", " ", "Yellow", ",", " ", "White"}],
+              "]"}], ",", "\n", "\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                "\"\<R\>\"", "]"}], " ", ">", " ", 
+               RowBox[{
+                RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                "\"\<D\>\"", "]"}]}], ",", " ", "Yellow", ",", " ", "White"}],
+              "]"}], ",", "\n", "\t\t\t", 
+            RowBox[{
+             RowBox[{"colorScales", "[", "\"\<Diff\>\"", "]"}], "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+               "\"\<R\>\"", "]"}], " ", "-", " ", 
+              RowBox[{
+               RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+               "\"\<R\>\"", "]"}]}], "]"}]}], " ", "\n", "\t\t", "}"}]}]}], 
+        "\n", "\t", "]"}]}], "]"}]}], ";", "\n", "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
+     RowBox[{"Append", "[", 
+      RowBox[{"cols", ",", " ", 
+       RowBox[{"Column", "[", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"{", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<D\>\"", ",", " ", "Bold"}], "]"}], ",", "\n", 
+           "\t\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+              "\"\<D\>\"", "]"}], ",", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                 "\"\<R\>\"", "]"}], " ", "<", " ", 
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                 "\"\<D\>\"", "]"}]}], ",", " ", "Bold", ",", " ", "Plain"}], 
+              "]"}]}], "]"}], ",", "\n", "\t\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+              "\"\<D\>\"", "]"}], ",", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                 "\"\<R\>\"", "]"}], " ", "<", " ", 
+                RowBox[{
+                 RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                 "\"\<D\>\"", "]"}]}], ",", " ", "Bold", ",", " ", "Plain"}], 
+              "]"}]}], "]"}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+             "\"\<D\>\"", "]"}], " ", "-", " ", 
+            RowBox[{
+             RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+             "\"\<D\>\"", "]"}]}]}], "\n", "\t\t", "}"}], ",", "\n", "\t\t", 
+         RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
+         RowBox[{"Alignment", "\[Rule]", "\"\<Center\>\""}], ",", " ", 
+         RowBox[{"Spacings", "\[Rule]", " ", 
+          RowBox[{"{", " ", 
+           RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"2", ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
+         RowBox[{"Background", "\[Rule]", 
+          RowBox[{"{", "\n", "\t\t\t", 
+           RowBox[{"blue", ",", "\n", "\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                "\"\<R\>\"", "]"}], " ", "<", " ", 
+               RowBox[{
+                RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+                "\"\<D\>\"", "]"}]}], ",", " ", "Yellow", ",", " ", "White"}],
+              "]"}], ",", "\n", "\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                "\"\<R\>\"", "]"}], " ", "<", " ", 
+               RowBox[{
+                RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+                "\"\<D\>\"", "]"}]}], ",", " ", "Yellow", ",", " ", "White"}],
+              "]"}], ",", "\n", "\t\t\t", 
+            RowBox[{
+             RowBox[{"colorScales", "[", "\"\<Diff\>\"", "]"}], "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+               "\"\<D\>\"", "]"}], " ", "-", " ", 
+              RowBox[{
+               RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+               "\"\<D\>\"", "]"}]}], "]"}]}], "\n", "\t\t", "}"}]}]}], "\n", 
+        "\t", "]"}]}], "]"}]}], ";", "\n", "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
+     RowBox[{"Append", "[", 
+      RowBox[{"cols", ",", " ", 
+       RowBox[{"Column", "[", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"{", " ", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Total\>\"", ",", " ", "Bold"}], "]"}], ",", "\n", 
+           "\t\t\t", 
+           RowBox[{
+            RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+            "\"\<Total\>\"", "]"}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+            "\"\<Total\>\"", "]"}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+             "\"\<Total\>\"", "]"}], " ", "-", " ", 
+            RowBox[{
+             RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+             "\"\<Total\>\"", "]"}]}]}], "\n", "\t\t", "}"}], ",", "\n", 
+         "\t\t", 
+         RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
+         RowBox[{"Alignment", "\[Rule]", "\"\<Center\>\""}], ",", " ", 
+         RowBox[{"Spacings", "\[Rule]", " ", 
+          RowBox[{"{", " ", 
+           RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"3", ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
+         RowBox[{"Background", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"White", ",", " ", "White", ",", " ", "White", ",", " ", 
+            RowBox[{
+             RowBox[{"colorScales", "[", "\"\<Diff\>\"", "]"}], "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"election", "[", "\"\<results\>\"", "]"}], "[", 
+               "\"\<Total\>\"", "]"}], " ", "-", " ", 
+              RowBox[{
+               RowBox[{"election", "[", "\"\<actual\>\"", "]"}], "[", 
+               "\"\<Total\>\"", "]"}]}], "]"}]}], " ", "}"}]}]}], "\n", "\t", 
+        "]"}]}], "]"}]}], ";", "\t\t\t", "\n", "\t\t\t\t\t\t\t\t\t", "\n", 
+    "\t", 
     RowBox[{"cols", " ", "=", " ", 
      RowBox[{"Prepend", "[", 
       RowBox[{"cols", ",", " ", 
@@ -1208,9 +1464,8 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"{", "\n", "\t\t", 
           RowBox[{
-          "\"\<State\>\"", ",", "\n", "\t\t", "\"\<Actual EVs\>\"", ",", "\n",
-            "\t\t", "\"\<New EVs\>\"", ",", "\n", "\t\t", 
-           "\"\<Difference\>\"", ",", "\n", "\t\t", "\"\<2016 Winner\>\""}], 
+          "\"\<State\>\"", ",", "\n", "\t\t", "\"\<Real EVs\>\"", ",", "\n", 
+           "\t\t", "\"\<New EVs\>\"", ",", "\n", "\t\t", "\"\<Diff\>\""}], 
           "\n", "\t", "}"}], ",", " ", 
          RowBox[{"Alignment", "\[Rule]", "Right"}], ",", " ", 
          RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
@@ -1219,18 +1474,22 @@ Cell[BoxData[{
            RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
          RowBox[{"ItemSize", "\[Rule]", " ", 
           RowBox[{"{", 
-           RowBox[{"7", ",", " ", "1.4"}], "}"}]}]}], "]"}]}], "]"}]}], ";", 
-    "\n", "\t", "\n", "\t", 
-    RowBox[{"newCols", " ", "=", " ", 
+           RowBox[{"5", ",", " ", "1.4"}], "}"}]}]}], "]"}]}], "]"}]}], ";", 
+    "\n", "\t", "\n", "\t", "\n", "\t", "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
      RowBox[{"Map", "[", "\n", "\t\t", 
       RowBox[{
        RowBox[{
         RowBox[{"Style", "[", 
          RowBox[{"#", ",", " ", 
-          RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}], "&"}], ",", "\n", 
+          RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], "&"}], ",", "\n", 
        "\t\t", "cols"}], "\n", "\t", "]"}]}], ";", "\n", "\t", 
-    RowBox[{"Row", "[", "newCols", "]"}]}], "\n", ")"}]}], "\n", 
- RowBox[{"chartElection", "[", "election2016", "]"}]}], "Code",
+    RowBox[{"Grid", "[", 
+     RowBox[{
+      RowBox[{"{", "cols", "}"}], ",", " ", 
+      RowBox[{"Spacings", "\[Rule]", 
+       RowBox[{"-", "0.1"}]}]}], "]"}]}], "\n", ")"}]}], "\n", 
+ RowBox[{"chartElection", "[", "election1000", "]"}]}], "Code",
  CellChangeTimes->{{3.743108867871427*^9, 3.743108894399274*^9}, {
    3.743109706087352*^9, 3.743109777557749*^9}, {3.7431101510091877`*^9, 
    3.743110207309558*^9}, {3.743113569555873*^9, 3.743113580321947*^9}, {
@@ -1247,743 +1506,2603 @@ Cell[BoxData[{
    3.743166017586149*^9}, {3.74316605682821*^9, 3.7431662171842413`*^9}, {
    3.7431662561166477`*^9, 3.743166409577986*^9}, {3.743166493927969*^9, 
    3.743166549412141*^9}, {3.743166714894184*^9, 3.743166727609303*^9}, {
-   3.7431667683194313`*^9, 3.7431667742134047`*^9}},
+   3.7431667683194313`*^9, 3.7431667742134047`*^9}, {3.7431668323190193`*^9, 
+   3.743166839163121*^9}, {3.74316687107342*^9, 3.743166951094839*^9}, {
+   3.743166981258398*^9, 3.743166990839169*^9}, {3.743167063334937*^9, 
+   3.743167147386409*^9}, {3.743167300951376*^9, 3.743167498016719*^9}, {
+   3.7431676540191383`*^9, 3.743167709769484*^9}, {3.743167748801732*^9, 
+   3.743168219775755*^9}, {3.7431682857831087`*^9, 3.743168410058166*^9}, {
+   3.74316845018769*^9, 3.743168450744933*^9}, {3.7431685796366167`*^9, 
+   3.743168583439818*^9}, {3.743168624918827*^9, 3.743168875717869*^9}, {
+   3.743168917518491*^9, 3.743168944525268*^9}, {3.7431689856453743`*^9, 
+   3.743169077425198*^9}, {3.743169109033806*^9, 3.743169119733927*^9}, {
+   3.743169181799959*^9, 3.743169233356825*^9}, {3.7431692771260242`*^9, 
+   3.743169282547242*^9}, {3.74316931277417*^9, 3.7431693130112543`*^9}, {
+   3.7431694101441927`*^9, 3.743169530307354*^9}, {3.74316964519326*^9, 
+   3.743169679283374*^9}},
  CellLabel->
-  "In[923]:=",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
+  "In[1063]:=",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
 
 Cell[BoxData[
- TemplateBox[{StyleBox[
-    TagBox[
-     GridBox[{{"\"State\""}, {"\"Actual EVs\""}, {"\"New EVs\""}, {
-       "\"Difference\""}, {"\"2016 Winner\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{Right}}}, DefaultBaseStyle -> 
-      "Column", GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{7}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"AL\""}, {"9"}, {"9"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
-          RGBColor[
-          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"AK\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"AZ\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"AR\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"CA\""}, {"55"}, {"55"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0., 0.6980392156862745, 1.], 
-          RGBColor[0., 0.6980392156862745, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"CO\""}, {"9"}, {"9"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
-          RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"CT\""}, {"7"}, {"7"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
-          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"DE\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"DC\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"FL\""}, {"29"}, {"29"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9710516934046346, 0.6629590017825312, 0.6443493761140819], 
-          RGBColor[
-          0.9710516934046346, 0.6629590017825312, 0.6443493761140819], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"GA\""}, {"16"}, {"16"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
-          RGBColor[
-          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"HI\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"ID\""}, {"4"}, {"4"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
-          RGBColor[
-          0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"IL\""}, {"20"}, {"20"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.6363636363636364, 0.8901960784313725, 1.], 
-          RGBColor[0.6363636363636364, 0.8901960784313725, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"IN\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"IA\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"KS\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"KY\""}, {"8"}, {"8"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
-          RGBColor[
-          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"LA\""}, {"8"}, {"8"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
-          RGBColor[
-          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"ME\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MD\""}, {"10"}, {"10"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
-          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MA\""}, {"11"}, {"11"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8, 0.9396078431372549, 1.], 
-          RGBColor[0.8, 0.9396078431372549, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MI\""}, {"16"}, {"16"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
-          RGBColor[
-          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MN\""}, {"10"}, {"10"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
-          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MS\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MO\""}, {"10"}, {"10"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
-          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"MT\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NE\""}, {"5"}, {"5"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
-          RGBColor[
-          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NV\""}, {"6"}, {"6"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
-          RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NH\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NJ\""}, {"14"}, {"14"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
-          RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NM\""}, {"5"}, {"5"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
-          RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NY\""}, {"29"}, {"29"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
-          RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"NC\""}, {"15"}, {"15"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
-          RGBColor[0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"ND\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"OH\""}, {"18"}, {"18"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
-          RGBColor[
-          0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"OK\""}, {"7"}, {"7"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
-          RGBColor[
-          0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"OR\""}, {"7"}, {"7"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
-          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"PA\""}, {"20"}, {"20"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9800356506238859, 0.7675579322638146, 0.7547237076648841], 
-          RGBColor[
-          0.9800356506238859, 0.7675579322638146, 0.7547237076648841], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"RI\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"SC\""}, {"9"}, {"9"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
-          RGBColor[
-          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"SD\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"TN\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[
-          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"TX\""}, {"38"}, {"38"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9620677361853832, 0.5583600713012478, 0.5339750445632798], 
-          RGBColor[
-          0.9620677361853832, 0.5583600713012478, 0.5339750445632798], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"UT\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[
-          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"VT\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"VA\""}, {"13"}, {"13"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
-          RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"WA\""}, {"12"}, {"12"}, {"0"}, {"\"D\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
-          RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"WV\""}, {"5"}, {"5"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
-          RGBColor[
-          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"WI\""}, {"10"}, {"10"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
-          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False],StyleBox[
-    TagBox[
-     GridBox[{{"\"WY\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
-      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
-       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
-          GrayLevel[1], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[
-          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
-          RGBColor[1, 1, 1], 
-          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
-      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
-      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
-    FontSize -> 12, StripOnInput -> False]},
-  "RowDefault"]], "Output",
- CellChangeTimes->{
-  3.7431665559622602`*^9, {3.7431667206027393`*^9, 3.743166728465025*^9}, 
-   3.743166774951128*^9},
+ TagBox[GridBox[{
+    {
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"State\"\>"},
+         {"\<\"Real EVs\"\>"},
+         {"\<\"New EVs\"\>"},
+         {"\<\"Diff\"\>"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{Right}}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{5}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AL\"\>"},
+         {"9"},
+         {"18"},
+         {"9"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9959827833572453, 0.9532281205164993, 0.9506456241032999], 
+            RGBColor[
+            0.9919655667144907, 0.9064562410329986, 0.9012912482065997], 
+            RGBColor[
+            0.9044982698961938, 0.9673010380622837, 0.9034602076124567]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AK\"\>"},
+         {"3"},
+         {"4"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9986609277857484, 0.9844093735054997, 0.9835485413677666], 
+            RGBColor[
+            0.9982145703809979, 0.979212498007333, 0.9780647218236889], 
+            RGBColor[
+            0.9893886966551326, 0.9963667820069204, 0.989273356401384]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AZ\"\>"},
+         {"11"},
+         {"23"},
+         {"12"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9897337796907381, 0.8804718635421649, 0.8738721504862107], 
+            RGBColor[
+            0.8726643598615917, 0.956401384083045, 0.871280276816609]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AR\"\>"},
+         {"6"},
+         {"11"},
+         {"5"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9973218555714969, 0.9688187470109996, 0.9670970827355332], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9469434832756632, 0.9818339100346021, 0.9463667820069204]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CA\"\>"},
+         {"55"},
+         {"123"},
+         {"68"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.5528455284552845, 0.8649768850629682, 1.], 
+            RGBColor[0., 0.6980392156862745, 1.], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{2}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CO\"\>"},
+         {"9"},
+         {"18"},
+         {"9"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9268292682926829, 0.9779053084648494, 1.], 
+            RGBColor[0.8536585365853658, 0.9558106169296987, 1.], 
+            RGBColor[
+            0.9044982698961938, 0.9673010380622837, 0.9034602076124567]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CT\"\>"},
+         {"7"},
+         {"14"},
+         {"7"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.943089430894309, 0.9828152399171051, 1.], 
+            RGBColor[0.8861788617886179, 0.9656304798342101, 1.], 
+            RGBColor[
+            0.9257208765859285, 0.9745674740484429, 0.9249134948096885]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"DE\"\>"},
+         {"3"},
+         {"5"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.975609756097561, 0.9926351028216165, 1.], 
+            RGBColor[0.959349593495935, 0.9877251713693608, 1.], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"DC\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.975609756097561, 0.9926351028216165, 1.], 
+            RGBColor[0.975609756097561, 0.9926351028216165, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"FL\"\>"},
+         {"29"},
+         {"63"},
+         {"34"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9870556352622349, 0.8492906105531643, 0.840969233221744], 
+            RGBColor[
+            0.9718794835007174, 0.672596843615495, 0.654519368723099], 
+            RGBColor[
+            0.6392156862745098, 0.8764705882352941, 0.6352941176470588]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"GA\"\>"},
+         {"16"},
+         {"33"},
+         {"17"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9928582815239917, 0.916849992029332, 0.9122588872947552], 
+            RGBColor[
+            0.9852702056432329, 0.8285031085604974, 0.8190339550454329], 
+            RGBColor[
+            0.8196078431372549, 0.9382352941176471, 0.8176470588235294]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"HI\"\>"},
+         {"4"},
+         {"6"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.967479674796748, 0.9901801370954886, 1.], 
+            RGBColor[0.9512195121951219, 0.9852702056432329, 1.], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ID\"\>"},
+         {"4"},
+         {"7"},
+         {"3"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9982145703809979, 0.979212498007333, 0.9780647218236889], 
+            RGBColor[
+            0.9968754981667464, 0.9636218715128327, 0.9616132631914555], 
+            RGBColor[
+            0.9681660899653979, 0.9891003460207612, 0.9678200692041522]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IL\"\>"},
+         {"20"},
+         {"44"},
+         {"24"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8373983739837398, 0.950900685477443, 1.], 
+            RGBColor[0.6422764227642276, 0.8919815080503746, 1.], 
+            RGBColor[
+            0.7453287197231834, 0.91280276816609, 0.7425605536332179]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IN\"\>"},
+         {"11"},
+         {"23"},
+         {"12"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9897337796907381, 0.8804718635421649, 0.8738721504862107], 
+            RGBColor[
+            0.8726643598615917, 0.956401384083045, 0.871280276816609]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IA\"\>"},
+         {"6"},
+         {"12"},
+         {"6"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9973218555714969, 0.9688187470109996, 0.9670970827355332], 
+            RGBColor[
+            0.9946437111429938, 0.937637494021999, 0.9341941654710665], 
+            RGBColor[
+            0.9363321799307959, 0.9782006920415225, 0.9356401384083045]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"KS\"\>"},
+         {"6"},
+         {"11"},
+         {"5"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9973218555714969, 0.9688187470109996, 0.9670970827355332], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9469434832756632, 0.9818339100346021, 0.9463667820069204]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"KY\"\>"},
+         {"8"},
+         {"16"},
+         {"8"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9964291407619958, 0.958424996014666, 0.9561294436473776], 
+            RGBColor[
+            0.9928582815239917, 0.916849992029332, 0.9122588872947552], 
+            RGBColor[
+            0.9151095732410611, 0.9709342560553633, 0.9141868512110727]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"LA\"\>"},
+         {"8"},
+         {"17"},
+         {"9"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9964291407619958, 0.958424996014666, 0.9561294436473776], 
+            RGBColor[
+            0.9924119241192412, 0.9116531165311653, 0.9067750677506775], 
+            RGBColor[
+            0.9044982698961938, 0.9673010380622837, 0.9034602076124567]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ME\"\>"},
+         {"4"},
+         {"6"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.967479674796748, 0.9901801370954886, 1.], 
+            RGBColor[0.9512195121951219, 0.9852702056432329, 1.], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MD\"\>"},
+         {"10"},
+         {"21"},
+         {"11"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9186991869918699, 0.9754503427387216, 1.], 
+            RGBColor[0.8292682926829268, 0.9484457197513152, 1.], 
+            RGBColor[
+            0.883275663206459, 0.9600346020761246, 0.8820069204152249]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MA\"\>"},
+         {"11"},
+         {"23"},
+         {"12"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9105691056910569, 0.9729953770125936, 1.], 
+            RGBColor[0.8130081300813008, 0.9435357882990595, 1.], 
+            RGBColor[
+            0.8726643598615917, 0.956401384083045, 0.871280276816609]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MI\"\>"},
+         {"16"},
+         {"34"},
+         {"18"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9928582815239917, 0.916849992029332, 0.9122588872947552], 
+            RGBColor[
+            0.9848238482384823, 0.8233062330623306, 0.813550135501355], 
+            RGBColor[
+            0.8089965397923875, 0.9346020761245675, 0.8069204152249134]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MN\"\>"},
+         {"10"},
+         {"19"},
+         {"9"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9186991869918699, 0.9754503427387216, 1.], 
+            RGBColor[0.8455284552845528, 0.9533556512035709, 1.], 
+            RGBColor[
+            0.9044982698961938, 0.9673010380622837, 0.9034602076124567]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MS\"\>"},
+         {"6"},
+         {"12"},
+         {"6"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9973218555714969, 0.9688187470109996, 0.9670970827355332], 
+            RGBColor[
+            0.9946437111429938, 0.937637494021999, 0.9341941654710665], 
+            RGBColor[
+            0.9363321799307959, 0.9782006920415225, 0.9356401384083045]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MO\"\>"},
+         {"10"},
+         {"21"},
+         {"11"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9955364259524948, 0.9480312450183326, 0.945161804559222], 
+            RGBColor[
+            0.9906264945002391, 0.8908656145384983, 0.8848397895743663], 
+            RGBColor[
+            0.883275663206459, 0.9600346020761246, 0.8820069204152249]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MT\"\>"},
+         {"3"},
+         {"5"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9986609277857484, 0.9844093735054997, 0.9835485413677666], 
+            RGBColor[
+            0.9977682129762474, 0.9740156225091663, 0.972580902279611], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NE\"\>"},
+         {"5"},
+         {"8"},
+         {"3"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9977682129762474, 0.9740156225091663, 0.972580902279611], 
+            RGBColor[
+            0.9964291407619958, 0.958424996014666, 0.9561294436473776], 
+            RGBColor[
+            0.9681660899653979, 0.9891003460207612, 0.9678200692041522]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NV\"\>"},
+         {"6"},
+         {"11"},
+         {"5"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9512195121951219, 0.9852702056432329, 1.], 
+            RGBColor[0.9105691056910569, 0.9729953770125936, 1.], 
+            RGBColor[
+            0.9469434832756632, 0.9818339100346021, 0.9463667820069204]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NH\"\>"},
+         {"4"},
+         {"6"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.967479674796748, 0.9901801370954886, 1.], 
+            RGBColor[0.9512195121951219, 0.9852702056432329, 1.], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NJ\"\>"},
+         {"14"},
+         {"31"},
+         {"17"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8861788617886179, 0.9656304798342101, 1.], 
+            RGBColor[0.7479674796747967, 0.9238960624900366, 1.], 
+            RGBColor[
+            0.8196078431372549, 0.9382352941176471, 0.8176470588235294]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NM\"\>"},
+         {"5"},
+         {"9"},
+         {"4"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.959349593495935, 0.9877251713693608, 1.], 
+            RGBColor[0.9268292682926829, 0.9779053084648494, 1.], 
+            RGBColor[
+            0.9575547866205305, 0.9854671280276817, 0.9570934256055363]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NY\"\>"},
+         {"29"},
+         {"65"},
+         {"36"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.7642276422764227, 0.9288059939422924, 1.], 
+            RGBColor[0.4715447154471544, 0.8404272278016898, 1.], 
+            RGBColor[
+            0.617993079584775, 0.8692041522491349, 0.613840830449827]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NC\"\>"},
+         {"15"},
+         {"33"},
+         {"18"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9933046389287422, 0.9220468675274989, 0.9177427068388331], 
+            RGBColor[
+            0.9852702056432329, 0.8285031085604974, 0.8190339550454329], 
+            RGBColor[
+            0.8089965397923875, 0.9346020761245675, 0.8069204152249134]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ND\"\>"},
+         {"3"},
+         {"4"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9986609277857484, 0.9844093735054997, 0.9835485413677666], 
+            RGBColor[
+            0.9982145703809979, 0.979212498007333, 0.9780647218236889], 
+            RGBColor[
+            0.9893886966551326, 0.9963667820069204, 0.989273356401384]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OH\"\>"},
+         {"18"},
+         {"40"},
+         {"22"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9919655667144907, 0.9064562410329986, 0.9012912482065997], 
+            RGBColor[
+            0.9821457038099792, 0.7921249800733301, 0.7806472182368882], 
+            RGBColor[
+            0.7665513264129181, 0.9200692041522491, 0.7640138408304498]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OK\"\>"},
+         {"7"},
+         {"14"},
+         {"7"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9968754981667464, 0.9636218715128327, 0.9616132631914555], 
+            RGBColor[
+            0.9937509963334927, 0.9272437430256656, 0.9232265263829109], 
+            RGBColor[
+            0.9257208765859285, 0.9745674740484429, 0.9249134948096885]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OR\"\>"},
+         {"7"},
+         {"14"},
+         {"7"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.943089430894309, 0.9828152399171051, 1.], 
+            RGBColor[0.8861788617886179, 0.9656304798342101, 1.], 
+            RGBColor[
+            0.9257208765859285, 0.9745674740484429, 0.9249134948096885]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"PA\"\>"},
+         {"20"},
+         {"43"},
+         {"23"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9910728519049896, 0.896062490036665, 0.8903236091184441], 
+            RGBColor[
+            0.9808066315957277, 0.7765343535788299, 0.7641957596046549], 
+            RGBColor[
+            0.7559400230680507, 0.9164359861591695, 0.7532871972318339]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"RI\"\>"},
+         {"4"},
+         {"5"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.967479674796748, 0.9901801370954886, 1.], 
+            RGBColor[0.959349593495935, 0.9877251713693608, 1.], 
+            RGBColor[
+            0.9893886966551326, 0.9963667820069204, 0.989273356401384]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"SC\"\>"},
+         {"9"},
+         {"17"},
+         {"8"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9959827833572453, 0.9532281205164993, 0.9506456241032999], 
+            RGBColor[
+            0.9924119241192412, 0.9116531165311653, 0.9067750677506775], 
+            RGBColor[
+            0.9151095732410611, 0.9709342560553633, 0.9141868512110727]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"SD\"\>"},
+         {"3"},
+         {"5"},
+         {"2"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9986609277857484, 0.9844093735054997, 0.9835485413677666], 
+            RGBColor[
+            0.9977682129762474, 0.9740156225091663, 0.972580902279611], 
+            RGBColor[
+            0.9787773933102653, 0.9927335640138408, 0.9785467128027682]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"TN\"\>"},
+         {"11"},
+         {"23"},
+         {"12"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9897337796907381, 0.8804718635421649, 0.8738721504862107], 
+            RGBColor[
+            0.8726643598615917, 0.956401384083045, 0.871280276816609]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"TX\"\>"},
+         {"38"},
+         {"84"},
+         {"46"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9830384186194803, 0.8025187310696636, 0.7916148573250439], 
+            RGBColor[
+            0.9625059780009565, 0.5634624581539933, 0.5393591582974653], 
+            RGBColor[
+            0.5118800461361015, 0.8328719723183391, 0.5065743944636678]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"UT\"\>"},
+         {"6"},
+         {"11"},
+         {"5"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9973218555714969, 0.9688187470109996, 0.9670970827355332], 
+            RGBColor[
+            0.9950900685477443, 0.9428343695201657, 0.9396779850151442], 
+            RGBColor[
+            0.9469434832756632, 0.9818339100346021, 0.9463667820069204]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"VT\"\>"},
+         {"3"},
+         {"4"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.975609756097561, 0.9926351028216165, 1.], 
+            RGBColor[0.967479674796748, 0.9901801370954886, 1.], 
+            RGBColor[
+            0.9893886966551326, 0.9963667820069204, 0.989273356401384]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"VA\"\>"},
+         {"13"},
+         {"28"},
+         {"15"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8943089430894309, 0.9680854455603379, 1.], 
+            RGBColor[0.7723577235772358, 0.9312609596684203, 1.], 
+            RGBColor[
+            0.8408304498269896, 0.9455017301038062, 0.8391003460207612]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WA\"\>"},
+         {"12"},
+         {"24"},
+         {"12"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9024390243902439, 0.9705404112864658, 1.], 
+            RGBColor[0.8048780487804879, 0.9410808225729316, 1.], 
+            RGBColor[
+            0.8726643598615917, 0.956401384083045, 0.871280276816609]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WV\"\>"},
+         {"5"},
+         {"8"},
+         {"3"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9977682129762474, 0.9740156225091663, 0.972580902279611], 
+            RGBColor[
+            0.9964291407619958, 0.958424996014666, 0.9561294436473776], 
+            RGBColor[
+            0.9681660899653979, 0.9891003460207612, 0.9678200692041522]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WI\"\>"},
+         {"10"},
+         {"20"},
+         {"10"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9955364259524948, 0.9480312450183326, 0.945161804559222], 
+            RGBColor[
+            0.9910728519049896, 0.896062490036665, 0.8903236091184441], 
+            RGBColor[
+            0.8938869665513264, 0.9636678200692042, 0.8927335640138409]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WY\"\>"},
+         {"3"},
+         {"4"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9986609277857484, 0.9844093735054997, 0.9835485413677666], 
+            RGBColor[
+            0.9982145703809979, 0.979212498007333, 0.9780647218236889], 
+            RGBColor[
+            0.9893886966551326, 0.9963667820069204, 0.989273356401384]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"R\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["305",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["624",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {"319"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            RGBColor[
+            0.9450980392156862, 0.3607843137254902, 0.3254901960784314], 
+            RGBColor[1, 1, 0], 
+            RGBColor[1, 1, 0], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{2}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"D\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["233",
+           StripOnInput->False,
+           FontWeight->Plain,
+           FontSlant->Plain,
+           FontVariations->{"Underline"->False}]},
+         {
+          StyleBox["479",
+           StripOnInput->False,
+           FontWeight->Plain,
+           FontSlant->Plain,
+           FontVariations->{"Underline"->False}]},
+         {"246"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            RGBColor[0., 0.6980392156862745, 1.], 
+            GrayLevel[1], 
+            GrayLevel[1], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{2}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"Total\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {"538"},
+         {"1103"},
+         {"565"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            GrayLevel[1], 
+            GrayLevel[1], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{3}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{-0.1}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.743168769992221*^9, 3.7431687934657707`*^9}, 
+   3.743168876613359*^9, {3.7431689272404423`*^9, 3.743168944975217*^9}, 
+   3.743169034053327*^9, 3.7431692340985727`*^9, {3.743169300288649*^9, 
+   3.7431693141193523`*^9}, {3.743169420824168*^9, 3.743169440437808*^9}, 
+   3.743169537050706*^9, 3.743169679835531*^9},
  CellLabel->
-  "Out[924]=",ExpressionUUID->"17cd1aa9-9285-465a-9e0a-f84f78b6cc9a"]
+  "Out[1064]=",ExpressionUUID->"a0374cdf-ce17-46ff-add4-365f78978be4"]
+}, Open  ]],
+
+Cell["\<\
+What about if we reapportioned every year? Not much difference...\
+\>", "Text",
+ CellChangeTimes->{{3.743169351921961*^9, 
+  3.743169364136112*^9}},ExpressionUUID->"b02909c1-ec85-442b-8fb2-\
+ff1adfc2e99b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"chartElection", "[", 
+  RowBox[{"runElection", "[", 
+   RowBox[{"\"\<2016\>\"", ",", " ", "435", ",", " ", "1", ",", " ", "2"}], 
+   "]"}], "]"}]], "Code",
+ CellChangeTimes->{{3.743169366281242*^9, 3.7431693941998*^9}},
+ CellLabel->
+  "In[1065]:=",ExpressionUUID->"a45776c6-9448-49f2-90f4-39fb3f342d17"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"State\"\>"},
+         {"\<\"Real EVs\"\>"},
+         {"\<\"New EVs\"\>"},
+         {"\<\"Diff\"\>"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{Right}}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{5}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AL\"\>"},
+         {"9"},
+         {"9"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+            RGBColor[
+            0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AK\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AZ\"\>"},
+         {"11"},
+         {"11"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"AR\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CA\"\>"},
+         {"55"},
+         {"55"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0., 0.6980392156862745, 1.], 
+            RGBColor[0., 0.6980392156862745, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CO\"\>"},
+         {"9"},
+         {"9"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
+            RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"CT\"\>"},
+         {"7"},
+         {"7"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+            RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"DE\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"DC\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"FL\"\>"},
+         {"29"},
+         {"30"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9710516934046346, 0.6629590017825312, 0.6443493761140819], 
+            RGBColor[
+            0.9700534759358289, 0.651336898395722, 0.6320855614973262], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"GA\"\>"},
+         {"16"},
+         {"16"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+            RGBColor[
+            0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"HI\"\>"},
+         {"4"},
+         {"4"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ID\"\>"},
+         {"4"},
+         {"4"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
+            RGBColor[
+            0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IL\"\>"},
+         {"20"},
+         {"19"},
+         {
+          RowBox[{"-", "1"}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.6363636363636364, 0.8901960784313725, 1.], 
+            RGBColor[0.6545454545454545, 0.8956862745098039, 1.], 
+            RGBColor[1., 0.7372549019607844, 0.17647058823529413`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IN\"\>"},
+         {"11"},
+         {"11"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"IA\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"KS\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"KY\"\>"},
+         {"8"},
+         {"8"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+            RGBColor[
+            0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"LA\"\>"},
+         {"8"},
+         {"8"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+            RGBColor[
+            0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ME\"\>"},
+         {"4"},
+         {"4"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MD\"\>"},
+         {"10"},
+         {"10"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+            RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MA\"\>"},
+         {"11"},
+         {"11"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8, 0.9396078431372549, 1.], 
+            RGBColor[0.8, 0.9396078431372549, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MI\"\>"},
+         {"16"},
+         {"15"},
+         {
+          RowBox[{"-", "1"}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+            RGBColor[
+            0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
+            RGBColor[1., 0.7372549019607844, 0.17647058823529413`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MN\"\>"},
+         {"10"},
+         {"9"},
+         {
+          RowBox[{"-", "1"}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+            RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
+            RGBColor[1., 0.7372549019607844, 0.17647058823529413`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MS\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MO\"\>"},
+         {"10"},
+         {"10"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+            RGBColor[
+            0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"MT\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NE\"\>"},
+         {"5"},
+         {"5"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+            RGBColor[
+            0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NV\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
+            RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NH\"\>"},
+         {"4"},
+         {"4"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NJ\"\>"},
+         {"14"},
+         {"14"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
+            RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NM\"\>"},
+         {"5"},
+         {"5"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
+            RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NY\"\>"},
+         {"29"},
+         {"29"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
+            RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"NC\"\>"},
+         {"15"},
+         {"16"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
+            RGBColor[
+            0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"ND\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OH\"\>"},
+         {"18"},
+         {"18"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
+            RGBColor[
+            0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OK\"\>"},
+         {"7"},
+         {"7"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
+            RGBColor[
+            0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"OR\"\>"},
+         {"7"},
+         {"8"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+            RGBColor[0.8545454545454545, 0.956078431372549, 1.], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"PA\"\>"},
+         {"20"},
+         {"19"},
+         {
+          RowBox[{"-", "1"}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9800356506238859, 0.7675579322638146, 0.7547237076648841], 
+            RGBColor[
+            0.9810338680926917, 0.7791800356506239, 0.7669875222816399], 
+            RGBColor[1., 0.7372549019607844, 0.17647058823529413`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"RI\"\>"},
+         {"4"},
+         {"4"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"SC\"\>"},
+         {"9"},
+         {"9"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+            RGBColor[
+            0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"SD\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"TN\"\>"},
+         {"11"},
+         {"11"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[
+            0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"TX\"\>"},
+         {"38"},
+         {"39"},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9620677361853832, 0.5583600713012478, 0.5339750445632798], 
+            RGBColor[
+            0.9610695187165775, 0.5467379679144385, 0.5217112299465241], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"UT\"\>"},
+         {"6"},
+         {"6"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[
+            0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"VT\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"VA\"\>"},
+         {"13"},
+         {"13"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
+            RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WA\"\>"},
+         {"12"},
+         {"12"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
+            RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WV\"\>"},
+         {"5"},
+         {"5"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+            RGBColor[
+            0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WI\"\>"},
+         {"10"},
+         {"10"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+            RGBColor[
+            0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {"\<\"WY\"\>"},
+         {"3"},
+         {"3"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[
+            0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{1}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"R\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["305",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["306",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {"1"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            RGBColor[
+            0.9450980392156862, 0.3607843137254902, 0.3254901960784314], 
+            RGBColor[1, 1, 0], 
+            RGBColor[1, 1, 0], 
+            RGBColor[
+            0.2784313725490196, 0.7529411764705882, 0.27058823529411763`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{2}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"D\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {
+          StyleBox["233",
+           StripOnInput->False,
+           FontWeight->Plain,
+           FontSlant->Plain,
+           FontVariations->{"Underline"->False}]},
+         {
+          StyleBox["232",
+           StripOnInput->False,
+           FontWeight->Plain,
+           FontSlant->Plain,
+           FontVariations->{"Underline"->False}]},
+         {
+          RowBox[{"-", "1"}]}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            RGBColor[0., 0.6980392156862745, 1.], 
+            GrayLevel[1], 
+            GrayLevel[1], 
+            RGBColor[1., 0.7372549019607844, 0.17647058823529413`]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{2}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10], 
+     StyleBox[
+      TagBox[GridBox[{
+         {
+          StyleBox["\<\"Total\"\>",
+           StripOnInput->False,
+           FontWeight->Bold]},
+         {"538"},
+         {"538"},
+         {"0"}
+        },
+        DefaultBaseStyle->"Column",
+        GridBoxAlignment->{"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+        
+        GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+            GrayLevel[1], 
+            GrayLevel[1], 
+            GrayLevel[1], 
+            RGBColor[1., 1., 1.]}},
+        GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+        GridBoxItemSize->{"Columns" -> {{3}}, "Rows" -> {{1.4}}},
+        GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
+       "Column"],
+      StripOnInput->False,
+      FontSize->10]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{-0.1}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.743169395742713*^9, 3.7431694443530197`*^9}, 
+   3.743169683748646*^9},
+ CellLabel->
+  "Out[1065]=",ExpressionUUID->"536c9829-a0eb-4ff8-9447-e47063814967"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2001,6 +4120,11 @@ for the `EVs` object\
  CellChangeTimes->{{3.7426998016135473`*^9, 
   3.742699833860738*^9}},ExpressionUUID->"a633d59a-3d7e-484e-b35c-\
 371e2198ef1a"],
+
+Cell[BoxData["elections"], "Code",
+ CellChangeTimes->{{3.743169338554049*^9, 
+  3.743169340321199*^9}},ExpressionUUID->"5cc85d4d-6c5a-411f-bf57-\
+fc7adf313ead"],
 
 Cell[CellGroupData[{
 
@@ -37396,39 +39520,47 @@ Cell[33763, 785, 328, 7, 34, "Output",ExpressionUUID->"f0f55683-cb90-4588-852f-8
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[34140, 798, 346, 7, 54, "Subsection",ExpressionUUID->"b4bf2de5-966a-4d73-96d2-ae998c4970e2"],
-Cell[34489, 807, 7819, 137, 414, "Code",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
-Cell[42311, 946, 210, 4, 35, "Text",ExpressionUUID->"a519ab75-154e-4951-b331-d4f099e34677"],
+Cell[34489, 807, 8998, 160, 490, "Code",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+Cell[43490, 969, 210, 4, 35, "Text",ExpressionUUID->"a519ab75-154e-4951-b331-d4f099e34677"],
 Cell[CellGroupData[{
-Cell[42546, 954, 842, 15, 72, "Code",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
-Cell[43391, 971, 559, 12, 34, "Output",ExpressionUUID->"25485680-4c5d-4428-b74e-f3670e5e92f6"]
+Cell[43725, 977, 957, 17, 91, "Code",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
+Cell[44685, 996, 664, 14, 37, "Output",ExpressionUUID->"5f1d997f-351f-405d-b744-6f00cef55823"],
+Cell[45352, 1012, 664, 14, 37, "Output",ExpressionUUID->"6dd4627f-4b28-4678-a076-8661c9682fd1"]
 }, Open  ]],
-Cell[43965, 986, 613, 11, 58, "Text",ExpressionUUID->"ff11143e-990b-4d72-96f0-b9beb67909ba"],
-Cell[44581, 999, 364, 9, 37, "Text",ExpressionUUID->"384d7c01-fed1-4bde-9a74-aa27b191f928"]
-}, Open  ]],
+Cell[46031, 1029, 613, 11, 58, "Text",ExpressionUUID->"ff11143e-990b-4d72-96f0-b9beb67909ba"],
+Cell[46647, 1042, 364, 9, 37, "Text",ExpressionUUID->"384d7c01-fed1-4bde-9a74-aa27b191f928"],
+Cell[47014, 1053, 359, 8, 35, "Text",ExpressionUUID->"5d66cdee-c273-4e49-8627-b4114315998c"],
 Cell[CellGroupData[{
-Cell[44982, 1013, 177, 3, 54, "Subsection",ExpressionUUID->"068d3b35-98db-46b2-a0e5-8770799993ff"],
-Cell[45162, 1018, 343, 7, 52, "Code",ExpressionUUID->"e74da7fe-da5b-462b-8fca-a7e3f75f3aee"],
-Cell[CellGroupData[{
-Cell[45530, 1029, 251, 5, 52, "Code",ExpressionUUID->"02b650f7-bcca-45db-8cba-4e548e168772"],
-Cell[45784, 1036, 1891, 53, 34, "Output",ExpressionUUID->"17307615-0e91-4cd4-82e7-df0063a8b1a7"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[47712, 1094, 7204, 157, 794, "Code",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
-Cell[54919, 1253, 39702, 732, 316, "Output",ExpressionUUID->"17cd1aa9-9285-465a-9e0a-f84f78b6cc9a"]
+Cell[47398, 1065, 488, 11, 91, "Code",ExpressionUUID->"561e4741-3850-49b1-84f4-d1fe34c5d64c"],
+Cell[47889, 1078, 371, 9, 37, "Output",ExpressionUUID->"dbabb9db-698a-415c-ae98-1cb9d3a6b4a5"],
+Cell[48263, 1089, 374, 9, 37, "Output",ExpressionUUID->"f4d31bfb-ddd4-4ce5-8b5d-b00c7e658465"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[94670, 1991, 169, 3, 54, "Subsection",ExpressionUUID->"3750e92c-c857-4428-b15e-f72535a73439"],
-Cell[94842, 1996, 250, 6, 35, "Text",ExpressionUUID->"a633d59a-3d7e-484e-b35c-371e2198ef1a"],
+Cell[48686, 1104, 177, 3, 54, "Subsection",ExpressionUUID->"068d3b35-98db-46b2-a0e5-8770799993ff"],
 Cell[CellGroupData[{
-Cell[95117, 2006, 4766, 108, 383, "Code",ExpressionUUID->"b152273f-c9ca-4cb3-be89-fa41636e0845"],
-Cell[99886, 2116, 11969, 227, 68, "Print",ExpressionUUID->"6721777a-868b-44b8-a5c6-5bb8697fdb39"],
-Cell[111858, 2345, 2153642, 34950, 431, "Output",ExpressionUUID->"5248e0fb-dbaf-46d1-ba59-5309622ad2d1"]
+Cell[48888, 1111, 18857, 412, 1725, "Code",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
+Cell[67748, 1525, 48702, 1302, 107, "Output",ExpressionUUID->"a0374cdf-ce17-46ff-add4-365f78978be4"]
 }, Open  ]],
-Cell[2265515, 37298, 256, 5, 115, "Input",ExpressionUUID->"f8b2f4e0-4ec7-4873-9f25-75994f2cb28c"],
-Cell[2265774, 37305, 388, 6, 52, "Code",ExpressionUUID->"7a334160-c5d8-446e-bca4-ed73eabc7ae0"],
-Cell[2266165, 37313, 216, 4, 35, "Text",ExpressionUUID->"ba77442d-08f9-4cee-b31c-5e13fb021925"],
-Cell[2266384, 37319, 198, 3, 52, "Code",ExpressionUUID->"1cb70c08-bdac-40a4-919c-85f9451da006"]
+Cell[116465, 2830, 215, 5, 35, "Text",ExpressionUUID->"b02909c1-ec85-442b-8fb2-ff1adfc2e99b"],
+Cell[CellGroupData[{
+Cell[116705, 2839, 327, 7, 52, "Code",ExpressionUUID->"a45776c6-9448-49f2-90f4-39fb3f342d17"],
+Cell[117035, 2848, 45796, 1256, 107, "Output",ExpressionUUID->"536c9829-a0eb-4ff8-9447-e47063814967"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[162880, 4110, 169, 3, 54, "Subsection",ExpressionUUID->"3750e92c-c857-4428-b15e-f72535a73439"],
+Cell[163052, 4115, 250, 6, 35, "Text",ExpressionUUID->"a633d59a-3d7e-484e-b35c-371e2198ef1a"],
+Cell[163305, 4123, 160, 3, 52, "Code",ExpressionUUID->"5cc85d4d-6c5a-411f-bf57-fc7adf313ead"],
+Cell[CellGroupData[{
+Cell[163490, 4130, 4766, 108, 383, "Code",ExpressionUUID->"b152273f-c9ca-4cb3-be89-fa41636e0845"],
+Cell[168259, 4240, 11969, 227, 68, "Print",ExpressionUUID->"6721777a-868b-44b8-a5c6-5bb8697fdb39"],
+Cell[180231, 4469, 2153642, 34950, 431, "Output",ExpressionUUID->"5248e0fb-dbaf-46d1-ba59-5309622ad2d1"]
+}, Open  ]],
+Cell[2333888, 39422, 256, 5, 115, "Input",ExpressionUUID->"f8b2f4e0-4ec7-4873-9f25-75994f2cb28c"],
+Cell[2334147, 39429, 388, 6, 52, "Code",ExpressionUUID->"7a334160-c5d8-446e-bca4-ed73eabc7ae0"],
+Cell[2334538, 39437, 216, 4, 35, "Text",ExpressionUUID->"ba77442d-08f9-4cee-b31c-5e13fb021925"],
+Cell[2334757, 39443, 198, 3, 52, "Code",ExpressionUUID->"1cb70c08-bdac-40a4-919c-85f9451da006"]
 }, Open  ]]
 }, Open  ]]
 }
