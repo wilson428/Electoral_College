@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12881,        301]
-NotebookOptionsPosition[     11735,        274]
-NotebookOutlinePosition[     12114,        291]
-CellTagsIndexPosition[     12071,        288]
+NotebookDataLength[     12907,        302]
+NotebookOptionsPosition[     11761,        275]
+NotebookOutlinePosition[     12140,        292]
+CellTagsIndexPosition[     12097,        289]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,7 +29,7 @@ Cell[BoxData[{
    3.742682531307863*^9, 3.742682532410281*^9}, {3.742682680885469*^9, 
    3.7426826811969013`*^9}, {3.742690105826301*^9, 3.7426901119852962`*^9}},
  CellLabel->
-  "In[227]:=",ExpressionUUID->"7c7ec41f-99d0-4464-acd5-26fbe7c3a19a"],
+  "In[552]:=",ExpressionUUID->"7c7ec41f-99d0-4464-acd5-26fbe7c3a19a"],
 
 Cell[CellGroupData[{
 
@@ -126,7 +126,7 @@ Cell[BoxData[
    3.742709844163906*^9, 3.74270987350839*^9}, {3.742709912459607*^9, 
    3.742709921553672*^9}, 3.742709955697068*^9},
  CellLabel->
-  "In[229]:=",ExpressionUUID->"9b677569-5121-44a2-bc26-260dd2fa6065"],
+  "In[554]:=",ExpressionUUID->"9b677569-5121-44a2-bc26-260dd2fa6065"],
 
 Cell["\<\
 We have to call the page itself before we can call the JSON object\
@@ -164,7 +164,7 @@ renderProductData?renderForMap=f&renderForChart=f&src=bkmk&log=t&_ts=\>\""}],
    3.7427098879369173`*^9}, 3.7427099754659863`*^9, {3.742818838023243*^9, 
    3.742818857980324*^9}},
  CellLabel->
-  "In[230]:=",ExpressionUUID->"e764cb9c-d690-419d-b558-ef9425f5343e"],
+  "In[555]:=",ExpressionUUID->"e764cb9c-d690-419d-b558-ef9425f5343e"],
 
 Cell[CellGroupData[{
 
@@ -236,7 +236,7 @@ Cell[BoxData[{
    3.742700833329094*^9, 3.742700870888753*^9}, {3.742709925938518*^9, 
    3.742709928583151*^9}},
  CellLabel->
-  "In[233]:=",ExpressionUUID->"b5551e37-b10f-4554-8668-4f6e203e71ba"],
+  "In[558]:=",ExpressionUUID->"b5551e37-b10f-4554-8668-4f6e203e71ba"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
@@ -256,9 +256,10 @@ Cell[BoxData[
  CellChangeTimes->{
   3.742700871918419*^9, {3.742709831162738*^9, 3.742709866678711*^9}, {
    3.742709929407798*^9, 3.7427099827304707`*^9}, 3.742710023590057*^9, 
-   3.742818864756963*^9, {3.742827200541494*^9, 3.7428272065353937`*^9}},
+   3.742818864756963*^9, {3.742827200541494*^9, 3.7428272065353937`*^9}, 
+   3.743129081027548*^9},
  CellLabel->
-  "Out[235]=",ExpressionUUID->"b3f5f24d-0ed6-4391-b8d6-7f33fc63c52c"]
+  "Out[560]=",ExpressionUUID->"2fef0c57-6b68-4fa9-a405-2b6e9ba8d9da"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -269,7 +270,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.7426971191804123`*^9, 3.742697132827486*^9}, 
    3.742697798067759*^9},
  CellLabel->
-  "In[236]:=",ExpressionUUID->"5b0f3a0c-aea7-4a07-8bda-6c1a012cd5e2"]
+  "In[561]:=",ExpressionUUID->"5b0f3a0c-aea7-4a07-8bda-6c1a012cd5e2"]
 }, Open  ]]
 },
 WindowSize->{1335, 751},
@@ -299,9 +300,9 @@ Cell[5352, 130, 215, 5, 35, "Text",ExpressionUUID->"7b16166b-b0a6-4056-9c11-c1e4
 Cell[5570, 137, 1358, 29, 91, "Code",ExpressionUUID->"e764cb9c-d690-419d-b558-ef9425f5343e"],
 Cell[CellGroupData[{
 Cell[6953, 170, 3349, 68, 100, "Code",ExpressionUUID->"b5551e37-b10f-4554-8668-4f6e203e71ba"],
-Cell[10305, 240, 1071, 20, 60, "Output",ExpressionUUID->"b3f5f24d-0ed6-4391-b8d6-7f33fc63c52c"]
+Cell[10305, 240, 1097, 21, 60, "Output",ExpressionUUID->"2fef0c57-6b68-4fa9-a405-2b6e9ba8d9da"]
 }, Open  ]],
-Cell[11391, 263, 328, 8, 52, "Code",ExpressionUUID->"5b0f3a0c-aea7-4a07-8bda-6c1a012cd5e2"]
+Cell[11417, 264, 328, 8, 52, "Code",ExpressionUUID->"5b0f3a0c-aea7-4a07-8bda-6c1a012cd5e2"]
 }, Open  ]]
 }
 ]

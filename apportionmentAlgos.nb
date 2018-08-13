@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2250904,      37064]
-NotebookOptionsPosition[   2244169,      36952]
-NotebookOutlinePosition[   2244546,      36969]
-CellTagsIndexPosition[   2244503,      36966]
+NotebookDataLength[   2272810,      37429]
+NotebookOptionsPosition[   2266610,      37326]
+NotebookOutlinePosition[   2266987,      37343]
+CellTagsIndexPosition[   2266944,      37340]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[{
    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]}], "Code",
  CellChangeTimes->{3.7426979134469337`*^9},
  CellLabel->
-  "In[589]:=",ExpressionUUID->"db869b51-fa78-4d6c-8d31-5a3565bd6e7d"],
+  "In[658]:=",ExpressionUUID->"db869b51-fa78-4d6c-8d31-5a3565bd6e7d"],
 
 Cell[CellGroupData[{
 
@@ -126,7 +126,7 @@ Cell[BoxData[
    3.742700897607704*^9, 3.7427008999513693`*^9}, {3.743128885496269*^9, 
    3.7431289366892843`*^9}},
  CellLabel->
-  "In[591]:=",ExpressionUUID->"f2b9b567-d534-4271-aa11-34bf88daeb71"],
+  "In[660]:=",ExpressionUUID->"f2b9b567-d534-4271-aa11-34bf88daeb71"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
@@ -164,9 +164,9 @@ Cell[BoxData[
    3.742861371387595*^9}, 3.742864166552374*^9, 3.7428678026888247`*^9, 
    3.74309797388752*^9, 3.743098137846846*^9, 3.743107383755286*^9, 
    3.7431289376423597`*^9, 3.7431294405070553`*^9, 3.743129480196864*^9, 
-   3.74312962282832*^9, 3.7431297755588713`*^9},
+   3.74312962282832*^9, 3.7431297755588713`*^9, 3.743158720618762*^9},
  CellLabel->
-  "Out[592]=",ExpressionUUID->"83588379-ef49-4a55-92b3-8461812e57f7"]
+  "Out[661]=",ExpressionUUID->"cba65621-7298-461a-8a95-56a53a392dd0"]
 }, Open  ]],
 
 Cell["\<\
@@ -196,41 +196,44 @@ Cell[BoxData[
      RowBox[{"Import", "[", "\"\<./data/state_populations.wl\>\"", "]"}]}], 
     ";"}], "\n", 
    RowBox[{"statePopulations", "[", 
-    TemplateBox[{"\"Arkansas, United States\"",RowBox[{"Entity", "[", 
+    TemplateBox[{"\"Pennsylvania, United States\"",RowBox[{"Entity", "[", 
         RowBox[{"\"AdministrativeDivision\"", ",", 
           RowBox[{"{", 
-            RowBox[{"\"Arkansas\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Arkansas\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+            RowBox[{"\"Pennsylvania\"", ",", "\"UnitedStates\""}], "}"}]}], 
+        "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
+{\\\"Pennsylvania\\\", \\\"UnitedStates\\\"}]\"",
+      "\"administrative division\""},
      "Entity"], "]"}]}]}]], "Code",
  CellChangeTimes->{
   3.742827107657061*^9, {3.742827561892654*^9, 3.742827562211619*^9}, {
-   3.743129662750359*^9, 3.743129663589271*^9}},
+   3.743129662750359*^9, 3.743129663589271*^9}, {3.743158825840008*^9, 
+   3.7431588265999002`*^9}},
  CellLabel->
-  "In[593]:=",ExpressionUUID->"0c162128-a187-4ae3-a66c-25a41e601fc8"],
+  "In[675]:=",ExpressionUUID->"0c162128-a187-4ae3-a66c-25a41e601fc8"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
-   RowBox[{"\<\"state\"\>", "\[Rule]", "\<\"Arkansas\"\>"}], ",", 
-   RowBox[{"\<\"census\"\>", "\[Rule]", "2915918"}], ",", 
-   RowBox[{"\<\"census_base\"\>", "\[Rule]", "2916031"}], ",", 
-   RowBox[{"\<\"2010\"\>", "\[Rule]", "2921737"}], ",", 
-   RowBox[{"\<\"2011\"\>", "\[Rule]", "2938640"}], ",", 
-   RowBox[{"\<\"2012\"\>", "\[Rule]", "2949208"}], ",", 
-   RowBox[{"\<\"2013\"\>", "\[Rule]", "2956780"}], ",", 
-   RowBox[{"\<\"2014\"\>", "\[Rule]", "2964800"}], ",", 
-   RowBox[{"\<\"2015\"\>", "\[Rule]", "2975626"}], ",", 
-   RowBox[{"\<\"2016\"\>", "\[Rule]", "2988231"}], ",", 
-   RowBox[{"\<\"2017\"\>", "\[Rule]", "3004279"}]}], 
+   RowBox[{"\<\"state\"\>", "\[Rule]", "\<\"Pennsylvania\"\>"}], ",", 
+   RowBox[{"\<\"census\"\>", "\[Rule]", "12702379"}], ",", 
+   RowBox[{"\<\"census_base\"\>", "\[Rule]", "12702857"}], ",", 
+   RowBox[{"\<\"2010\"\>", "\[Rule]", "12711063"}], ",", 
+   RowBox[{"\<\"2011\"\>", "\[Rule]", "12742811"}], ",", 
+   RowBox[{"\<\"2012\"\>", "\[Rule]", "12768034"}], ",", 
+   RowBox[{"\<\"2013\"\>", "\[Rule]", "12778450"}], ",", 
+   RowBox[{"\<\"2014\"\>", "\[Rule]", "12790341"}], ",", 
+   RowBox[{"\<\"2015\"\>", "\[Rule]", "12791124"}], ",", 
+   RowBox[{"\<\"2016\"\>", "\[Rule]", "12787085"}], ",", 
+   RowBox[{"\<\"2017\"\>", "\[Rule]", "12805537"}]}], 
   "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{
   3.7428275627504997`*^9, {3.742861350184012*^9, 3.742861371503706*^9}, 
    3.742864168876072*^9, 3.742867804627338*^9, 3.7430979739598103`*^9, 
    3.7430981424981194`*^9, 3.7431073867973547`*^9, 3.743129503764228*^9, 
-   3.743129668763096*^9, 3.743129778850175*^9},
+   3.743129668763096*^9, 3.743129778850175*^9, 3.7431587233975*^9, 
+   3.743158827134379*^9},
  CellLabel->
-  "Out[594]=",ExpressionUUID->"c5445af8-5398-4385-9971-9d96f3d507e4"]
+  "Out[676]=",ExpressionUUID->"af2afd6b-675e-45bf-bd85-004744605166"]
 }, Open  ]],
 
 Cell["State abbreviations, for conciseness later", "Text",
@@ -254,37 +257,55 @@ d77282bc9621\>\"", "]"}]}], ";"}], " ", "*)"}], "\n",
     RowBox[{"stateInfo", " ", "=", " ", 
      RowBox[{"Import", "[", "\"\<./data/state_info.wl\>\"", "]"}]}], ";"}], 
    "\n", 
-   RowBox[{"stateInfo", "[", 
-    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Code",
+   RowBox[{
+    RowBox[{"stateInfoAssociation", " ", "=", " ", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", "\"\<entity\>\"", "]"}], "&"}], " ", "/@", " ", 
+        "stateInfo"}], ",", " ", "stateInfo"}], "]"}]}], ";"}], "\n", 
+   RowBox[{"stateInfoAssociation", "[", 
+    TemplateBox[{"\"Virginia, United States\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"Virginia\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Virginia\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+     "Entity"], "]"}]}]}]], "Code",
  CellChangeTimes->{{3.742752340870695*^9, 3.7427523508433743`*^9}, {
   3.742752464837688*^9, 3.7427524941384153`*^9}, {3.742827697390978*^9, 
   3.7428276977403603`*^9}, {3.742861362186508*^9, 3.742861380288733*^9}, {
   3.742864173902461*^9, 3.742864192454348*^9}, {3.743129721102285*^9, 
-  3.743129722346366*^9}, {3.7431297612349663`*^9, 3.7431297651692667`*^9}},
+  3.743129722346366*^9}, {3.7431297612349663`*^9, 3.7431297651692667`*^9}, {
+  3.7431587531821632`*^9, 3.7431587929012747`*^9}, {3.743162224857833*^9, 
+  3.743162229967518*^9}},
  CellLabel->
-  "In[595]:=",ExpressionUUID->"18dff5ee-5f59-4884-ba1c-29f827deaac6"],
+  "In[700]:=",ExpressionUUID->"18dff5ee-5f59-4884-ba1c-29f827deaac6"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
-   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Alabama\"\>"}], ",", 
-   RowBox[{"\<\"ev\"\>", "\[Rule]", "9"}], ",", 
-   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AL\"\>"}], ",", 
-   RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Ala.\"\>"}], ",", 
+   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Virginia\"\>"}], ",", 
+   RowBox[{"\<\"ev\"\>", "\[Rule]", "13"}], ",", 
+   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"VA\"\>"}], ",", 
+   RowBox[{"\<\"ap\"\>", "\[Rule]", "\<\"Va.\"\>"}], ",", 
    RowBox[{"\<\"entity\"\>", "\[Rule]", 
-    TemplateBox[{"\"Alabama, United States\"",RowBox[{"Entity", "[", 
+    TemplateBox[{"\"Virginia, United States\"",RowBox[{"Entity", "[", 
         RowBox[{"\"AdministrativeDivision\"", ",", 
           RowBox[{"{", 
-            RowBox[{"\"Alabama\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alabama\\\", \
+            RowBox[{"\"Virginia\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Virginia\\\", \
 \\\"UnitedStates\\\"}]\"","\"administrative division\""},
      "Entity"]}]}], "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{
   3.742864193482341*^9, 3.7428678135755177`*^9, 3.743097974035001*^9, 
    3.743098163222369*^9, 3.74310739024848*^9, {3.743129715207553*^9, 
-   3.743129722728573*^9}, {3.74312975770572*^9, 3.743129783342573*^9}},
+   3.743129722728573*^9}, {3.74312975770572*^9, 3.743129783342573*^9}, 
+   3.74315872956074*^9, {3.7431587775119467`*^9, 3.7431587936731043`*^9}, 
+   3.743162230506466*^9},
  CellLabel->
-  "Out[596]=",ExpressionUUID->"bf123167-9ebf-4768-b3e2-3f9a9cbae035"]
+  "Out[702]=",ExpressionUUID->"37ae04e7-4440-47fc-91a0-344fa1aa4101"]
 }, Open  ]],
 
 Cell["\<\
@@ -311,7 +332,7 @@ Cell[BoxData[{
    3.7426996626942167`*^9, {3.742701009501276*^9, 3.742701024885275*^9}, 
    3.7427512124227343`*^9, {3.7428613961780252`*^9, 3.7428613966068*^9}},
  CellLabel->
-  "In[597]:=",ExpressionUUID->"0fb5f417-6118-4ceb-b6d4-3ccd7205a1a3"]
+  "In[666]:=",ExpressionUUID->"0fb5f417-6118-4ceb-b6d4-3ccd7205a1a3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -323,16 +344,17 @@ Cell["The Huntington-Hill method", "Subsection",
 d235d58ff3e5"],
 
 Cell["\<\
-Allocation begins by allotting one electoral vote to each state, leaving 385 \
-left to allocate--one for each voting member of the House of Representatives. \
-The 50 states are allotted these remaining seats one-by-one according to \
-which one has the highest priority as determined by a simple equation: it\
-\[CloseCurlyQuote]s population divided by the square root of its current \
-seats times one extra seat (the Geometric Mean):  \
+Allocation of the 435 House of Representatives seats, under current law, \
+begins by allotting one electoral vote to each state, leaving 385 left to \
+allocate. The 50 states are allotted these remaining seats one-by-one \
+according to which one has the highest priority as determined by a simple \
+equation: it\[CloseCurlyQuote]s population divided by the square root of its \
+current seats times one extra seat (the Geometric Mean):  \
 \>", "Text",
  CellChangeTimes->{{3.742699576180757*^9, 3.742699604740075*^9}, {
   3.742864981947083*^9, 3.742864994128841*^9}, {3.7428655701918697`*^9, 
-  3.742865712447036*^9}},ExpressionUUID->"fc6cdf9f-a315-4336-ade0-\
+  3.742865712447036*^9}, {3.743158874972745*^9, 
+  3.743158896713509*^9}},ExpressionUUID->"fc6cdf9f-a315-4336-ade0-\
 714cb7384548"],
 
 Cell[TextData[Cell[BoxData[
@@ -372,7 +394,7 @@ f967010c56e8"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"Priority", "[", 
+  RowBox[{"PriorityHuntingtonHill", "[", 
    RowBox[{"stateEntity_", ",", " ", "year_", ",", " ", "evs_"}], "]"}], " ", 
   ":=", " ", 
   RowBox[{"1.0", " ", "*", " ", 
@@ -392,24 +414,30 @@ Cell[BoxData[
    3.742703720719286*^9, 3.742703791852066*^9}, {3.742703955678955*^9, 
    3.742703957045228*^9}, {3.742864492042851*^9, 3.742864495639021*^9}, {
    3.7428657635322943`*^9, 3.742865764571494*^9}, {3.7428659827091208`*^9, 
-   3.742865985699524*^9}, {3.742873976461589*^9, 3.742873983043447*^9}},
+   3.742865985699524*^9}, {3.742873976461589*^9, 3.742873983043447*^9}, {
+   3.743158943148601*^9, 3.743158963274629*^9}},
  CellLabel->
-  "In[599]:=",ExpressionUUID->"909fb99b-bcc0-4054-983f-4010db6d2ed3"],
+  "In[677]:=",ExpressionUUID->"909fb99b-bcc0-4054-983f-4010db6d2ed3"],
 
 Cell["\<\
 The allocation function will assign electoral votes according to the above \
-formula one at a time, using population figures from the specified year.\
+formula one at a time, using population figures from the specified year. We\
+\[CloseCurlyQuote]re also going to explicitly pass the priority function in \
+case we want to try a different one later (which we definitely will).\
 \>", "Text",
  CellChangeTimes->{{3.742700024336563*^9, 3.742700080277816*^9}, {
   3.742702853198641*^9, 3.7427028543812323`*^9}, {3.7428739555718403`*^9, 
-  3.7428739706913767`*^9}},ExpressionUUID->"114e1f0c-3dd9-4f99-bdb9-\
+  3.7428739706913767`*^9}, {3.7431618430729094`*^9, 
+  3.7431618833100357`*^9}},ExpressionUUID->"114e1f0c-3dd9-4f99-bdb9-\
 51545e8c0ebd"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"AllocateOne", "[", 
    RowBox[{"year_", ",", " ", "evs_", ",", " ", 
-    RowBox[{"print_:", "False"}]}], "]"}], " ", ":=", " ", 
+    RowBox[{"print_:", "False"}], ",", " ", 
+    RowBox[{"priorityFunc_:", "PriorityHuntingtonHill"}]}], "]"}], " ", ":=", 
+  " ", 
   RowBox[{"(", "\n", "\t", 
    RowBox[{
     RowBox[{"priorities", " ", "=", " ", 
@@ -417,7 +445,7 @@ Cell[BoxData[
       RowBox[{"stateEntities", ",", " ", 
        RowBox[{
         RowBox[{
-         RowBox[{"Priority", "[", 
+         RowBox[{"PriorityHuntingtonHill", "[", 
           RowBox[{"#", ",", " ", "year", ",", " ", "evs"}], "]"}], "&"}], " ",
          "/@", " ", "stateEntities"}]}], "]"}]}], ";", "\n", "\t", 
     RowBox[{"topPriority", " ", "=", " ", 
@@ -469,9 +497,10 @@ Cell[BoxData[
    3.742868147950429*^9}, {3.742868211306143*^9, 3.7428682573590508`*^9}, {
    3.7428729922150393`*^9, 3.7428730217011423`*^9}, {3.7428730875009336`*^9, 
    3.742873116018709*^9}, {3.742873511396791*^9, 3.7428735732563353`*^9}, {
-   3.742873604462029*^9, 3.742873607452322*^9}},
+   3.742873604462029*^9, 3.742873607452322*^9}, 3.7431589797528763`*^9, {
+   3.7431618056996727`*^9, 3.743161836200527*^9}},
  CellLabel->
-  "In[600]:=",ExpressionUUID->"988e0ab4-88a6-4c2d-be18-a2daf51cb8c2"],
+  "In[688]:=",ExpressionUUID->"988e0ab4-88a6-4c2d-be18-a2daf51cb8c2"],
 
 Cell["\<\
 Let\[CloseCurlyQuote]s test it once, starting with one EV per state. \
@@ -502,14 +531,15 @@ Cell[BoxData[{
    3.742867739864524*^9, {3.742868156448224*^9, 3.742868192913464*^9}, 
    3.742868224440546*^9},
  CellLabel->
-  "In[601]:=",ExpressionUUID->"9dbc78ae-5a0f-4422-a243-ca5e5ef1d6d2"],
+  "In[689]:=",ExpressionUUID->"9dbc78ae-5a0f-4422-a243-ca5e5ef1d6d2"],
 
 Cell[BoxData["\<\"Electoral vote number 51 goes to California for a total of \
 2\"\>"], "Print",
- CellChangeTimes->{3.743107406562104*^9, 3.743129827678297*^9},
+ CellChangeTimes->{3.743107406562104*^9, 3.743129827678297*^9, 
+  3.743159004753792*^9, 3.743161889226801*^9},
  CellLabel->
   "During evaluation of \
-In[601]:=",ExpressionUUID->"6869f7ba-1ad4-4bdc-a135-13f0f00ab5ec"]
+In[689]:=",ExpressionUUID->"743e2fbb-87c1-4b9b-b966-ede25a575697"]
 }, Open  ]],
 
 Cell["\<\
@@ -574,8 +604,22 @@ Cell[TextData[{
  StyleBox[", defaulting to 2 -- the number of senators per state", "Text",
   FontSize->14]
 }], "Item",
- CellChangeTimes->{{3.743119035108349*^9, 3.743119050882251*^9}},
- FontSize->16,ExpressionUUID->"12d0db85-eb9c-414c-a065-15b353d0cb86"]
+ CellChangeTimes->{{3.743119035108349*^9, 3.743119050882251*^9}, {
+  3.743161900121416*^9, 3.7431619001229687`*^9}},
+ FontSize->16,ExpressionUUID->"12d0db85-eb9c-414c-a065-15b353d0cb86"],
+
+Cell[TextData[{
+ StyleBox["The priority function for allocation ", "Text",
+  FontSize->14],
+ StyleBox["(priorityFunc_)", "Text",
+  FontSize->14,
+  FontWeight->"Bold"],
+ StyleBox[", defaulting to Huntington-Hill", "Text",
+  FontSize->14]
+}], "Item",
+ CellChangeTimes->{{3.743119035108349*^9, 3.743119050882251*^9}, {
+  3.7431619140930967`*^9, 3.743161949124668*^9}},
+ FontSize->16,ExpressionUUID->"e72c1469-d7a2-44cc-ae15-8922a6836089"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -585,7 +629,9 @@ Cell[BoxData[
     RowBox[{"year_:", "\"\<census\>\""}], ",", " ", 
     RowBox[{"total_:", "435"}], ",", " ", 
     RowBox[{"min_:", "1"}], ",", " ", 
-    RowBox[{"extra_:", "2"}]}], "]"}], ":=", " ", 
+    RowBox[{"extra_:", "2"}], ",", " ", 
+    RowBox[{"priorityFunc_:", "PriorityHuntingtonHill"}]}], "]"}], ":=", " ", 
+  
   RowBox[{"(", "\n", "\t", 
    RowBox[{
     RowBox[{"EVs", " ", "=", " ", 
@@ -602,8 +648,9 @@ Cell[BoxData[
        RowBox[{"Total", "@", "EVs"}], " ", "<", " ", "total"}], ",", " ", 
       RowBox[{"EVs", " ", "=", " ", 
        RowBox[{"AllocateOne", "[", 
-        RowBox[{"year", ",", " ", "EVs"}], "]"}]}]}], "]"}], ";", "\n", "\t", 
-    
+        RowBox[{
+        "year", ",", " ", "EVs", ",", " ", "False", ",", " ", 
+         "priorityFunc"}], "]"}]}]}], "]"}], ";", "\n", "\t", 
     RowBox[{"(*", " ", 
      RowBox[{
      "Add", " ", "two", " ", "to", " ", "each", " ", "state", " ", "for", " ",
@@ -690,9 +737,11 @@ Cell[BoxData[
    3.7431185877726383`*^9, 3.743118616735886*^9}, {3.7431187228062363`*^9, 
    3.7431187775163107`*^9}, {3.743119323782302*^9, 3.743119394144105*^9}, 
    3.7431196880041237`*^9, {3.7431197384095163`*^9, 3.743119741622819*^9}, {
-   3.743119783160199*^9, 3.7431198012239656`*^9}},
+   3.743119783160199*^9, 3.7431198012239656`*^9}, {3.743161756983734*^9, 
+   3.743161770835677*^9}, {3.7431619062169228`*^9, 3.74316191082376*^9}, {
+   3.743161986862994*^9, 3.7431619956783247`*^9}},
  CellLabel->
-  "In[603]:=",ExpressionUUID->"b2c29eb0-a0d3-4dba-8046-d05218d5630e"],
+  "In[691]:=",ExpressionUUID->"b2c29eb0-a0d3-4dba-8046-d05218d5630e"],
 
 Cell[CellGroupData[{
 
@@ -732,16 +781,16 @@ Cell[BoxData[{
    3.743119295684989*^9, 3.743119316395767*^9}, 3.743119408736906*^9, {
    3.743119466104003*^9, 3.743119542507772*^9}},
  CellLabel->
-  "In[604]:=",ExpressionUUID->"f592e677-3d9e-4df4-8a9d-fe1676152c45"],
+  "In[692]:=",ExpressionUUID->"f592e677-3d9e-4df4-8a9d-fe1676152c45"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"9", ",", "8", ",", "3"}], "}"}]], "Output",
  CellChangeTimes->{
   3.743119543242793*^9, 3.743119718854887*^9, {3.743119759823599*^9, 
-   3.7431198032248173`*^9}, 3.743129839338324*^9},
+   3.7431198032248173`*^9}, 3.743129839338324*^9, 3.74316200739709*^9},
  CellLabel->
-  "Out[605]=",ExpressionUUID->"237ec61c-967c-4429-b365-fcf5f9555a83"]
+  "Out[693]=",ExpressionUUID->"f0f55683-cb90-4588-852f-84c3fd8962cf"]
 }, Open  ]]
 }, Open  ]],
 
@@ -756,24 +805,6 @@ election results, and bring in the actual state winners in 2016\
   3.743119567186623*^9}},ExpressionUUID->"b4bf2de5-966a-4d73-96d2-\
 ae998c4970e2"],
 
-Cell["Make an associate of entities -> info", "Text",
- CellChangeTimes->{{3.743129855494123*^9, 
-  3.7431298679096813`*^9}},ExpressionUUID->"8eab73f8-d8bc-48b8-936e-\
-0502d58fa79a"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"stateInfoAssociation", " ", "=", " ", 
-   RowBox[{"AssociationThread", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{"#", "[", "\"\<entity\>\"", "]"}], "&"}], " ", "/@", " ", 
-      "stateInfo"}], ",", " ", "stateInfo"}], "]"}]}], ";"}]], "Code",
- CellChangeTimes->{{3.743129869861335*^9, 3.7431299020067673`*^9}},
- CellLabel->
-  "In[607]:=",ExpressionUUID->"65034648-0318-4226-8daa-dbc78e9334d3"],
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"runElection", "[", 
@@ -781,13 +812,16 @@ Cell[BoxData[
     RowBox[{"year_:", "\"\<2016\>\""}], ",", " ", 
     RowBox[{"total_:", "435"}], ",", " ", 
     RowBox[{"min_:", "1"}], ",", " ", 
-    RowBox[{"extra_:", "2"}]}], "]"}], " ", ":=", " ", 
+    RowBox[{"extra_:", "2"}], ",", " ", 
+    RowBox[{"priorityFunc_:", "PriorityHuntingtonHill"}]}], "]"}], " ", ":=", 
+  " ", 
   RowBox[{"(", "\n", "\t", 
    RowBox[{
     RowBox[{"calculated", " ", "=", " ", 
      RowBox[{"calculateAllocations", "[", 
-      RowBox[{"year", ",", " ", "total", ",", " ", "min", ",", " ", "extra"}],
-       "]"}]}], ";", "\n", "\t", 
+      RowBox[{
+      "year", ",", " ", "total", ",", " ", "min", ",", " ", "extra", ",", " ",
+        "priorityFunc"}], "]"}]}], ";", "\n", "\t", 
     RowBox[{"tally", " ", "=", " ", 
      RowBox[{"<|", " ", 
       RowBox[{
@@ -842,7 +876,11 @@ Cell[BoxData[
            RowBox[{"state", "[", "\"\<calculated_evs\>\"", "]"}]}], ";", "\n",
            "\t\t", "state"}], "\n", "\t", ")"}], "&"}], ",", " ", 
        RowBox[{"Keys", "@", "calculated"}]}], "]"}]}], ";", "\n", "\t", 
-    "tally"}], "\n", ")"}]}]], "Code",
+    RowBox[{"<|", " ", 
+     RowBox[{
+      RowBox[{"\"\<results\>\"", " ", "\[Rule]", " ", "tally"}], ",", " ", 
+      RowBox[{"\"\<states\>\"", " ", "\[Rule]", " ", "comparison"}]}], " ", 
+     "|>"}]}], "\n", ")"}]}]], "Code",
  CellChangeTimes->{{3.742705866446476*^9, 3.7427060251559772`*^9}, {
    3.742706064485188*^9, 3.742706068514029*^9}, {3.7427061038977127`*^9, 
    3.742706112758217*^9}, 3.742706150440687*^9, {3.742706183559895*^9, 
@@ -900,716 +938,1052 @@ Cell[BoxData[
    3.743120111444564*^9}, {3.743120250358951*^9, 3.7431202582164383`*^9}, {
    3.743120467003085*^9, 3.743120474735239*^9}, 3.743129995807125*^9, {
    3.743130029929842*^9, 3.74313003825891*^9}, {3.743134949442354*^9, 
-   3.743134975903867*^9}, {3.743135105453209*^9, 3.743135192073081*^9}},
+   3.743134975903867*^9}, {3.743135105453209*^9, 3.743135192073081*^9}, {
+   3.743162033155707*^9, 3.743162066571478*^9}, {3.743162145546666*^9, 
+   3.743162186687805*^9}},
  CellLabel->
-  "In[628]:=",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+  "In[703]:=",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+
+Cell["Let\[CloseCurlyQuote]s test this on realistic settings for 2016.", \
+"Text",
+ CellChangeTimes->{{3.743162297731238*^9, 
+  3.7431623142507887`*^9}},ExpressionUUID->"a519ab75-154e-4951-b331-\
+d4f099e34677"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"election2016", " ", "=", " ", 
-  RowBox[{"runElection", "[", 
-   RowBox[{"\"\<2016\>\"", ",", " ", "300", ",", " ", "1", ",", " ", "0"}], 
-   "]"}]}]], "Code",
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"election2016", " ", "=", " ", 
+   RowBox[{"runElection", "[", 
+    RowBox[{"\"\<census\>\"", ",", " ", "435", ",", " ", "1", ",", " ", "2"}],
+     "]"}]}], ";"}], "\n", 
+ RowBox[{"election2016", "[", "\"\<results\>\"", "]"}]}], "Code",
  CellChangeTimes->{{3.743109657330909*^9, 3.7431096830785227`*^9}, {
    3.7431135517812223`*^9, 3.743113557907488*^9}, {3.743119652331917*^9, 
    3.743119660538136*^9}, {3.743119825109127*^9, 3.743119868731411*^9}, 
-   3.7431349782952967`*^9, {3.743135203386825*^9, 3.743135292389565*^9}},
+   3.7431349782952967`*^9, {3.743135203386825*^9, 3.743135292389565*^9}, {
+   3.743139700408717*^9, 3.743139746613852*^9}, {3.743145079888249*^9, 
+   3.7431450831408587`*^9}, {3.743162089418542*^9, 3.7431621106164494`*^9}, {
+   3.74316227623267*^9, 3.74316228445192*^9}},
  CellLabel->
-  "In[639]:=",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
+  "In[705]:=",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
-   RowBox[{"\<\"D\"\>", "\[Rule]", "130"}], ",", 
-   RowBox[{"\<\"R\"\>", "\[Rule]", "171"}]}], 
+   RowBox[{"\<\"D\"\>", "\[Rule]", "233"}], ",", 
+   RowBox[{"\<\"R\"\>", "\[Rule]", "305"}]}], 
   "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{
-  3.7431349791926613`*^9, {3.743135194921534*^9, 3.743135293099008*^9}},
+  3.7431349791926613`*^9, {3.743135194921534*^9, 3.743135293099008*^9}, {
+   3.743139701115127*^9, 3.743139747651321*^9}, 3.743145084836976*^9, {
+   3.743162095474216*^9, 3.743162111401376*^9}, 3.743162195105135*^9, 
+   3.743162241036519*^9, 3.743162285414096*^9},
  CellLabel->
-  "Out[639]=",ExpressionUUID->"3fe14ff7-f65d-4aa9-9072-f6897c18c3a6"]
+  "Out[706]=",ExpressionUUID->"25485680-4c5d-4428-b74e-f3670e5e92f6"]
 }, Open  ]],
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"clinton", " ", "=", " ", 
-   RowBox[{"Select", "[", 
-    RowBox[{"election2016", ",", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}], " ", "\[Equal]", " ", 
-       "\"\<D\>\""}], "&"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"trump", " ", "=", " ", 
-   RowBox[{"Select", "[", 
-    RowBox[{"election2016", ",", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}], " ", "\[Equal]", " ", 
-       "\"\<R\>\""}], "&"}]}], "]"}]}], ";"}]}], "Code",
- CellChangeTimes->{{3.743119914802919*^9, 3.743119921729899*^9}, {
-  3.743120133092868*^9, 3.7431201807385473`*^9}, {3.7431202263782463`*^9, 
-  3.743120238207376*^9}},
- CellLabel->
-  "In[621]:=",ExpressionUUID->"6eacef3e-c2eb-4597-a1cc-f384debdc373"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["clinton"], "Code",
- CellChangeTimes->{{3.7431205002580748`*^9, 3.7431205023192244`*^9}},
- CellLabel->
-  "In[623]:=",ExpressionUUID->"14bb9849-7b39-49e9-b7fc-1a9c4e56742e"],
+Cell["\<\
+This tracks with reality almost exactly. After accounting for \
+\[OpenCurlyDoubleQuote]faithless electors,\[CloseCurlyDoubleQuote] who cast \
+rogue ballots in the Electoral College, Donald Trump won 306 electoral votes \
+to Hillary Clinton\[CloseCurlyQuote]s 232. The reason we\[CloseCurlyQuote]re \
+off by 1 here is that this calculation does not account for the fact that \
+Maine allots electoral votes by congressional district, one of which went to \
+Trump:\
+\>", "Text",
+ CellChangeTimes->{{3.743162321680224*^9, 
+  3.7431624919019003`*^9}},ExpressionUUID->"ff11143e-990b-4d72-96f0-\
+b9beb67909ba"],
 
 Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"California\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CA\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"California, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"California\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
-{\\\"California\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "55"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "55"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Colorado\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CO\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Colorado, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Colorado\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Colorado\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "9"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "9"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Connecticut\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CT\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Connecticut, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Connecticut\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
-{\\\"Connecticut\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "7"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "7"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Delaware\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"DE\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Delaware, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Delaware\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Delaware\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"District of Columbia\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"DC\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{
-       "\"District of Columbia, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"DistrictOfColumbia\"", ",", "\"UnitedStates\""}], 
-              "}"}]}], "]"}],
-        "\"Entity[\\\"AdministrativeDivision\\\", \
-{\\\"DistrictOfColumbia\\\", \\\"UnitedStates\\\"}]\"",
-        "\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Hawaii\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"HI\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Hawaii, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Hawaii\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-        "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Hawaii\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Illinois\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"IL\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Illinois, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Illinois\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Illinois\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "20"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "19"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", 
-      RowBox[{"-", "1"}]}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Maine\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"ME\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Maine, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Maine\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-        "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Maine\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Maryland\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"MD\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Maryland, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Maryland\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Maryland\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "10"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "10"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Massachusetts\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"MA\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Massachusetts, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Massachusetts\"", ",", "\"UnitedStates\""}], "}"}]}],
-           "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Massachusetts\
-\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "11"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "11"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Minnesota\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"MN\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Minnesota, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Minnesota\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Minnesota\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "10"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "9"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", 
-      RowBox[{"-", "1"}]}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Nevada\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"NV\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Nevada, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Nevada\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-        "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Nevada\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "6"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "6"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"New Hampshire\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"NH\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"New Hampshire, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"NewHampshire\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"NewHampshire\\\
-\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"New Jersey\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"NJ\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"New Jersey, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"NewJersey\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"NewJersey\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "14"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "14"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"New Mexico\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"NM\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"New Mexico, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"NewMexico\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"NewMexico\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "5"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "5"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"New York\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"NY\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"New York, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"NewYork\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"NewYork\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "29"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "29"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Oregon\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"OR\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Oregon, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Oregon\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
-        "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Oregon\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "7"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "8"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Rhode Island\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"RI\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Rhode Island, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"RhodeIsland\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
-{\\\"RhodeIsland\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "4"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Vermont\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"VT\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Vermont, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Vermont\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Vermont\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "3"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Virginia\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"VA\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Virginia, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Virginia\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"Virginia\\\", \
-\\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "13"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "13"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Washington\"\>"}], ",", 
-     RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"WA\"\>"}], ",", 
-     RowBox[{"\<\"entity\"\>", "\[Rule]", 
-      TemplateBox[{"\"Washington, United States\"",RowBox[{"Entity", "[", 
-          RowBox[{"\"AdministrativeDivision\"", ",", 
-            RowBox[{"{", 
-              RowBox[{"\"Washington\"", ",", "\"UnitedStates\""}], "}"}]}], 
-          "]"}],"\"Entity[\\\"AdministrativeDivision\\\", \
-{\\\"Washington\\\", \\\"UnitedStates\\\"}]\"","\"administrative division\""},
-       
-       "Entity"]}], ",", 
-     RowBox[{"\<\"winner_party\"\>", "\[Rule]", "\<\"D\"\>"}], ",", 
-     RowBox[{"\<\"winner_name\"\>", "\[Rule]", "\<\"Hillary Clinton\"\>"}], 
-     ",", 
-     RowBox[{"\<\"evs\"\>", "\[Rule]", "12"}], ",", 
-     RowBox[{"\<\"calculated_evs\"\>", "\[Rule]", "12"}], ",", 
-     RowBox[{"\<\"diff\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}]}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.7431205026762257`*^9, 3.743130101572276*^9},
- CellLabel->
-  "Out[623]=",ExpressionUUID->"dde8d09d-16c7-4cb7-a7d5-911bf979817b"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Tally", "[", 
-  RowBox[{"election2016", ",", " "}]}]], "Code",
- CellChangeTimes->{{3.743120380036269*^9, 
-  3.743120413282524*^9}},ExpressionUUID->"b5db0403-dd01-4206-ba29-\
-32a8f51f5661"],
-
-Cell[BoxData["29"], "Output",
- CellChangeTimes->{{3.743120382634027*^9, 3.743120392792921*^9}},
- CellLabel->
-  "Out[131]=",ExpressionUUID->"04016fe6-7a56-4d47-82af-723bd2da3a9e"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{"Total", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"#", "[", "\"\<evs\>\"", "]"}], "&"}], " ", "/@", " ", 
-   "clinton"}], "]"}], "\n", 
- RowBox[{"Total", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"#", "[", "\"\<evs\>\"", "]"}], "&"}], " ", "/@", " ", "trump"}], 
-  "]"}]}], "Code",
- CellChangeTimes->{{3.743120326996872*^9, 3.7431203440443373`*^9}},
- CellLabel->
-  "In[624]:=",ExpressionUUID->"6a448508-5ef9-4609-ae9a-b891c204e816"],
-
-Cell[BoxData["233"], "Output",
- CellChangeTimes->{{3.743120328510417*^9, 3.743120344438068*^9}, 
-   3.7431204881737633`*^9, 3.7431301075275087`*^9},
- CellLabel->
-  "Out[624]=",ExpressionUUID->"3cf238e5-1736-488a-9a6a-0f9dfe805511"],
-
-Cell[BoxData["305"], "Output",
- CellChangeTimes->{{3.743120328510417*^9, 3.743120344438068*^9}, 
-   3.7431204881737633`*^9, 3.74313010754531*^9},
- CellLabel->
-  "Out[625]=",ExpressionUUID->"405f0d91-5ff9-4693-ad58-3061dfa5d76c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[""], "Code",
- CellChangeTimes->{{3.743120183584528*^9, 3.743120202840061*^9}, {
-  3.743120271110734*^9, 3.743120277221993*^9}, {3.743120325278976*^9, 
-  3.743120339036395*^9}},ExpressionUUID->"35b0824f-94a4-42fb-be76-\
-f71dca85a26e"],
-
-Cell[BoxData[
- RowBox[{"21", " ", 
-  RowBox[{"Missing", "[", 
-   RowBox[{"\<\"KeyAbsent\"\>", ",", "\<\"ev\"\>"}], "]"}]}]], "Output",
- CellChangeTimes->{{3.743120185634089*^9, 3.7431202032267523`*^9}, 
-   3.7431202775866613`*^9},
- CellLabel->
-  "Out[117]=",ExpressionUUID->"8263e752-0cec-4cad-9dcb-a87df6ad90f0"],
-
-Cell[BoxData[
- RowBox[{"29", " ", 
-  RowBox[{"Missing", "[", 
-   RowBox[{"\<\"KeyAbsent\"\>", ",", "\<\"ev\"\>"}], "]"}]}]], "Output",
- CellChangeTimes->{{3.743120185634089*^9, 3.7431202032267523`*^9}, 
-   3.7431202775979977`*^9},
- CellLabel->
-  "Out[118]=",ExpressionUUID->"4305645c-9b33-446f-8ab0-4d6fad7a1384"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"chartComparison", "[", "comparison_", "]"}], " ", ":=", " ", 
-   RowBox[{"(", "\n", "\t", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"{", " ", 
-       RowBox[{
-        RowBox[{"#", "[", "\"\<abbr\>\"", "]"}], ",", " ", 
-        RowBox[{"#", "[", "\"\<ev\>\"", "]"}], ",", " ", 
-        RowBox[{"#", "[", "\"\<calculated\>\"", "]"}], ",", " ", 
-        RowBox[{"#", "[", "\"\<diff\>\"", "]"}], ",", " ", 
-        RowBox[{
-         RowBox[{"#", "[", "\"\<winner\>\"", "]"}], "[", 
-         RowBox[{"[", "2", "]"}], "]"}]}], " ", "}"}], "&"}], " ", "/@", " ", 
-     "comparison"}], "\n", ")"}]}], "\t"}], "\n", 
- RowBox[{"chartComparison", "[", "election2016", "]"}]}], "Code",
- CellChangeTimes->{{3.743108867871427*^9, 3.743108894399274*^9}, {
-  3.743109706087352*^9, 3.743109777557749*^9}, {3.7431101510091877`*^9, 
-  3.743110207309558*^9}, {3.743113569555873*^9, 3.743113580321947*^9}},
- CellLabel->"In[39]:=",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"\<\"AL\"\>", ",", "9", ",", "9", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"AK\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"AZ\"\>", ",", "11", ",", "11", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"AR\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"CA\"\>", ",", "55", ",", "55", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"CO\"\>", ",", "9", ",", "9", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"CT\"\>", ",", "7", ",", "7", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"DE\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"DC\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"FL\"\>", ",", "29", ",", "30", ",", "1", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"GA\"\>", ",", "16", ",", "16", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"HI\"\>", ",", "4", ",", "4", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"ID\"\>", ",", "4", ",", "4", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"IL\"\>", ",", "20", ",", "19", ",", 
-     RowBox[{"-", "1"}], ",", "\<\"D\"\>"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"IN\"\>", ",", "11", ",", "11", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"IA\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"KS\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"KY\"\>", ",", "8", ",", "8", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"LA\"\>", ",", "8", ",", "8", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"ME\"\>", ",", "4", ",", "4", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MD\"\>", ",", "10", ",", "10", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MA\"\>", ",", "11", ",", "11", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MI\"\>", ",", "16", ",", "15", ",", 
-     RowBox[{"-", "1"}], ",", "\<\"R\"\>"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MN\"\>", ",", "10", ",", "9", ",", 
-     RowBox[{"-", "1"}], ",", "\<\"D\"\>"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MS\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MO\"\>", ",", "10", ",", "10", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MT\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NE\"\>", ",", "5", ",", "5", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NV\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NH\"\>", ",", "4", ",", "4", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NJ\"\>", ",", "14", ",", "14", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NM\"\>", ",", "5", ",", "5", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NY\"\>", ",", "29", ",", "29", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"NC\"\>", ",", "15", ",", "16", ",", "1", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"ND\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"OH\"\>", ",", "18", ",", "18", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"OK\"\>", ",", "7", ",", "7", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"OR\"\>", ",", "7", ",", "8", ",", "1", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"PA\"\>", ",", "20", ",", "19", ",", 
-     RowBox[{"-", "1"}], ",", "\<\"R\"\>"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"RI\"\>", ",", "4", ",", "4", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"SC\"\>", ",", "9", ",", "9", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"SD\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"TN\"\>", ",", "11", ",", "11", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"TX\"\>", ",", "38", ",", "39", ",", "1", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"UT\"\>", ",", "6", ",", "6", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"VT\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"VA\"\>", ",", "13", ",", "13", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"WA\"\>", ",", "12", ",", "12", ",", "0", ",", "\<\"D\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"WV\"\>", ",", "5", ",", "5", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"WI\"\>", ",", "10", ",", "10", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"WY\"\>", ",", "3", ",", "3", ",", "0", ",", "\<\"R\"\>"}], 
-    "}"}]}], "}"}]], "Output",
+ TemplateBox[{
+  "\"https://en.wikipedia.org/wiki/United_States_presidential_election,_2016#\
+cite_note-pledged-2\"",
+   "https://en.wikipedia.org/wiki/United_States_presidential_election,_2016#\
+cite_note-pledged-2"},
+  "HyperlinkURL"]], "Text",
  CellChangeTimes->{
-  3.743110208107177*^9, {3.7431135703984747`*^9, 3.74311358086771*^9}},
- CellLabel->"Out[40]=",ExpressionUUID->"f8c85044-2da1-4ad5-b799-98b62f0d5ea0"]
+  3.7431624972174273`*^9},ExpressionUUID->"384d7c01-fed1-4bde-9a74-\
+aa27b191f928"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["A few visualization functions", "Subsection",
+ CellChangeTimes->{{3.743162549392702*^9, 
+  3.743162557217782*^9}},ExpressionUUID->"068d3b35-98db-46b2-a0e5-\
+8770799993ff"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"election", " ", "=", " ", "election2016"}], ";"}]], "Code",
+ CellChangeTimes->{{3.743166025407548*^9, 3.7431660557790956`*^9}, {
+  3.743166142775115*^9, 3.743166151766946*^9}, {3.743166423508893*^9, 
+  3.743166430071342*^9}},
+ CellLabel->
+  "In[911]:=",ExpressionUUID->"e74da7fe-da5b-462b-8fca-a7e3f75f3aee"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"colorScales", "[", "\"\<R\>\"", "]"}], "[", "30", "]"}]], "Code",
+ CellChangeTimes->{{3.743166473801675*^9, 3.7431664830206633`*^9}},
+ CellLabel->
+  "In[916]:=",ExpressionUUID->"02b650f7-bcca-45db-8cba-4e548e168772"],
+
+Cell[BoxData[
+ InterpretationBox[
+  ButtonBox[
+   TooltipBox[
+    GraphicsBox[{
+      {GrayLevel[0], RectangleBox[{0, 0}]}, 
+      {GrayLevel[0], RectangleBox[{1, -1}]}, 
+      {RGBColor[1, 
+        Rational[5, 11], 
+        Rational[5, 11]], RectangleBox[{0, -1}, {2, 1}]}},
+     AspectRatio->1,
+     DefaultBaseStyle->"ColorSwatchGraphics",
+     Frame->True,
+     FrameStyle->RGBColor[
+      0.6666666666666666, 0.30303030303030304`, 0.30303030303030304`],
+     FrameTicks->None,
+     ImageSize->
+      Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
+        AbsoluteCurrentValue[Magnification]}],
+     PlotRangePadding->None],
+    StyleBox[
+     RowBox[{"RGBColor", "[", 
+       RowBox[{"1", ",", 
+         FractionBox["5", "11"], ",", 
+         FractionBox["5", "11"]}], "]"}], NumberMarks -> False]],
+   Appearance->None,
+   BaseStyle->{},
+   BaselinePosition->Baseline,
+   ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+     If[
+      Not[
+       AbsoluteCurrentValue["Deployed"]], 
+      SelectionMove[Typeset`box$, All, Expression]; 
+      FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+      FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[1, 
+         Rational[5, 11], 
+         Rational[5, 11]]; FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+      MathLink`CallFrontEnd[
+        FrontEnd`AttachCell[Typeset`box$, 
+         FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+         Left, Top}, 
+         "ClosingActions" -> {
+          "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+   DefaultBaseStyle->{},
+   Evaluator->Automatic,
+   Method->"Preemptive"],
+  RGBColor[1, 
+   Rational[5, 11], 
+   Rational[5, 11]],
+  Editable->False,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.743166480215719*^9, 3.743166483439159*^9}},
+ CellLabel->
+  "Out[916]=",ExpressionUUID->"17307615-0e91-4cd4-82e7-df0063a8b1a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"chartElection", "[", "election_", "]"}], " ", ":=", " ", 
+  RowBox[{"(", "\n", "\t", 
+   RowBox[{
+    RowBox[{"maxEV", " ", "=", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", "\"\<calculated_evs\>\"", "]"}], "&"}], " ", "/@", 
+       " ", 
+       RowBox[{"election", "[", "\"\<states\>\"", "]"}]}], "]"}]}], ";", "\n",
+     "\t", 
+    RowBox[{"maxDiff", " ", "=", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", "\"\<diff\>\"", "]"}], "&"}], " ", "/@", " ", 
+       RowBox[{"election", "[", "\"\<states\>\"", "]"}]}], "]"}]}], ";", "\n",
+     "\t", "\n", "\t", 
+    RowBox[{"colorScales", " ", "=", " ", 
+     RowBox[{"<|", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"\"\<D\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"Function", "[", 
+         RowBox[{"ev", ",", " ", 
+          RowBox[{"Blend", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "maxEV"}], "}"}], ",", " ", 
+               RowBox[{"{", " ", 
+                RowBox[{"White", ",", " ", 
+                 RowBox[{"RGBColor", "[", "\"\<#00B2FF\>\"", "]"}]}], " ", 
+                "}"}]}], "}"}], "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], 
+       ",", "\n", "\t\t", 
+       RowBox[{"\"\<R\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"Function", "[", 
+         RowBox[{"ev", ",", " ", 
+          RowBox[{"Blend", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "maxEV"}], "}"}], ",", " ", 
+               RowBox[{"{", " ", 
+                RowBox[{"White", ",", " ", 
+                 RowBox[{"RGBColor", "[", "\"\<#F15C53\>\"", "]"}]}], " ", 
+                "}"}]}], "}"}], "]"}], ",", " ", "ev"}], "]"}]}], "]"}]}], 
+       ",", "\n", "\t\t", 
+       RowBox[{"\"\<Diff\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"Function", "[", 
+         RowBox[{"d", ",", " ", 
+          RowBox[{"Blend", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "maxDiff"}], "}"}], ",", " ", 
+               RowBox[{"{", " ", 
+                RowBox[{"White", ",", " ", "Yellow"}], " ", "}"}]}], "}"}], 
+             "]"}], ",", " ", "d"}], "]"}]}], "]"}]}]}], "\n", "\t", "|>"}]}],
+     ";", "\n", "\t", "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Column", "[", 
+        RowBox[{
+         RowBox[{"{", "\n", "\t ", 
+          RowBox[{
+           RowBox[{"#", "[", "\"\<abbr\>\"", "]"}], ",", "\n", "\t ", 
+           RowBox[{"#", "[", "\"\<evs\>\"", "]"}], ",", "\n", "\t ", 
+           RowBox[{"#", "[", "\"\<calculated_evs\>\"", "]"}], ",", "\n", 
+           "\t ", 
+           RowBox[{"#", "[", "\"\<diff\>\"", "]"}], ",", "\n", "\t ", 
+           RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}]}], "\n", "\t", 
+          "}"}], ",", " ", 
+         RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
+         RowBox[{"Alignment", "\[Rule]", "\"\<Center\>\""}], ",", " ", 
+         RowBox[{"Spacings", "\[Rule]", " ", 
+          RowBox[{"{", " ", 
+           RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "1.4"}], "}"}]}], ",", "\n", "\t\t", 
+         RowBox[{"Background", "\[Rule]", 
+          RowBox[{"{", "\n", "\t\t\t", 
+           RowBox[{"White", ",", "\n", "\t\t\t", 
+            RowBox[{
+             RowBox[{"colorScales", "[", 
+              RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}], "]"}], "[", 
+             RowBox[{"#", "[", "\"\<evs\>\"", "]"}], "]"}], ",", "\n", 
+            "\t\t\t", 
+            RowBox[{
+             RowBox[{"colorScales", "[", 
+              RowBox[{"#", "[", "\"\<winner_party\>\"", "]"}], "]"}], "[", 
+             RowBox[{"#", "[", "\"\<calculated_evs\>\"", "]"}], "]"}], ",", 
+            "\n", "\t\t\t", 
+            RowBox[{
+             RowBox[{"colorScales", "[", "\"\<Diff\>\"", "]"}], "[", 
+             RowBox[{"#", "[", "\"\<diff\>\"", "]"}], "]"}], ",", "\n", 
+            "\t\t\t", "Yellow"}], "}"}]}]}], "\n", "\t", "]"}], "&"}], " ", "/@",
+       " ", 
+      RowBox[{"election", "[", "\"\<states\>\"", "]"}]}]}], ";", "\n", "\t", 
+    "\n", "\t", 
+    RowBox[{"cols", " ", "=", " ", 
+     RowBox[{"Prepend", "[", 
+      RowBox[{"cols", ",", " ", 
+       RowBox[{"Column", "[", 
+        RowBox[{
+         RowBox[{"{", "\n", "\t\t", 
+          RowBox[{
+          "\"\<State\>\"", ",", "\n", "\t\t", "\"\<Actual EVs\>\"", ",", "\n",
+            "\t\t", "\"\<New EVs\>\"", ",", "\n", "\t\t", 
+           "\"\<Difference\>\"", ",", "\n", "\t\t", "\"\<2016 Winner\>\""}], 
+          "\n", "\t", "}"}], ",", " ", 
+         RowBox[{"Alignment", "\[Rule]", "Right"}], ",", " ", 
+         RowBox[{"Frame", "\[Rule]", "All"}], ",", " ", 
+         RowBox[{"Spacings", "\[Rule]", " ", 
+          RowBox[{"{", " ", 
+           RowBox[{"1", ",", " ", "0.8"}], " ", "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"7", ",", " ", "1.4"}], "}"}]}]}], "]"}]}], "]"}]}], ";", 
+    "\n", "\t", "\n", "\t", 
+    RowBox[{"newCols", " ", "=", " ", 
+     RowBox[{"Map", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"#", ",", " ", 
+          RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}], "&"}], ",", "\n", 
+       "\t\t", "cols"}], "\n", "\t", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"Row", "[", "newCols", "]"}]}], "\n", ")"}]}], "\n", 
+ RowBox[{"chartElection", "[", "election2016", "]"}]}], "Code",
+ CellChangeTimes->{{3.743108867871427*^9, 3.743108894399274*^9}, {
+   3.743109706087352*^9, 3.743109777557749*^9}, {3.7431101510091877`*^9, 
+   3.743110207309558*^9}, {3.743113569555873*^9, 3.743113580321947*^9}, {
+   3.7431625385512133`*^9, 3.743162546114545*^9}, {3.743162599401243*^9, 
+   3.7431626022244873`*^9}, {3.743162643531108*^9, 3.743162824233267*^9}, {
+   3.7431628675996447`*^9, 3.7431629330947*^9}, {3.743162999700631*^9, 
+   3.743163029989699*^9}, {3.743163118361484*^9, 3.743163149294118*^9}, {
+   3.743163196294829*^9, 3.7431635499214363`*^9}, {3.7431636049230328`*^9, 
+   3.7431636348636427`*^9}, {3.743163679727621*^9, 3.743163691343089*^9}, {
+   3.74316372518867*^9, 3.743163797408657*^9}, {3.7431638679466457`*^9, 
+   3.743163955013756*^9}, {3.7431639870284758`*^9, 3.743164163513001*^9}, 
+   3.743164234552635*^9, {3.743164266383024*^9, 3.743164294083665*^9}, {
+   3.743165145972398*^9, 3.743165159355776*^9}, {3.7431660123563557`*^9, 
+   3.743166017586149*^9}, {3.74316605682821*^9, 3.7431662171842413`*^9}, {
+   3.7431662561166477`*^9, 3.743166409577986*^9}, {3.743166493927969*^9, 
+   3.743166549412141*^9}, {3.743166714894184*^9, 3.743166727609303*^9}, {
+   3.7431667683194313`*^9, 3.7431667742134047`*^9}},
+ CellLabel->
+  "In[923]:=",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
+
+Cell[BoxData[
+ TemplateBox[{StyleBox[
+    TagBox[
+     GridBox[{{"\"State\""}, {"\"Actual EVs\""}, {"\"New EVs\""}, {
+       "\"Difference\""}, {"\"2016 Winner\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{Right}}}, DefaultBaseStyle -> 
+      "Column", GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{7}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"AL\""}, {"9"}, {"9"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+          RGBColor[
+          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"AK\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"AZ\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"AR\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"CA\""}, {"55"}, {"55"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0., 0.6980392156862745, 1.], 
+          RGBColor[0., 0.6980392156862745, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"CO\""}, {"9"}, {"9"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
+          RGBColor[0.8363636363636364, 0.9505882352941176, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"CT\""}, {"7"}, {"7"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"DE\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"DC\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"FL\""}, {"29"}, {"29"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9710516934046346, 0.6629590017825312, 0.6443493761140819], 
+          RGBColor[
+          0.9710516934046346, 0.6629590017825312, 0.6443493761140819], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"GA\""}, {"16"}, {"16"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+          RGBColor[
+          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"HI\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"ID\""}, {"4"}, {"4"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
+          RGBColor[
+          0.9960071301247772, 0.9535115864527629, 0.9509447415329768], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"IL\""}, {"20"}, {"20"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.6363636363636364, 0.8901960784313725, 1.], 
+          RGBColor[0.6363636363636364, 0.8901960784313725, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"IN\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"IA\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"KS\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"KY\""}, {"8"}, {"8"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+          RGBColor[
+          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"LA\""}, {"8"}, {"8"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+          RGBColor[
+          0.9920142602495544, 0.9070231729055258, 0.9018894830659536], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"ME\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MD\""}, {"10"}, {"10"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MA\""}, {"11"}, {"11"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8, 0.9396078431372549, 1.], 
+          RGBColor[0.8, 0.9396078431372549, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MI\""}, {"16"}, {"16"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+          RGBColor[
+          0.9840285204991087, 0.8140463458110517, 0.8037789661319072], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MN\""}, {"10"}, {"10"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+          RGBColor[0.8181818181818181, 0.9450980392156862, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MS\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MO\""}, {"10"}, {"10"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"MT\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NE\""}, {"5"}, {"5"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+          RGBColor[
+          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NV\""}, {"6"}, {"6"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
+          RGBColor[0.8909090909090909, 0.9670588235294117, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NH\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NJ\""}, {"14"}, {"14"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
+          RGBColor[0.7454545454545455, 0.9231372549019607, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NM\""}, {"5"}, {"5"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
+          RGBColor[0.9090909090909091, 0.9725490196078431, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NY\""}, {"29"}, {"29"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
+          RGBColor[0.4727272727272728, 0.8407843137254902, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"NC\""}, {"15"}, {"15"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
+          RGBColor[0.9850267379679144, 0.825668449197861, 0.8160427807486631], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"ND\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"OH\""}, {"18"}, {"18"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
+          RGBColor[
+          0.9820320855614973, 0.7908021390374331, 0.7792513368983958], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"OK\""}, {"7"}, {"7"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
+          RGBColor[
+          0.9930124777183601, 0.9186452762923352, 0.9141532976827095], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"OR\""}, {"7"}, {"7"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+          RGBColor[0.8727272727272728, 0.9615686274509804, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"PA\""}, {"20"}, {"20"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9800356506238859, 0.7675579322638146, 0.7547237076648841], 
+          RGBColor[
+          0.9800356506238859, 0.7675579322638146, 0.7547237076648841], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"RI\""}, {"4"}, {"4"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[0.9272727272727272, 0.9780392156862745, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"SC\""}, {"9"}, {"9"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+          RGBColor[
+          0.9910160427807486, 0.8954010695187166, 0.8896256684491979], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"SD\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"TN\""}, {"11"}, {"11"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[
+          0.9890196078431372, 0.8721568627450981, 0.8650980392156863], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"TX\""}, {"38"}, {"38"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9620677361853832, 0.5583600713012478, 0.5339750445632798], 
+          RGBColor[
+          0.9620677361853832, 0.5583600713012478, 0.5339750445632798], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"UT\""}, {"6"}, {"6"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[
+          0.9940106951871658, 0.9302673796791444, 0.9264171122994652], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"VT\""}, {"3"}, {"3"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[0.9454545454545454, 0.9835294117647059, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"VA\""}, {"13"}, {"13"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
+          RGBColor[0.7636363636363637, 0.9286274509803921, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"WA\""}, {"12"}, {"12"}, {"0"}, {"\"D\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
+          RGBColor[0.7818181818181819, 0.9341176470588235, 1.], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"WV\""}, {"5"}, {"5"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+          RGBColor[
+          0.9950089126559715, 0.9418894830659537, 0.9386809269162211], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"WI\""}, {"10"}, {"10"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+          RGBColor[0.9900178253119429, 0.8837789661319073, 0.877361853832442], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False],StyleBox[
+    TagBox[
+     GridBox[{{"\"WY\""}, {"3"}, {"3"}, {"0"}, {"\"R\""}}, 
+      GridBoxAlignment -> {"Columns" -> {{"Center"}}, "Rows" -> {{"Center"}}},
+       GridBoxBackground -> {"Columns" -> {{Automatic}}, "Rows" -> {
+          GrayLevel[1], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[
+          0.9970053475935828, 0.9651336898395722, 0.9632085561497327], 
+          RGBColor[1, 1, 1], 
+          RGBColor[1, 1, 0]}}, DefaultBaseStyle -> "Column", 
+      GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+      GridBoxItemSize -> {"Columns" -> {{1}}, "Rows" -> {{1.4}}}, 
+      GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0.8}}}], "Column"], 
+    FontSize -> 12, StripOnInput -> False]},
+  "RowDefault"]], "Output",
+ CellChangeTimes->{
+  3.7431665559622602`*^9, {3.7431667206027393`*^9, 3.743166728465025*^9}, 
+   3.743166774951128*^9},
+ CellLabel->
+  "Out[924]=",ExpressionUUID->"17cd1aa9-9285-465a-9e0a-f84f78b6cc9a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -36977,93 +37351,84 @@ Cell[1716, 51, 392, 8, 35, "Text",ExpressionUUID->"86c04119-afa3-488f-af68-73ee3
 Cell[2111, 61, 373, 8, 35, "Text",ExpressionUUID->"bd7098a7-bdd0-4fdc-9658-32b9ae0ab0b5"],
 Cell[CellGroupData[{
 Cell[2509, 73, 2485, 55, 101, "Code",ExpressionUUID->"f2b9b567-d534-4271-aa11-34bf88daeb71"],
-Cell[4997, 130, 2092, 38, 76, "Output",ExpressionUUID->"83588379-ef49-4a55-92b3-8461812e57f7"]
+Cell[4997, 130, 2114, 38, 76, "Output",ExpressionUUID->"cba65621-7298-461a-8a95-56a53a392dd0"]
 }, Open  ]],
-Cell[7104, 171, 405, 8, 58, "Text",ExpressionUUID->"ba2db629-1418-405a-a11f-e26fa34f4546"],
+Cell[7126, 171, 405, 8, 58, "Text",ExpressionUUID->"ba2db629-1418-405a-a11f-e26fa34f4546"],
 Cell[CellGroupData[{
-Cell[7534, 183, 1087, 26, 101, "Code",ExpressionUUID->"0c162128-a187-4ae3-a66c-25a41e601fc8"],
-Cell[8624, 211, 1107, 21, 60, "Output",ExpressionUUID->"c5445af8-5398-4385-9971-9d96f3d507e4"]
+Cell[7556, 183, 1160, 28, 101, "Code",ExpressionUUID->"0c162128-a187-4ae3-a66c-25a41e601fc8"],
+Cell[8719, 213, 1167, 22, 60, "Output",ExpressionUUID->"af2afd6b-675e-45bf-bd85-004744605166"]
 }, Open  ]],
-Cell[9746, 235, 184, 3, 35, "Text",ExpressionUUID->"cfe88d16-53b2-45ce-9a05-22cded43a863"],
+Cell[9901, 238, 184, 3, 35, "Text",ExpressionUUID->"cfe88d16-53b2-45ce-9a05-22cded43a863"],
 Cell[CellGroupData[{
-Cell[9955, 242, 941, 22, 91, "Code",ExpressionUUID->"18dff5ee-5f59-4884-ba1c-29f827deaac6"],
-Cell[10899, 266, 1053, 20, 45, "Output",ExpressionUUID->"bf123167-9ebf-4768-b3e2-3f9a9cbae035"]
+Cell[10110, 245, 1693, 38, 120, "Code",ExpressionUUID->"18dff5ee-5f59-4884-ba1c-29f827deaac6"],
+Cell[11806, 285, 1158, 22, 45, "Output",ExpressionUUID->"37ae04e7-4440-47fc-91a0-344fa1aa4101"]
 }, Open  ]],
-Cell[11967, 289, 252, 6, 35, "Text",ExpressionUUID->"475a58bc-999e-4a37-8058-0d46149f738b"],
-Cell[12222, 297, 766, 16, 72, "Code",ExpressionUUID->"0fb5f417-6118-4ceb-b6d4-3ccd7205a1a3"]
+Cell[12979, 310, 252, 6, 35, "Text",ExpressionUUID->"475a58bc-999e-4a37-8058-0d46149f738b"],
+Cell[13234, 318, 766, 16, 72, "Code",ExpressionUUID->"0fb5f417-6118-4ceb-b6d4-3ccd7205a1a3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13025, 318, 227, 4, 54, "Subsection",ExpressionUUID->"5e7667af-a0f9-466e-b760-d235d58ff3e5"],
-Cell[13255, 324, 681, 11, 58, "Text",ExpressionUUID->"fc6cdf9f-a315-4336-ade0-714cb7384548"],
-Cell[13939, 337, 351, 9, 59, "Text",ExpressionUUID->"cb6226d1-b2cb-47d4-ab30-eab8cba5e8ec"],
-Cell[14293, 348, 706, 13, 37, "Text",ExpressionUUID->"ff6eb8fd-6177-4d78-9c4a-c8cac5bdef7f"],
-Cell[15002, 363, 384, 7, 35, "Text",ExpressionUUID->"636de0ed-9421-4d66-a095-f967010c56e8"],
-Cell[15389, 372, 1020, 24, 52, "Code",ExpressionUUID->"909fb99b-bcc0-4054-983f-4010db6d2ed3"],
-Cell[16412, 398, 400, 7, 35, "Text",ExpressionUUID->"114e1f0c-3dd9-4f99-bdb9-51545e8c0ebd"],
-Cell[16815, 407, 3437, 66, 186, "Code",ExpressionUUID->"988e0ab4-88a6-4c2d-be18-a2daf51cb8c2"],
-Cell[20255, 475, 326, 7, 35, "Text",ExpressionUUID->"014aba16-a20c-4ad8-b300-7a005883827d"],
+Cell[14037, 339, 227, 4, 54, "Subsection",ExpressionUUID->"5e7667af-a0f9-466e-b760-d235d58ff3e5"],
+Cell[14267, 345, 732, 12, 58, "Text",ExpressionUUID->"fc6cdf9f-a315-4336-ade0-714cb7384548"],
+Cell[15002, 359, 351, 9, 59, "Text",ExpressionUUID->"cb6226d1-b2cb-47d4-ab30-eab8cba5e8ec"],
+Cell[15356, 370, 706, 13, 37, "Text",ExpressionUUID->"ff6eb8fd-6177-4d78-9c4a-c8cac5bdef7f"],
+Cell[16065, 385, 384, 7, 35, "Text",ExpressionUUID->"636de0ed-9421-4d66-a095-f967010c56e8"],
+Cell[16452, 394, 1084, 25, 52, "Code",ExpressionUUID->"909fb99b-bcc0-4054-983f-4010db6d2ed3"],
+Cell[17539, 421, 605, 10, 58, "Text",ExpressionUUID->"114e1f0c-3dd9-4f99-bdb9-51545e8c0ebd"],
+Cell[18147, 433, 3599, 69, 186, "Code",ExpressionUUID->"988e0ab4-88a6-4c2d-be18-a2daf51cb8c2"],
+Cell[21749, 504, 326, 7, 35, "Text",ExpressionUUID->"014aba16-a20c-4ad8-b300-7a005883827d"],
 Cell[CellGroupData[{
-Cell[20606, 486, 806, 18, 72, "Code",ExpressionUUID->"9dbc78ae-5a0f-4422-a243-ca5e5ef1d6d2"],
-Cell[21415, 506, 266, 5, 24, "Print",ExpressionUUID->"6869f7ba-1ad4-4bdc-a135-13f0f00ab5ec"]
+Cell[22100, 515, 806, 18, 72, "Code",ExpressionUUID->"9dbc78ae-5a0f-4422-a243-ca5e5ef1d6d2"],
+Cell[22909, 535, 313, 6, 24, "Print",ExpressionUUID->"743e2fbb-87c1-4b9b-b966-ede25a575697"]
 }, Open  ]],
-Cell[21696, 514, 732, 12, 35, "Text",ExpressionUUID->"8c926679-6fa7-4be3-aa43-d6d5ff05025f"],
+Cell[23237, 544, 732, 12, 35, "Text",ExpressionUUID->"8c926679-6fa7-4be3-aa43-d6d5ff05025f"],
 Cell[CellGroupData[{
-Cell[22453, 530, 359, 11, 30, "Item",ExpressionUUID->"5c423b0f-27a4-4792-b3ae-7d4aab0f0eca"],
-Cell[22815, 543, 402, 10, 31, "Item",ExpressionUUID->"96460e24-6a53-478b-a071-304fb0d5d7a5"],
-Cell[23220, 555, 368, 10, 31, "Item",ExpressionUUID->"9fc66a75-4f1f-40dd-a952-845b6bd55bb5"],
-Cell[23591, 567, 408, 10, 31, "Item",ExpressionUUID->"12d0db85-eb9c-414c-a065-15b353d0cb86"]
+Cell[23994, 560, 359, 11, 30, "Item",ExpressionUUID->"5c423b0f-27a4-4792-b3ae-7d4aab0f0eca"],
+Cell[24356, 573, 402, 10, 31, "Item",ExpressionUUID->"96460e24-6a53-478b-a071-304fb0d5d7a5"],
+Cell[24761, 585, 368, 10, 31, "Item",ExpressionUUID->"9fc66a75-4f1f-40dd-a952-845b6bd55bb5"],
+Cell[25132, 597, 459, 11, 31, "Item",ExpressionUUID->"12d0db85-eb9c-414c-a065-15b353d0cb86"],
+Cell[25594, 610, 435, 11, 31, "Item",ExpressionUUID->"e72c1469-d7a2-44cc-ae15-8922a6836089"]
 }, Open  ]],
-Cell[24014, 580, 5679, 114, 247, "Code",ExpressionUUID->"b2c29eb0-a0d3-4dba-8046-d05218d5630e"],
+Cell[26044, 624, 5959, 119, 247, "Code",ExpressionUUID->"b2c29eb0-a0d3-4dba-8046-d05218d5630e"],
 Cell[CellGroupData[{
-Cell[29718, 698, 1732, 36, 82, "Code",ExpressionUUID->"f592e677-3d9e-4df4-8a9d-fe1676152c45"],
-Cell[31453, 736, 307, 7, 34, "Output",ExpressionUUID->"237ec61c-967c-4429-b365-fcf5f9555a83"]
+Cell[32028, 747, 1732, 36, 82, "Code",ExpressionUUID->"f592e677-3d9e-4df4-8a9d-fe1676152c45"],
+Cell[33763, 785, 328, 7, 34, "Output",ExpressionUUID->"f0f55683-cb90-4588-852f-84c3fd8962cf"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31809, 749, 346, 7, 54, "Subsection",ExpressionUUID->"b4bf2de5-966a-4d73-96d2-ae998c4970e2"],
-Cell[32158, 758, 181, 3, 35, "Text",ExpressionUUID->"8eab73f8-d8bc-48b8-936e-0502d58fa79a"],
-Cell[32342, 763, 449, 11, 52, "Code",ExpressionUUID->"65034648-0318-4226-8daa-dbc78e9334d3"],
-Cell[32794, 776, 7422, 128, 414, "Code",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+Cell[34140, 798, 346, 7, 54, "Subsection",ExpressionUUID->"b4bf2de5-966a-4d73-96d2-ae998c4970e2"],
+Cell[34489, 807, 7819, 137, 414, "Code",ExpressionUUID->"057390cb-d699-4720-8843-30ce86acf007"],
+Cell[42311, 946, 210, 4, 35, "Text",ExpressionUUID->"a519ab75-154e-4951-b331-d4f099e34677"],
 Cell[CellGroupData[{
-Cell[40241, 908, 556, 10, 52, "Code",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
-Cell[40800, 920, 367, 9, 34, "Output",ExpressionUUID->"3fe14ff7-f65d-4aa9-9072-f6897c18c3a6"]
+Cell[42546, 954, 842, 15, 72, "Code",ExpressionUUID->"d75358e2-28b3-48ff-a35e-d82ff605e5a2"],
+Cell[43391, 971, 559, 12, 34, "Output",ExpressionUUID->"25485680-4c5d-4428-b74e-f3670e5e92f6"]
 }, Open  ]],
-Cell[41182, 932, 816, 21, 72, "Code",ExpressionUUID->"6eacef3e-c2eb-4597-a1cc-f384debdc373"],
-Cell[CellGroupData[{
-Cell[42023, 957, 185, 3, 52, "Code",ExpressionUUID->"14bb9849-7b39-49e9-b7fc-1a9c4e56742e"],
-Cell[42211, 962, 20625, 391, 685, "Output",ExpressionUUID->"dde8d09d-16c7-4cb7-a7d5-911bf979817b"]
+Cell[43965, 986, 613, 11, 58, "Text",ExpressionUUID->"ff11143e-990b-4d72-96f0-b9beb67909ba"],
+Cell[44581, 999, 364, 9, 37, "Text",ExpressionUUID->"384d7c01-fed1-4bde-9a74-aa27b191f928"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62873, 1358, 212, 5, 52, "Code",ExpressionUUID->"b5db0403-dd01-4206-ba29-32a8f51f5661"],
-Cell[63088, 1365, 178, 3, 34, "Output",ExpressionUUID->"04016fe6-7a56-4d47-82af-723bd2da3a9e"]
+Cell[44982, 1013, 177, 3, 54, "Subsection",ExpressionUUID->"068d3b35-98db-46b2-a0e5-8770799993ff"],
+Cell[45162, 1018, 343, 7, 52, "Code",ExpressionUUID->"e74da7fe-da5b-462b-8fca-a7e3f75f3aee"],
+Cell[CellGroupData[{
+Cell[45530, 1029, 251, 5, 52, "Code",ExpressionUUID->"02b650f7-bcca-45db-8cba-4e548e168772"],
+Cell[45784, 1036, 1891, 53, 34, "Output",ExpressionUUID->"17307615-0e91-4cd4-82e7-df0063a8b1a7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63303, 1373, 455, 13, 72, "Code",ExpressionUUID->"6a448508-5ef9-4609-ae9a-b891c204e816"],
-Cell[63761, 1388, 231, 4, 34, "Output",ExpressionUUID->"3cf238e5-1736-488a-9a6a-0f9dfe805511"],
-Cell[63995, 1394, 228, 4, 34, "Output",ExpressionUUID->"405f0d91-5ff9-4693-ad58-3061dfa5d76c"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[64260, 1403, 246, 4, 52, "Code",ExpressionUUID->"35b0824f-94a4-42fb-be76-f71dca85a26e"],
-Cell[64509, 1409, 313, 7, 34, "Output",ExpressionUUID->"8263e752-0cec-4cad-9dcb-a87df6ad90f0"],
-Cell[64825, 1418, 313, 7, 34, "Output",ExpressionUUID->"4305645c-9b33-446f-8ab0-4d6fad7a1384"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[65175, 1430, 1012, 21, 110, "Code",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
-Cell[66190, 1453, 5990, 158, 140, "Output",ExpressionUUID->"f8c85044-2da1-4ad5-b799-98b62f0d5ea0"]
+Cell[47712, 1094, 7204, 157, 794, "Code",ExpressionUUID->"20dc6151-f957-4884-9300-e1a409984989"],
+Cell[54919, 1253, 39702, 732, 316, "Output",ExpressionUUID->"17cd1aa9-9285-465a-9e0a-f84f78b6cc9a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[72229, 1617, 169, 3, 54, "Subsection",ExpressionUUID->"3750e92c-c857-4428-b15e-f72535a73439"],
-Cell[72401, 1622, 250, 6, 35, "Text",ExpressionUUID->"a633d59a-3d7e-484e-b35c-371e2198ef1a"],
+Cell[94670, 1991, 169, 3, 54, "Subsection",ExpressionUUID->"3750e92c-c857-4428-b15e-f72535a73439"],
+Cell[94842, 1996, 250, 6, 35, "Text",ExpressionUUID->"a633d59a-3d7e-484e-b35c-371e2198ef1a"],
 Cell[CellGroupData[{
-Cell[72676, 1632, 4766, 108, 383, "Code",ExpressionUUID->"b152273f-c9ca-4cb3-be89-fa41636e0845"],
-Cell[77445, 1742, 11969, 227, 68, "Print",ExpressionUUID->"6721777a-868b-44b8-a5c6-5bb8697fdb39"],
-Cell[89417, 1971, 2153642, 34950, 431, "Output",ExpressionUUID->"5248e0fb-dbaf-46d1-ba59-5309622ad2d1"]
+Cell[95117, 2006, 4766, 108, 383, "Code",ExpressionUUID->"b152273f-c9ca-4cb3-be89-fa41636e0845"],
+Cell[99886, 2116, 11969, 227, 68, "Print",ExpressionUUID->"6721777a-868b-44b8-a5c6-5bb8697fdb39"],
+Cell[111858, 2345, 2153642, 34950, 431, "Output",ExpressionUUID->"5248e0fb-dbaf-46d1-ba59-5309622ad2d1"]
 }, Open  ]],
-Cell[2243074, 36924, 256, 5, 115, "Input",ExpressionUUID->"f8b2f4e0-4ec7-4873-9f25-75994f2cb28c"],
-Cell[2243333, 36931, 388, 6, 52, "Code",ExpressionUUID->"7a334160-c5d8-446e-bca4-ed73eabc7ae0"],
-Cell[2243724, 36939, 216, 4, 35, "Text",ExpressionUUID->"ba77442d-08f9-4cee-b31c-5e13fb021925"],
-Cell[2243943, 36945, 198, 3, 52, "Code",ExpressionUUID->"1cb70c08-bdac-40a4-919c-85f9451da006"]
+Cell[2265515, 37298, 256, 5, 115, "Input",ExpressionUUID->"f8b2f4e0-4ec7-4873-9f25-75994f2cb28c"],
+Cell[2265774, 37305, 388, 6, 52, "Code",ExpressionUUID->"7a334160-c5d8-446e-bca4-ed73eabc7ae0"],
+Cell[2266165, 37313, 216, 4, 35, "Text",ExpressionUUID->"ba77442d-08f9-4cee-b31c-5e13fb021925"],
+Cell[2266384, 37319, 198, 3, 52, "Code",ExpressionUUID->"1cb70c08-bdac-40a4-919c-85f9451da006"]
 }, Open  ]]
 }, Open  ]]
 }
