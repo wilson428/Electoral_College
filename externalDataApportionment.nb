@@ -1,0 +1,1372 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     61224,       1364]
+NotebookOptionsPosition[     55165,       1263]
+NotebookOutlinePosition[     55520,       1279]
+CellTagsIndexPosition[     55477,       1276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{3.743180038247629*^9},
+ CellLabel->
+  "In[1656]:=",ExpressionUUID->"51f7fabf-a19e-46ae-a232-ae4256460272"],
+
+Cell[CellGroupData[{
+
+Cell["Data Collection: Decennial Population and Apportionment", "Section",
+ CellChangeTimes->{{3.7431784001794167`*^9, 
+  3.743178416626031*^9}},ExpressionUUID->"5c265e36-345e-4974-904a-\
+1da5da32b77c"],
+
+Cell[CellGroupData[{
+
+Cell["Sources", "Subsection",
+ CellChangeTimes->{{3.742862820248248*^9, 3.7428628342719927`*^9}, {
+  3.7431784806480227`*^9, 
+  3.743178481656633*^9}},ExpressionUUID->"6b928c99-d631-41cd-bf70-\
+7727040d30d5"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+State Abbreviations: \
+http://about.usps.com/who-we-are/postal-history/state-abbreviations.htm\
+\>", "Item",
+ CellChangeTimes->{{3.743179018165012*^9, 3.7431790443077793`*^9}, {
+  3.7431791697228203`*^9, 
+  3.743179176392524*^9}},ExpressionUUID->"89e225a9-3188-430e-b19e-\
+12e645541e1b"],
+
+Cell["\<\
+State Decennial Census Populations: \
+https://www.census.gov/data/tables/2010/dec/popchange-data-text.html\
+\>", "Item",
+ CellChangeTimes->{{3.743179018165012*^9, 
+  3.7431790443077793`*^9}},ExpressionUUID->"fd68910d-eb2f-4ab9-a61f-\
+f568f6d82f0f"],
+
+Cell["\<\
+State Decennial Apportionment Data: \
+https://www.census.gov/data/tables/2010/dec/apportionment-data-text.html\
+\>", "Item",
+ CellChangeTimes->{{3.743179018165012*^9, 3.7431790196664352`*^9}, {
+  3.743179049684649*^9, 
+  3.743179066296739*^9}},ExpressionUUID->"21530cfd-244a-41b0-be3e-\
+f16cb1f80410"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+We\[CloseCurlyQuote]ll start with the state abbreviations from the Post Office\
+\>", "Subsection",
+ CellChangeTimes->{{3.743181130486888*^9, 
+  3.743181140495187*^9}},ExpressionUUID->"d4b3c92c-a1c9-4fd6-a432-\
+75594463da29"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"table", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\<http://about.usps.com/who-we-are/postal-history/state-abbreviations.\
+htm\>\"", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<HTML\>\"", ",", " ", "\"\<Data\>\"", ",", "2"}], "}"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"Grid", "[", 
+    RowBox[{
+     RowBox[{"table", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ";;", "6"}], "]"}], "]"}], ",", " ", 
+     RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}], "]"}], ";"}]}], "Code",
+ CellChangeTimes->{{3.7431792165435057`*^9, 3.743179304089542*^9}, {
+  3.743179577221175*^9, 3.743179651520553*^9}, {3.743180202893139*^9, 
+  3.743180247704164*^9}},
+ CellLabel->
+  "In[1658]:=",ExpressionUUID->"43aad3c2-440a-4160-a777-1899cb5207ae"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\" \"\>", "\<\" 1831 \"\>", "\<\" 1874 \"\>", "\<\" 1943 \"\>", "\<\" \
+1963 \"\>"},
+    {"\<\" Alabama \"\>", "\<\" Al. \"\>", "\<\" Ala. \"\>", "\<\" Ala. \
+\"\>", "\<\" AL \"\>"},
+    {"\<\" Alaska \"\>", "\<\" -- \"\>", "\<\" Alaska \"\>", "\<\" Alaska \
+\"\>", "\<\" AK \"\>"},
+    {"\<\" Arizona \"\>", "\<\" -- \"\>", "\<\" Ariz. \"\>", "\<\" Ariz. \
+\"\>", "\<\" AZ \"\>"},
+    {"\<\" Arkansas \"\>", "\<\" Ar. T. \"\>", "\<\" Ark. \"\>", "\<\" Ark. \
+\"\>", "\<\" AR \"\>"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Print",
+ CellChangeTimes->{3.743179652199532*^9, 3.74318004375043*^9, 
+  3.7431802167273912`*^9, 3.743180254008654*^9, 3.743180593413838*^9, 
+  3.743180648710079*^9, 3.743194309339952*^9, 3.74319598664847*^9, 
+  3.7431963966454077`*^9, 3.743197392821143*^9, 3.7431978989425707`*^9, 
+  3.743198026908393*^9, 3.743198228444285*^9, 3.743198992265695*^9},
+ CellLabel->
+  "During evaluation of \
+In[1658]:=",ExpressionUUID->"e372d2a2-41d9-4caa-9d30-0d311d6daf60"]
+}, Open  ]],
+
+Cell["\<\
+We\[CloseCurlyQuote]ll start by converting the full state names to entities, \
+since we can be sure they\[CloseCurlyQuote]re uniform across different \
+sources and punctuation\
+\>", "Text",
+ CellChangeTimes->{{3.7431801353864393`*^9, 
+  3.743180186497472*^9}},ExpressionUUID->"6cccf251-830f-43da-ab81-\
+d55bf7dc47fe"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", " ", 
+      RowBox[{
+       RowBox[{"StringTrim", "[", 
+        RowBox[{"First", "@", "#"}], "]"}], ",", " ", 
+       RowBox[{"StringTrim", "[", 
+        RowBox[{"Last", "@", "#"}], "]"}]}], " ", "}"}], "&"}], " ", "/@", 
+    " ", 
+    RowBox[{"Rest", "@", "table"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"Select", "[", 
+    RowBox[{"data", ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"First", "@", "#"}], " ", "\[NotEqual]", " ", "\"\<\>\""}], 
+       " ", "&&", " ", 
+       RowBox[{
+        RowBox[{"First", "@", "#"}], " ", "\[NotEqual]", " ", 
+        "\"\<Puerto Rico\>\""}]}], "&"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"states", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"<|", " ", 
+      RowBox[{
+       RowBox[{"\"\<name\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"First", "@", "#"}]}], ",", " ", 
+       RowBox[{"\"\<abbr\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"Last", "@", "#"}]}], ",", " ", 
+       RowBox[{"\"\<entity\>\"", " ", "\[Rule]", " ", 
+        RowBox[{
+         RowBox[{"Interpreter", "[", "\"\<USState\>\"", "]"}], "[", 
+         RowBox[{"First", "@", "#"}], "]"}]}]}], " ", "|>"}], "&"}], " ", "/@",
+     " ", "data"}]}], ";"}]}], "Code",
+ CellChangeTimes->{
+  3.743180461164468*^9, {3.7431805111069717`*^9, 3.7431807566590347`*^9}, {
+   3.743180820600212*^9, 3.743180890615374*^9}, {3.743180939158474*^9, 
+   3.7431809401969357`*^9}},
+ CellLabel->
+  "In[1660]:=",ExpressionUUID->"28baf75e-ca77-4ec4-a069-87f47635d425"],
+
+Cell["And make an association of the associations", "Text",
+ CellChangeTimes->{{3.743180945612075*^9, 
+  3.743180953612165*^9}},ExpressionUUID->"9995b470-46e1-47a0-ae09-\
+b2bafb82a78e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statesAssociation", " ", "=", " ", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", "\"\<name\>\"", "]"}], "&"}], " ", "/@", " ", 
+      "states"}], ",", " ", "states"}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.74318096112361*^9, 3.743181004580023*^9}, {
+  3.7431810462279263`*^9, 3.743181046570085*^9}, {3.743194128709321*^9, 
+  3.743194129778933*^9}, {3.743194297080614*^9, 3.743194297582335*^9}},
+ CellLabel->
+  "In[1663]:=",ExpressionUUID->"c5c92ed1-b51e-4250-8bc7-068b97185c22"],
+
+Cell[TextData[{
+ "We\[CloseCurlyQuote]ll need to correct Nebraska:\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt3euPFNeZx/Fod1/sy/0TWAmJF4QXERKykCKEeIGsCBTtghBCkQlyjFBI
+rIQFe40gUQxxJBs7gCKDE9sTY3DwDduxPbaTgM3FXIMtBoPBgDEwGMz9Otxr
+/atVlZ6uOdVdPdM93Tz1/UgnDt116z7PnHr61KlT/zntwf964F++853vzPr3
+b//nv3780Ohf/vLH//vf//HtPyb+fNaM6T//yf33/vx/fjL9J7+8Z9q/fvvi
+k9+Ws98u/2/f/jcq6Lvf/W5cAAycX//613GBD9QnLOIBIcRFuTQrvyZvBwYe
+7bcv1Ccs4gEhxEW5kLcDftB++0J9wiIeEEJclAt5O+AH7bcv1Ccs4gEhxEW5
+kLcDftB++0J9wiIeEEJclAt5O+AH7bcv1Ccs4gEhxEW5kLcDftB++0J9wiIe
+EEJclEuz8/YknigUCoVCoVAoFErfC3k7hUKhUCgUCoXS/oVxMoAfyd81fKA+
+YREPCCEuyoW8HfCD9tsX6hMW8YAQ4qJcyNsBP2i/faE+YREPCCEuyoW8HfCD
+9tsX6hMW8YAQ4qJcyNsBP2i/faE+YREPCCEuyoW8HfCD9tsX6hMW8YAQ4qJc
+yNsBP2i/faE+YREPCCEuyoW8HfCD9tsX6hMW8YAQ4qJcyNsBP2i/faE+YREP
+CCEuyoW8HfCD9tsX6hMW8YAQ4qJcyNsBP2i/faE+YREPCCEuyoW8HfCD9tsX
+6hMW8YAQ4qJcyNsBP2i/faE+YREPCCEuyqWVefvNmzej5557Llq2bFm0dOnS
+6NixY4W23dnZGT399NPR8uXLo56enkYcbmzXrl3RkiVL4mM5ceJEw7bbavZ7
+fuONN6I7d+60+pDQJLTfvhSpT9rR8iAeENKKuFAe8dZbb8XvaZuh8vzzz0ev
+vPJK9PHHH0cXL17s12eUGzduRD/4wQ+iwYMHR7t37+739u5WrczbL1++HA0b
+NiwaNGhQXMaPHx/HVjWKlWnTpsXLDxkyJDpz5kzDjnnFihXpsWzatKlh2201
++z2PHj06unXrVqsPCU1C3u5LkfqkHS0P4gEhrYgL+17RsmjRon7lH1evXo2G
+Dx8eb2v79u193s7drpV5u+pgxIgRFfXa0dFRdR3FysyZM9M4Onv2bMOOefXq
+1elxbNu2rWHbbTX7PetvlbzdL/J2X4rUJ+1oeRAPCGlFXNj36ikLFiyo65r/
+hQsX4j52xdHx48ejkSNHxttRH75y9/vuuy/66KOPCm/Pg3bL23X94+DBg7nr
+0L7Uj7y9PMjbfenr+Zh21CfiASGtiIts3q5xNIcPH47279+flp07d0avvfZa
+NGbMmIr91tNXvnbt2pq/BdTvf/v27cLbvNu1W95e6/oN7Uv9yNvLg7zdl76e
+j2lHfSIeENKKuMjm7crR81y7di0aN25cRY5f1I4dO6Lvf//7VfP2+fPnk7cP
+0HaTOErGKxW5flNP+3LlypX4npj169dHGzdujOu/2r0Rtn355JNP4tc+//zz
+eP3NmzdH+/btqzoeTLGpMWQ6RhWtu2HDhuizzz4Lrqf8ubu7O453bX/Lli3x
+skXaTF072rt3b7yeita7dOlScNkiefv169fje070neV9xuw+//nPf8a/r8v0
+99LuyNt9qed8XNZ2tEyIB+IhpBVxkc3ba/0mW7NmTbrsT3/607rzhvPnz8fH
+YI9b82yUUTvk7cl1Do17qnX9pkj7omV0H3Peb7Mnnngi+Pdu2xfdAx2650LH
+9Ze//KXX+Cx7v4TundffkF1Px6r2KTk+3dedjcHsdZ9Tp071Oka1mQ899FDV
+9bL37NfK29V+2m088sgjFZ9Pxz1p0qTcfeo70bUwtB55uy/19qOVqR0tI+KB
+eAhpRVzUm7e/88476bILFy6s6/NpX7NmzeoVN0OHDo2+/vrrurblQbvk7VOm
+TIlzUnsdR9dVsu1ArfZFv821rby2JSm67pJd17YvtYrizrYxedegkqL7uNUn
+oc/zwx/+sNA+tI6+k4TWHTVqVM319L2cPHkyeGzZvF39FnZd/Q6u9n618vLL
+LxeIDDQTebsv9Z6Py9KOlhXxQDyEtCIu6hkno2V/8YtfpMuuWrWqrs9n++oX
+L14cX2tJ/q2x82Ub+9sueXuST+qam/27fOaZZyrWqRVHc+bMqVhf85Tq99i5
+c+fiayr2vcmTJ1fUt21fkr7wP/7xj3G/t8aD3H///RXr6xph6LMk5Z577oke
+fvjheFuPPvpor30kn+/IkSPx8X3xxRe9+tI/+OCDdB82dnVPte7X0OfX3Exv
+v/12Rf+9+iaqfc+ia5R2X7Nnz674Pmxfh8qECRPi39Q6Vu1Tv5/tvFL6TcF1
+y9Yib/el3vNxWdrRsiIeiIeQVsWFzduVn2gsy+nTp9OiOeI1/nfixIkVv7Xq
+vX9Cvxv1+ezvNP3G07+VN5VNu+XtovpI6ljXbw4cOJCuUy2ODh06VBGDykuz
+lCPbXLOrqyt9L5tTa/yIpX3PmzcvfV9jR5JjzrYvM2bMSN/T2HG9r/Fc9r7q
+N998M/i92M9v829dh0xe37p1a6/19FryvvLt0LHpe9Zx6G/Jfta5c+f2+s2q
+9jN5/3vf+178zIOso0ePVrTJjZz3F/Ujb/elr+dj8dqOlhnxQDyEtCIu+jIP
+pLbRn3Etyt/t/svaT9iOebvuQbF/q3pWUFI/1eLoscceS9epNn7KtiN2Ofu6
++hdC9HsyaZ8U41999VWvz5I3Vkwx99vf/ja+RqXriXltjuZPsv0ayee2f1/K
+4bN5tr4j/ebVvKZqR0Pfs8bBZH9j592Lrdz+wQcfjD/vq6++GjxWHZfa0lB9
+YOCRt/vSn/Ox13a0zIgH4iGkFXHR1/nblaPwzPb+ace8XfKu3+TFkc0fVV58
+8cW471e/7WzRtZt33303Xc7u17Yvyn1DsvtJ7sWwn0XjRUJ909VorJmuGb73
+3nsV20/ydrHjZJJ2TO2jnkGXN5eMPbbQfeT6DVHvfd36vvTdajyb6iVpb8nb
+W69I+61+Kv2GDJWkvdZ/ay2D5uvP+VjK1o56RzwQDyEDHRfZ91Q0dlfHoDFM
+SdGYdjv/o+13JHfvu3bN28X2L6vovvG8/t3s333RYq/JJe2LtvvNN9/kHrd9
+bnOofbHbDNGx6rkDil3lzdXmlbF5u+ZprHZfqsafa6xh9j6davf26H7sap9V
+9B3rXn/9DVabR5W8vfVqtd/6G6r296BxWdn7GrKFZwAMnP6ej8VrO1pGxAPx
+EDLQcSHZvD2Z4zNE11N07d5uf/fu3f370CXWznl73vWb0O8/LVst18gr2ma2
+fVE/tp6nmyf0HImizzbS8eqZvUWPz+bton55jbWptZ7t16h1T361Z429/vrr
+hY+VvL31+pu3K95q/S2Rtw+cRpyPPbajZUU8EA8hAx0XUu88kMoxbN97NrdB
+ce2ct0v2+o3mj9X84tk4UgxNnTo1Xe6tt96K9uzZEz8fIlSS9/QcoeR6TdJu
+qA+6Wv6pe+H70r6E5oDUZ9D1pJUrV8b3+2i/do6jvNjWWAeNU1GffagP3M4F
+mc3b9YwF3Tdkl9c1zqzsvasq6vPQPExaXjmgrlsyvr191Gq/s/eYZYuuj+q6
+jq555i2TnS8CzdOI87F4akfLjHggHkIGOi6k3rxdnn32WfL2Bmj3vF2y129s
+bpp3PU/jUKrRdZvsOF37ez9vLtJsO1ZP+2LvN1Xp7OwMjvGyx2FjW9vU59Uc
+Lll61tILL7xQsf1ax2bnp8nO+a7jss/HUL6uOb+y7JgK8vbW475UXxp1PhYv
+7WiZEQ/EQ8hAx4X0JW+3v83I2/vubsjb1f8XGueRbV9svBUd+xEah6eSd998
+dt7DZP9FPovmWK91fNnPkcS2+rWTse3ab96zJuw8u7XGCGa/Vx1T8p7uP7R9
+rnZer+z3kYzPJ29vPfJ2Xxp5PvbSjpYZ8UA8hAx0XEi9eXt2zNXy5cvr/6CI
+3Q15u2Sv34TiSPPv2/dfeumlXtvR+Do7z6x9bld2ntkPP/ywYt3sM+P03N2k
+v7zIZ9FzkpJ17VxLls3tbWxn537X86KzsuPHkr6Rasdm53xXSeaU17HZ/a1b
+t67X/jTW3t4nS97eeuTtvjTyfCwe2tELFy7En0OlbM+4Jx6Ih5BWxEXRvF37
++fzzz6OxY8dWbC+vLxC13S15u2Sv3xR5rpuu8Sk+NMei5kSx76mdsfMnhp7H
+rLHgapM016L9DZqdS7bIZ8mOLVbM6xkHGn+iMYHZY1dZsGBBun72HlG1b/ps
+modLz0iyfxcaS5j0yVc7Nn1nmr/dfqcaL6PXf/azn1W8/te//jX+vjUmR3NS
+2nY6WabafUdoPvJ2Xxp9Ppa7vR214wHt/Y9lQDwQDyGtiovs/O16lm22ZOte
+Rc/ZYh7Ivmt13p5cNykSR9nrN6Hnc+q3e/a5yXkl+9y3UPuSV7LPfCvyWRSn
+ei5p0X0kbaD6tUX96T/60Y/q/my1jk39Ffb6VTJeptY9jKES6ovBwCFv96Xo
++bhM7ajdftnGThAPxENIK+Kir89d0jo8A6R/Wpm323kris5RoX7ppP7z7k9X
+POm+92x/cFLUd2DvwUwk/dlaTzmrvS8zKZojXX0MWfa3rB0nHjo23aMdOi79
+NtU4mew9OvZ6kt7Tsy/y5nxX26rrmtnvudax2TE8dp/q+5g4cWLu96jnbWgO
+AZvz1/scJzQOebsvReqzbO3o+++/X9HelClPIx6Ih5BWxIXiQdf8a+Xpuoai
++x1+//vfx+Nl0H+tzNubTXGl+12UV2ouF+Wzagfq0d3dna6v8SiNonkcdTya
+L0v/Vf5bD/3NHTt2LD4ulS+//DK+76NZ1B4n34O+U/W/oP2Qt/vSDvXZzu1o
+2RAPCGmHuMDA8Zy3A2VD++0L9QmLeEAIcVEu5O2AH7TfvlCfsIgHhBAX5ULe
+DvhB++0L9QmLeEAIcVEu5O2AH7TfvlCfsIgHhBAX5ULeDvhB++0L9QmLeEAI
+cVEu5O2AH7TfvlCfsIgHhBAX5ULeDvhB++0L9QmLeEAIcVEu5O2AH7TfvlCf
+sIgHhBAX5ULeDvhB++0L9QmLeEAIcVEu5O2AH7TfvlCfsIgHhBAX5ULeDvhB
+++0L9QmLeEAIcVEu5O2AH7TfvlCfsIgHhBAX5ULeDvhB++0L9QmLeEAIcVEu
+5O2AH7TfvlCfsIgHhBAX5ULeDvhB++0L9QmLeEAIcVEu5O2AH7TfvlCfsIgH
+hBAX5ULeDvhB++0L9QmLeEBIPXFx586daMGCBdGgQYOiVatWNfnI6nfz5s3o
+ueeei5YtWxYtXbo0OnbsWKH1Ojs7o6effjpavnx51NPTU/HeP/7xj/g9bbOe
+8swzz0SnT59uxsfsF/J2wA/O675Qn7CIB4TUm7fPmDEjztuVF1dbTnn9kCFD
+orNnzzbqUGu6fPlyNGzYsPj4VMaPHx/n8tXoWKdNmxYvr+M9c+ZM8L2+lE2b
+NjX7I9eNvB3wg/O6L9QnLOIBIbXiQrnrrFmzokWLFkUnT56M/79yUvUnHz58
+OJo/f3705JNPpssrTx41alQwD262q1evRiNGjKjInTs6Oqquo883c+bM9Hjt
+7wz7Xl/K1q1bm/2R60beDvjBed0X6hMW8YCQWnFx/Pjxmvmp+rgvXboUL68+
+7+HDhwfz4GYL5e2DBw+ODh48mLtOPXn7ypUr498q+/fvr1n27dtXs6+/Fcjb
+AT84r/tCfcIiHhBSKy7UXz5p0qSqefu4cePSvN3mzu2Qt9caL1NP3r5z586B
++ihNQ94O+MF53RfqExbxgJCicaEcdsKECRX5sMbM3Lp1K11G/19jaZIx5sqD
+jxw5El2/fj1eP6S7uzvasmVLtHnz5mjDhg3RoUOHcpetJcnbk/7+IuNl6snb
+t23b1qfjaifk7YAfnNd9oT5hEQ8IKRoXa9asCfa1r1+/Pn6/1lhwzdViffrp
+p9GYMWOCy44cObJPObLtb9f9pMncN9XGy5C3t/d2AeTjvO4L9QmLeEBIkbhQ
+H7gdc6L5De0Y9gsXLsQ5brXxNI8//ni6Pd3TWuS+Ti1XT9+7zdunTJkSXbly
+pWLcjMbzZMfL1JO3b9++vfCxtCvydsAPzuu+UJ+wiAeEFIkL5a+vvvpqnLvu
+3r07fm3t2rXxvzW/eUJjYvRvm3trbnSNC0/mldGYGPv+vffeG79/7ty5qKur
+K5o4cWLF+3//+98Lfxabt+v3hcbt7Nixo9dvgexnK5q3/+1vf4vH/Oje21ql
+r2N9mo28HfCD87ov1Ccs4gEh9cSF+q8t5bBZN27cSHPnoUOHRhcvXkzfu337
+djpHpIpyYjs+XpTvPvLII+kyWr7ovCyhvF0WLlxYMV7mwIEDFftrxjyQ2XFB
+7YK8HfCD87ov1Ccs4gEhjY6LavPJ2PE21eZ2P3/+fMXzk4qOT8nL29X/bcfL
+jB49Ov0t0Ky8ffHixX39CpuKvB3wg/O6L9QnLOIBIQOZt2/cuDHNa9UHXs1T
+Tz2VLvvxxx/XvW+bt0veeJl68vZ77rknmj59enT//fdXLRpbb8cPtRPydsAP
+zuu+UJ+wiAeEDGTevmLFisLjSFavXp0uu3Tp0rr3nc3bxY6XUdGzkZSbz5gx
+o1De/sknn9TxTbQn8nbAD87rvlCfsIgHhAxk3p7cy5rM91JNM/L2vPEyzAPZ
+vtsFkI/zui/UJyziASGt6m/PzuuS9frrr6fLLlmypO59h/J2yY6Xef7559P7
+YMnb22+7APJxXveF+oRFPCCkGXm7ndvd5sE2Z543b17uNpQv2zEtH330UeF9
+18rbJTtext4rS97eXtsFkI/zui/UJyziASGNjouenp74eaehPHj//v0VOfKJ
+EyeC29A6et+OQy+iaN6uY7TjZcjb23e7APJxXveF+oRFPCCk0XGRnZ/F5uZ6
+b8KECWkerOerXrt2rWJ9jTfXnCyNnL89JDtehry9PbcLIB/ndV+oT1jEA0Ka
+kbcn87Mkcyc+/PDD8T2psmvXropcWc9m0ntHjx6N1q1bl46xqXcOSKknb5fs
+eJki87fr8xQpWrajo6NvX2ITkbcDfnBe94X6hEU8IKQZefucOXN69WXb8exv
+v/12oWcXrVy5sq5927H1RfL27HiZ7LOgsr9B6i1F58EZSOTtgB+c132hPmER
+DwhpRlxcuXIleuCBBypy2GwerWenTp06NZjvapxMV1dX3fu1Y+snT55cM28X
+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
+     "], {{0, 142}, {750, 0}}, {
+     0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Magnification[0.5],
+   ImageSizeRaw->{750, 142},
+   PlotRange->{{0, 750}, {0, 142}}]], "Input",ExpressionUUID->
+  "2111c0d0-c6fd-4822-94f2-ff36735e4d3e"]
+}], "Text",
+ CellChangeTimes->{{3.743179530348521*^9, 3.743179562290628*^9}, 
+   3.74317967566641*^9, {3.743179759902524*^9, 3.7431797653900423`*^9}, {
+   3.7431809295507708`*^9, 
+   3.743180931693203*^9}},ExpressionUUID->"a6f65d22-c621-4098-adb6-\
+8a4664a12e57"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"statesAssociation", "[", "\"\<Nebraska\>\"", "]"}], "[", 
+    "\"\<abbr\>\"", "]"}], " ", "=", " ", "\"\<NE\>\""}], ";"}]], "Code",
+ CellChangeTimes->{{3.743194185058223*^9, 3.743194225864674*^9}, {
+  3.743194321151896*^9, 3.743194329269518*^9}},
+ CellLabel->
+  "In[1664]:=",ExpressionUUID->"d56c87f6-9880-491c-aad0-69c483bd39f4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Now let\[CloseCurlyQuote]s get decennial Census data.", "Subsection",
+ CellChangeTimes->{{3.7431811491436872`*^9, 
+  3.74318116163853*^9}},ExpressionUUID->"94f9ba47-cc91-43ab-b375-\
+8d78ee9fdf4d"],
+
+Cell["\<\
+While Mathematica has population conveniently built in to state entities, let\
+\[CloseCurlyQuote]s be extra careful and use the same figures the U.S. used \
+for apportionment.\
+\>", "Text",
+ CellChangeTimes->{{3.74318116458217*^9, 3.743181204365456*^9}, {
+  3.7431943529882383`*^9, 
+  3.743194355172146*^9}},ExpressionUUID->"2616e681-3758-4708-a2da-\
+d5a4a2bd4763"],
+
+Cell["\<\
+We can get the table data from the URL at the top of the document directly as \
+a CSV to save some time.\
+\>", "Text",
+ CellChangeTimes->{{3.743181356753593*^9, 3.7431813820083733`*^9}, 
+   3.743194358659996*^9},ExpressionUUID->"c62b76ab-d6d7-4551-bbb1-\
+060c1bd80bdf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"csv", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<https://www2.census.gov/programs-surveys/decennial/tables/2010/2010-\
+apportionment/pop_change.csv\>\"", ",", " ", "\"\<CSV\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"Most", "@", 
+    RowBox[{"Take", "[", 
+     RowBox[{"csv", ",", " ", 
+      RowBox[{"-", "52"}]}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"header", " ", "=", " ", 
+  RowBox[{"csv", "[", 
+   RowBox[{"[", "3", "]"}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.7431812189576197`*^9, 3.743181247077299*^9}, 
+   3.7431812874763203`*^9, {3.743181340671117*^9, 3.743181347881649*^9}, {
+   3.743181411832605*^9, 3.743181502685142*^9}, {3.7431938105570393`*^9, 
+   3.743193815339614*^9}},
+ CellLabel->
+  "In[1665]:=",ExpressionUUID->"df1721ef-069a-4154-a503-66d39e445b2e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"STATE_OR_REGION\"\>", ",", "\<\"1910_POPULATION\"\>", 
+   ",", "\<\"1920_POPULATION\"\>", ",", "\<\"1930_POPULATION\"\>", 
+   ",", "\<\"1940_POPULATION\"\>", ",", "\<\"1950_POPULATION\"\>", 
+   ",", "\<\"1960_POPULATION\"\>", ",", "\<\"1970_POPULATION\"\>", 
+   ",", "\<\"1980_POPULATION\"\>", ",", "\<\"1990_POPULATION\"\>", 
+   ",", "\<\"2000_POPULATION\"\>", ",", "\<\"2010_POPULATION\"\>", 
+   ",", "\<\"1910_CHANGE\"\>", ",", "\<\"1920_CHANGE\"\>", 
+   ",", "\<\"1930_CHANGE\"\>", ",", "\<\"1940_CHANGE\"\>", 
+   ",", "\<\"1950_CHANGE\"\>", ",", "\<\"1960_CHANGE\"\>", 
+   ",", "\<\"1970_CHANGE\"\>", ",", "\<\"1980_CHANGE\"\>", 
+   ",", "\<\"1990_CHANGE\"\>", ",", "\<\"2000_CHANGE\"\>", 
+   ",", "\<\"2010_CHANGE\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.743194251365985*^9, 3.743194361488656*^9, 
+  3.743196003479533*^9, 3.743196408101137*^9, 3.743197406358007*^9, 
+  3.7431979164109573`*^9, 3.743198036813443*^9, 3.7431982401895857`*^9, 
+  3.743199004654665*^9},
+ CellLabel->
+  "Out[1667]=",ExpressionUUID->"7a04c5d5-7bbb-4b42-bb99-bb7a8120ebdf"]
+}, Open  ]],
+
+Cell["\<\
+Let\[CloseCurlyQuote]s clean up the header, reducing to just to the \
+populations -- we can calculate the change ourselves if we ever need it.\
+\>", "Text",
+ CellChangeTimes->{{3.743192704250823*^9, 3.743192707538196*^9}, {
+  3.743193190620614*^9, 
+  3.743193212828369*^9}},ExpressionUUID->"bf6a4654-b52c-4316-8705-\
+2056f2e96d6b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"header", " ", "=", " ", 
+   RowBox[{"{", " ", 
+    RowBox[{
+    "\"\<name\>\"", ",", " ", "\"\<1910\>\"", ",", " ", "\"\<1920\>\"", ",", 
+     " ", "\"\<1930\>\"", ",", " ", "\"\<1940\>\"", ",", " ", "\"\<1950\>\"", 
+     ",", " ", "\"\<1960\>\"", ",", " ", "\"\<1970\>\"", ",", " ", 
+     "\"\<1980\>\"", ",", " ", "\"\<1990\>\"", ",", " ", "\"\<2000\>\"", ",", 
+     " ", "\"\<2010\>\""}], " ", "}"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.743192777832947*^9, 3.7431927844562273`*^9}, {
+   3.7431929280121527`*^9, 3.743192931164445*^9}, {3.743192974364233*^9, 
+   3.7431929865319366`*^9}, {3.743193181325426*^9, 3.743193186869625*^9}, 
+   3.743193222021277*^9},
+ CellLabel->
+  "In[1668]:=",ExpressionUUID->"c824aa3d-4066-4583-9781-3a9fcb41e1d4"],
+
+Cell["And map the header to the data objects", "Text",
+ CellChangeTimes->{{3.7431930004495*^9, 
+  3.743193024425015*^9}},ExpressionUUID->"ef639815-1c2a-4bc7-98a1-\
+0c388e4fd4b8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"population", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"AssociationThread", "[", 
+       RowBox[{"header", ",", " ", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ";;", "12"}], "]"}], "]"}]}], "]"}], "&"}], ",", " ", 
+     "data"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"Values", " ", "/@", " ", 
+      RowBox[{"population", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ";;", "5"}], "]"}], "]"}]}], ",", " ", "header"}], "]"}],
+    ",", " ", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], "Code",
+ CellChangeTimes->{{3.743192789407655*^9, 3.743192790783753*^9}, 
+   3.743192991683367*^9, {3.743193035634169*^9, 3.743193067496388*^9}, {
+   3.743193233189158*^9, 3.7431934184230328`*^9}, {3.7431937105270643`*^9, 
+   3.743193732183198*^9}, 3.743193850945999*^9},
+ CellLabel->
+  "In[1669]:=",ExpressionUUID->"0fa17f27-6d95-4d31-ad29-01229b5f8701"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"name\"\>", "\<\"1910\"\>", "\<\"1920\"\>", "\<\"1930\"\>", \
+"\<\"1940\"\>", "\<\"1950\"\>", "\<\"1960\"\>", "\<\"1970\"\>", \
+"\<\"1980\"\>", "\<\"1990\"\>", "\<\"2000\"\>", "\<\"2010\"\>"},
+    {"\<\"Alabama\"\>", "2138093", "2348174", "2646248", "2832961", "3061743",
+      "3266740", "3444165", "3893888", "4040587", "4447100", "4779736"},
+    {"\<\"Alaska\"\>", "64356", "55036", "59278", "72524", "128643", "226167",
+      "300382", "401851", "550043", "626932", "710231"},
+    {"\<\"Arizona\"\>", "204354", "334162", "435573", "499261", "749587", 
+     "1302161", "1770900", "2718215", "3665228", "5130632", "6392017"},
+    {"\<\"Arkansas\"\>", "1574449", "1752204", "1854482", "1949387", 
+     "1909511", "1786272", "1923295", "2286435", "2350725", "2673400", 
+     "2915918"},
+    {"\<\"California\"\>", "2377549", "3426861", "5677251", "6907387", 
+     "10586223", "15717204", "19953134", "23667902", "29760021", "33871648", 
+     "37253956"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.74319338949717*^9, 3.743193418812236*^9}, 
+   3.7431937507080183`*^9, {3.743193823625971*^9, 3.743193851422113*^9}, 
+   3.74319426136904*^9, 3.743194367426569*^9, 3.743196009806068*^9, 
+   3.743196411593013*^9, 3.7431974159319*^9, 3.743197924531073*^9, 
+   3.743198043016499*^9, 3.743198247044899*^9, 3.743199011698846*^9},
+ CellLabel->
+  "Out[1670]=",ExpressionUUID->"5348d811-3608-4c19-b674-bba678d10459"]
+}, Open  ]],
+
+Cell["Looks good. Let\[CloseCurlyQuote]s connect to the `states` object", \
+"Text",
+ CellChangeTimes->{{3.743193443222557*^9, 
+  3.743193458165586*^9}},ExpressionUUID->"e85af737-fead-40f0-b98c-\
+45ab08dab28f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statesAssociation", " ", "=", " ", 
+   RowBox[{"AssociationThread", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"Keys", "@", "statesAssociation"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{
+         RowBox[{"statesAssociation", "[", 
+          RowBox[{"#", "[", "\"\<name\>\"", "]"}], "]"}], ",", " ", 
+         RowBox[{"\"\<population_decennial\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"Rest", "@", "#"}]}]}], "]"}], "&"}], " ", "/@", " ", 
+      "population"}]}], "\n", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.7431934885173893`*^9, 3.743193599324153*^9}, {
+   3.743193633537621*^9, 3.7431936888072844`*^9}, {3.7431938836758757`*^9, 
+   3.74319394638305*^9}, {3.743193988359398*^9, 3.743194002566183*^9}, {
+   3.7431940329444036`*^9, 3.74319407730786*^9}, 3.74319427599435*^9, {
+   3.743194378532947*^9, 3.743194391313794*^9}, {3.743197444977051*^9, 
+   3.743197449639292*^9}},
+ CellLabel->
+  "In[1671]:=",ExpressionUUID->"21628b8f-6edb-4665-b7a0-2cca5130ace4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"statesAssociation", "[", "\"\<Alaska\>\"", "]"}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"statesAssociation", "[", "\"\<California\>\"", "]"}], "]"}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.7431935743857737`*^9, 3.743193594949957*^9}, {
+  3.743194086861405*^9, 3.743194087204254*^9}, {3.743194279235527*^9, 
+  3.743194282718679*^9}, {3.743194395748575*^9, 3.743194421155035*^9}, {
+  3.743199032068493*^9, 3.743199039274993*^9}},
+ CellLabel->
+  "In[1674]:=",ExpressionUUID->"db12b134-7d19-4a8e-a2f8-cf17dffe6195"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Alaska\"\>"}], ",", 
+   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AK\"\>"}], ",", 
+   RowBox[{"\<\"entity\"\>", "\[Rule]", 
+    TemplateBox[{"\"Alaska, United States\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"Alaska\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alaska\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+     "Entity"]}], ",", 
+   RowBox[{"\<\"population_decennial\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "64356"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "55036"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "59278"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "72524"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "128643"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "226167"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "300382"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "401851"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "550043"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "626932"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "710231"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Print",
+ CellChangeTimes->{
+  3.743194421545404*^9, 3.7431960172407227`*^9, 3.743196437349992*^9, 
+   3.7431974524557333`*^9, 3.743197936044751*^9, 3.743198049997764*^9, 
+   3.743198255479484*^9, {3.743199033395753*^9, 3.7431990399603786`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1674]:=",ExpressionUUID->"9f22573e-38a1-49b8-b314-0721e4ede884"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"California\"\>"}], ",", 
+   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"CA\"\>"}], ",", 
+   RowBox[{"\<\"entity\"\>", "\[Rule]", 
+    TemplateBox[{"\"California, United States\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"California\"", ",", "\"UnitedStates\""}], "}"}]}], 
+        "]"}],"\"Entity[\\\"AdministrativeDivision\\\", {\\\"California\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+     "Entity"]}], ",", 
+   RowBox[{"\<\"population_decennial\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "2377549"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "3426861"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "5677251"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "6907387"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "10586223"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "15717204"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "19953134"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "23667902"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "29760021"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "33871648"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "37253956"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Print",
+ CellChangeTimes->{
+  3.743194421545404*^9, 3.7431960172407227`*^9, 3.743196437349992*^9, 
+   3.7431974524557333`*^9, 3.743197936044751*^9, 3.743198049997764*^9, 
+   3.743198255479484*^9, {3.743199033395753*^9, 3.743199039980941*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1674]:=",ExpressionUUID->"48086f9f-653a-4e20-aa6d-2a44be3b0e86"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["And now the apportionment data", "Subsection",
+ CellChangeTimes->{{3.743194444858406*^9, 
+  3.743194464633648*^9}},ExpressionUUID->"9c342f81-e709-4bb0-82ce-\
+313a949eff7c"],
+
+Cell["\<\
+Again, we can call as CSV-version of the webpage. Note that DC is not listed \
+here. (\[OpenCurlyDoubleQuote]Taxation without representation!\
+\[CloseCurlyDoubleQuote])
+Before states entered the Union there\[CloseCurlyQuote]s an empty string, \
+which we\[CloseCurlyQuote]ll replace with a 0 to keep the types consistent\
+\>", "Text",
+ CellChangeTimes->{{3.743194488689385*^9, 3.743194503607869*^9}, {
+  3.743194697915779*^9, 3.743194717466642*^9}, {3.743194857871767*^9, 
+  3.743194881761697*^9}, {3.743197861140287*^9, 3.743197880789691*^9}, {
+  3.743197951016646*^9, 3.743197961848727*^9}, {3.743199048322258*^9, 
+  3.743199093489224*^9}},ExpressionUUID->"739fa7ca-33f8-41cd-8091-\
+b904eccff2a4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"csv", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<https://www2.census.gov/programs-surveys/decennial/tables/2010/2010-\
+apportionment/apportionment.csv\>\"", ",", " ", "\"\<CSV\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Rest", "@", 
+     RowBox[{"Take", "[", 
+      RowBox[{"csv", ",", " ", 
+       RowBox[{"-", "51"}]}], "]"}]}], " ", "/.", " ", 
+    RowBox[{"\"\<\>\"", " ", "\[Rule]", " ", "0"}]}]}], ";"}], "\n", 
+ RowBox[{"header", " ", "=", " ", 
+  RowBox[{"csv", "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]}], "Code",
+ CellChangeTimes->{
+  3.7431944787137003`*^9, {3.7431945425738907`*^9, 3.743194574582498*^9}, {
+   3.743194611054421*^9, 3.743194651165368*^9}, {3.743194683612404*^9, 
+   3.743194687907419*^9}, {3.743194963300992*^9, 3.743194989501267*^9}, {
+   3.743198975253063*^9, 3.743198980676869*^9}, {3.743199044635398*^9, 
+   3.743199045794627*^9}},
+ CellLabel->
+  "In[1676]:=",ExpressionUUID->"b0b558e3-241e-451a-b263-1ba9416d6c43"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"STATE_OR_REGION\"\>", ",", "\<\"1910_REPS\"\>", 
+   ",", "\<\"1920_REPS\"\>", ",", "\<\"1930_REPS\"\>", 
+   ",", "\<\"1940_REPS\"\>", ",", "\<\"1950_REPS\"\>", 
+   ",", "\<\"1960_REPS\"\>", ",", "\<\"1970_REPS\"\>", 
+   ",", "\<\"1980_REPS\"\>", ",", "\<\"1990_REPS\"\>", 
+   ",", "\<\"2000_REPS\"\>", ",", "\<\"2010_REPS\"\>", 
+   ",", "\<\"1910_PEOPLE_PER_REP\"\>", ",", "\<\"1920_PEOPLE_PER_REP\"\>", 
+   ",", "\<\"1930_PEOPLE_PER_REP\"\>", ",", "\<\"1940_PEOPLE_PER_REP\"\>", 
+   ",", "\<\"1950_PEOPLE_PER_REP\"\>", ",", "\<\"1960_PEOPLE_PER_REP\"\>", 
+   ",", "\<\"1970_PEOPLE_PER_REP\"\>", ",", "\<\"1980_PEOPLE_PER_REP\"\>", 
+   ",", "\<\"1990_PEOPLE_PER_REP\"\>", ",", "\<\"2000_PEOPLE_PER_REP\"\>", 
+   ",", "\<\"2010_PEOPLE_PER_REP\"\>", ",", "\<\"1910_SEAT_CHANGE\"\>", 
+   ",", "\<\"1920_SEAT_CHANGE\"\>", ",", "\<\"1930_SEAT_CHANGE\"\>", 
+   ",", "\<\"1940_SEAT_CHANGE\"\>", ",", "\<\"1950_SEAT_CHANGE\"\>", 
+   ",", "\<\"1960_SEAT_CHANGE\"\>", ",", "\<\"1970_SEAT_CHANGE\"\>", 
+   ",", "\<\"1980_SEAT_CHANGE\"\>", ",", "\<\"1990_SEAT_CHANGE\"\>", 
+   ",", "\<\"2000_SEAT_CHANGE\"\>", ",", "\<\"2010_SEAT_CHANGE\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.743194990904269*^9, 3.7431960295411673`*^9, 
+  3.7431965415974827`*^9, 3.743197460700468*^9, 3.743197965764098*^9, 
+  3.743198056320353*^9, 3.743198266354632*^9, 3.743198729292697*^9, 
+  3.743198981987279*^9, 3.743199095713422*^9},
+ CellLabel->
+  "Out[1678]=",ExpressionUUID->"d1ac1cd1-c33d-45c6-b6d9-6964d12d700d"]
+}, Open  ]],
+
+Cell["\<\
+Again, let\[CloseCurlyQuote]s reduce the header just the values we need. We \
+can always calculate the people-per-rep figures.\
+\>", "Text",
+ CellChangeTimes->{{3.743194998691461*^9, 3.743195003402546*^9}, {
+  3.74319511426481*^9, 3.743195137102912*^9}, {3.743195509364304*^9, 
+  3.743195530987494*^9}},ExpressionUUID->"9952dd86-fe18-4501-aad3-\
+7eec666785b5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"header", " ", "=", " ", 
+   RowBox[{"{", " ", 
+    RowBox[{
+    "\"\<name\>\"", ",", " ", "\"\<1910\>\"", ",", " ", "\"\<1920\>\"", ",", 
+     " ", "\"\<1930\>\"", ",", " ", "\"\<1940\>\"", ",", " ", "\"\<1950\>\"", 
+     ",", " ", "\"\<1960\>\"", ",", " ", "\"\<1970\>\"", ",", " ", 
+     "\"\<1980\>\"", ",", " ", "\"\<1990\>\"", ",", " ", "\"\<2000\>\"", ",", 
+     " ", "\"\<2010\>\""}], " ", "}"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.743194633541566*^9, 3.743194656885244*^9}, {
+  3.743194976476482*^9, 3.7431949886474867`*^9}, {3.7431951392664948`*^9, 
+  3.743195146966548*^9}},
+ CellLabel->
+  "In[1679]:=",ExpressionUUID->"a287c18a-72ed-4ba8-9a08-e52fd13889b0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"representatives", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"AssociationThread", "[", 
+       RowBox[{"header", ",", " ", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ";;", "12"}], "]"}], "]"}]}], "]"}], "&"}], ",", " ", 
+     "data"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"Values", " ", "/@", " ", 
+      RowBox[{"representatives", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ";;", "5"}], "]"}], "]"}]}], ",", " ", "header"}], "]"}],
+    ",", " ", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], "Code",
+ CellChangeTimes->{{3.7431951684727793`*^9, 3.743195205367538*^9}},
+ CellLabel->
+  "In[1680]:=",ExpressionUUID->"9ecd564a-7efe-4ccf-8fb9-a1bcafaf1eff"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"name\"\>", "\<\"1910\"\>", "\<\"1920\"\>", "\<\"1930\"\>", \
+"\<\"1940\"\>", "\<\"1950\"\>", "\<\"1960\"\>", "\<\"1970\"\>", \
+"\<\"1980\"\>", "\<\"1990\"\>", "\<\"2000\"\>", "\<\"2010\"\>"},
+    {"\<\"Alabama\"\>", "10", "10", "9", "9", "9", "8", "7", "7", "7", "7", 
+     "7"},
+    {"\<\"Alaska\"\>", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", 
+     "1"},
+    {"\<\"Arizona\"\>", "0", "0", "1", "2", "2", "3", "4", "5", "6", "8", "9"},
+    {"\<\"Arkansas\"\>", "7", "7", "7", "7", "6", "4", "4", "4", "4", "4", 
+     "4"},
+    {"\<\"California\"\>", "11", "11", "20", "23", "30", "38", "43", "45", 
+     "52", "53", "53"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.7431952067126837`*^9, 3.743195537955833*^9, 
+  3.743196035046781*^9, 3.743196546605076*^9, 3.743197465944727*^9, 
+  3.7431979730468197`*^9, 3.743198019102202*^9, 3.743198066890922*^9, 
+  3.743198173523975*^9, 3.743198273565441*^9, 3.7431983990171328`*^9, 
+  3.743199106761755*^9},
+ CellLabel->
+  "Out[1681]=",ExpressionUUID->"d738558a-f589-48fe-8f7f-09778574c048"]
+}, Open  ]],
+
+Cell["\<\
+Let's add a dummy list for DC just to keep the object consistent \
+\>", "Text",
+ CellChangeTimes->{{3.743198304119911*^9, 
+  3.74319833415022*^9}},ExpressionUUID->"0e7ae212-30ff-4602-947e-\
+b3a3b1626e99"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"representatives", " ", "=", " ", 
+   RowBox[{"Append", "[", 
+    RowBox[{"representatives", ",", " ", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{
+       "\"\<name\>\"", " ", "\[Rule]", " ", "\"\<District of Columbia\>\""}], 
+       ",", " ", 
+       RowBox[{"\"\<1910\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1920\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1930\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1940\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1950\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1960\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1970\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1980\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<1990\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<2000\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       RowBox[{"\"\<2010\>\"", " ", "\[Rule]", " ", "0"}]}], "|>"}]}], 
+    "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{
+  3.7431982971567307`*^9, {3.74319833955793*^9, 3.7431983937251663`*^9}, {
+   3.743199152857152*^9, 3.7431991816668253`*^9}},
+ CellLabel->
+  "In[1682]:=",ExpressionUUID->"ad59f883-72dd-460f-8dcc-3b28aa47384a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statesAssociation", " ", "=", " ", 
+   RowBox[{"KeySort", "@", 
+    RowBox[{"AssociationThread", "[", "\n", "\t", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", "\"\<name\>\"", "]"}], "&"}], " ", "/@", " ", 
+       "representatives"}], ",", "\n", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{"statesAssociation", "[", 
+           RowBox[{"#", "[", "\"\<name\>\"", "]"}], "]"}], ",", " ", 
+          RowBox[{"\"\<representatives\>\"", " ", "\[Rule]", " ", 
+           RowBox[{"Rest", "@", "#"}]}]}], "]"}], "&"}], " ", "/@", " ", 
+       "representatives"}]}], "\t", "\n", "]"}]}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.743195767736973*^9, 3.743195786686281*^9}, 
+   3.7431959230883923`*^9, {3.7431960533421507`*^9, 3.743196059615629*^9}, {
+   3.743196187721551*^9, 3.743196207529437*^9}, {3.743196311038357*^9, 
+   3.743196325270391*^9}, {3.743196369856832*^9, 3.743196376581777*^9}, 
+   3.743196564387824*^9, 3.743197348123386*^9, {3.7431974778062553`*^9, 
+   3.743197478782498*^9}},
+ CellLabel->
+  "In[1684]:=",ExpressionUUID->"d96f7e54-d706-47d0-b0eb-e011bc069b3b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"statesAssociation", "[", "\"\<Alaska\>\"", "]"}], "\n", 
+ RowBox[{"statesAssociation", "[", "\"\<District of Columbia\>\"", 
+  "]"}]}], "Code",
+ CellChangeTimes->{{3.743196578361425*^9, 3.7431965860386457`*^9}, {
+  3.743197483830521*^9, 3.7431974940859613`*^9}, {3.743198427494419*^9, 
+  3.743198428363614*^9}},
+ CellLabel->
+  "In[1685]:=",ExpressionUUID->"408a54cf-59aa-49b0-9922-f63a0c37ffa6"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Alaska\"\>"}], ",", 
+   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"AK\"\>"}], ",", 
+   RowBox[{"\<\"entity\"\>", "\[Rule]", 
+    TemplateBox[{"\"Alaska, United States\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"Alaska\"", ",", "\"UnitedStates\""}], "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"Alaska\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+     "Entity"]}], ",", 
+   RowBox[{"\<\"population_decennial\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "64356"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "55036"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "59278"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "72524"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "128643"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "226167"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "300382"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "401851"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "550043"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "626932"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "710231"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"representatives\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}]}],
+   "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.743196586406808*^9, 3.743197494511325*^9, 3.743197991145018*^9, {
+   3.743198417768116*^9, 3.743198428702278*^9}, 3.743199207804748*^9},
+ CellLabel->
+  "Out[1685]=",ExpressionUUID->"3780a79e-164a-46de-8fdb-3ec0ed88fa5d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"District of Columbia\"\>"}], ",", 
+   RowBox[{"\<\"abbr\"\>", "\[Rule]", "\<\"DC\"\>"}], ",", 
+   RowBox[{"\<\"entity\"\>", "\[Rule]", 
+    TemplateBox[{
+     "\"District of Columbia, United States\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"AdministrativeDivision\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"DistrictOfColumbia\"", ",", "\"UnitedStates\""}], 
+            "}"}]}], "]"}],
+      "\"Entity[\\\"AdministrativeDivision\\\", {\\\"DistrictOfColumbia\\\", \
+\\\"UnitedStates\\\"}]\"","\"administrative division\""},
+     "Entity"]}], ",", 
+   RowBox[{"\<\"population_decennial\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "331069"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "437571"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "486869"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "663091"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "802178"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "763956"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "756510"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "638333"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "606900"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "572059"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "601723"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"representatives\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"1910\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1920\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1930\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1940\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1950\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1960\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1970\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1980\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1990\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"2000\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"2010\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}]}]}],
+   "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.743196586406808*^9, 3.743197494511325*^9, 3.743197991145018*^9, {
+   3.743198417768116*^9, 3.743198428702278*^9}, 3.74319920782251*^9},
+ CellLabel->
+  "Out[1686]=",ExpressionUUID->"889cd72c-3e5d-481a-81ce-5745e3cc1552"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+With apportionment data, we can now easily calculate electoral votes.\
+\>", "Subsection",
+ CellChangeTimes->{{3.743198447036006*^9, 
+  3.7431984645867167`*^9}},ExpressionUUID->"9e431140-0d7b-4365-b76f-\
+5bdc4886c69d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statesAssociation", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", "\n", "\t", 
+       RowBox[{
+        RowBox[{"evs", " ", "=", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"#", " ", "\[Equal]", " ", "0"}], ",", " ", "0", ",", 
+             " ", 
+             RowBox[{"#", " ", "+", " ", "2"}]}], "]"}], "&"}], " ", "/@", 
+          " ", 
+          RowBox[{"#", "[", "\"\<representatives\>\"", "]"}]}]}], ";", "\n", 
+        "\t", 
+        RowBox[{"Append", "[", 
+         RowBox[{"#", ",", " ", 
+          RowBox[{"\"\<evs\>\"", " ", "\[Rule]", " ", "evs"}]}], "]"}]}], 
+       "\n", ")"}], "&"}], ",", " ", "statesAssociation"}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.743198537544343*^9, 3.7431986103669243`*^9}, {
+  3.743198650367091*^9, 3.743198671150635*^9}, {3.743199275605873*^9, 
+  3.743199399850417*^9}, {3.743199442657215*^9, 3.74319945129567*^9}, {
+  3.7431994885513477`*^9, 3.743199553117963*^9}},
+ CellLabel->
+  "In[1696]:=",ExpressionUUID->"f71bd52e-8d89-485e-9e58-af7387d23b12"],
+
+Cell["\<\
+DC  has had 3 EVs since the passage of the 23rd Amendment in 1961:
+https://en.wikipedia.org/wiki/Twenty-third_Amendment_to_the_United_States_\
+Constitution\
+\>", "Text",
+ CellChangeTimes->{{3.743198503318906*^9, 3.7431985114088783`*^9}, {
+  3.743199567707542*^9, 
+  3.743199572147653*^9}},ExpressionUUID->"86f830a1-9fc4-4b6f-a9a4-\
+cf6ea3c6a1b0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"statesAssociation", "[", "\"\<District of Columbia\>\"", "]"}], 
+    "[", "\"\<evs\>\"", "]"}], " ", "=", " ", 
+   RowBox[{"<|", " ", 
+    RowBox[{
+     RowBox[{"\"\<1910\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1920\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1930\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1940\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1950\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1960\>\"", " ", "->", " ", "0"}], ",", " ", 
+     RowBox[{"\"\<1970\>\"", " ", "->", " ", "3"}], ",", " ", 
+     RowBox[{"\"\<1980\>\"", " ", "->", " ", "3"}], ",", " ", 
+     RowBox[{"\"\<1990\>\"", " ", "->", " ", "3"}], ",", " ", 
+     RowBox[{"\"\<2000\>\"", " ", "->", " ", "3"}], ",", " ", 
+     RowBox[{"\"\<2010\>\"", " ", "->", " ", "3"}]}], "|>"}]}], ";"}]], "Code",\
+
+ CellChangeTimes->{{3.743199570219647*^9, 3.743199595380392*^9}, {
+  3.7431996642872467`*^9, 3.7431996770506067`*^9}},
+ CellLabel->
+  "In[1699]:=",ExpressionUUID->"e5082088-e6e0-4101-9c61-4e1aa014007b"],
+
+Cell["\<\
+Just to check, let\[CloseCurlyQuote]s make sure calculations of \
+people-per-representative match the Census figures
+https://www.census.gov/data/tables/2010/dec/apportionment-data-text.html\
+\>", "Text",
+ CellChangeTimes->{{3.743196718146577*^9, 
+  3.743196765662654*^9}},ExpressionUUID->"7269d1ab-413f-463f-a636-\
+f4510d7a28b8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"state", " ", "=", " ", 
+   RowBox[{"statesAssociation", "[", "\"\<Pennsylvania\>\"", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"pops", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"state", "[", "\"\<population_decennial\>\"", "]"}], "[", "#", 
+     "]"}], "&"}], " ", "/@", " ", "testYears"}]}], "\n", 
+ RowBox[{"reps", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"state", "[", "\"\<representatives\>\"", "]"}], "[", "#", "]"}], 
+    "&"}], " ", "/@", " ", "testYears"}]}], "\n", 
+ RowBox[{"Round", " ", "/@", " ", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{"testYears", ",", " ", 
+    RowBox[{"1.0", " ", "*", " ", 
+     RowBox[{"pops", " ", "/", " ", "reps"}]}]}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.7431968496890717`*^9, 3.743196882134315*^9}, {
+   3.7431969707557487`*^9, 3.743197013651915*^9}, {3.7431970779608803`*^9, 
+   3.7431971191122503`*^9}, 3.74319715707316*^9, {3.743197265031609*^9, 
+   3.74319731573872*^9}, 3.743199813287794*^9, {3.74320717105062*^9, 
+   3.743207193538768*^9}, {3.743207322233986*^9, 3.743207328734314*^9}, {
+   3.743207429077914*^9, 3.743207445555517*^9}, 3.743207478780223*^9, {
+   3.743209663919732*^9, 3.7432096662694483`*^9}, {3.743209737485458*^9, 
+   3.743209738523184*^9}, {3.7432097710524178`*^9, 3.743209774057795*^9}, {
+   3.743209823889958*^9, 3.743209827016966*^9}},
+ CellLabel->
+  "In[1877]:=",ExpressionUUID->"a800a7e2-cf96-4faf-8a04-f211c81b2f29"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "7665111", ",", "8720017", ",", "9631350", ",", "9900180", ",", "10498012", 
+   ",", "11319366", ",", "11793909", ",", "11863895", ",", "11881643", ",", 
+   "12281054", ",", "12702379"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7432071735393753`*^9, 3.7432071939467297`*^9}, {
+   3.7432073236913548`*^9, 3.743207329137287*^9}, {3.7432074361358557`*^9, 
+   3.743207445852605*^9}, 3.743207479417965*^9, 3.743209666852367*^9, 
+   3.7432097389937887`*^9, 3.743209774448863*^9, 3.743209827490513*^9},
+ CellLabel->
+  "Out[1878]=",ExpressionUUID->"4ea7e1a4-1824-4401-b5f6-5a53717e96bd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "36", ",", "36", ",", "34", ",", "33", ",", "30", ",", "27", ",", "25", ",",
+    "23", ",", "21", ",", "19", ",", "18"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7432071735393753`*^9, 3.7432071939467297`*^9}, {
+   3.7432073236913548`*^9, 3.743207329137287*^9}, {3.7432074361358557`*^9, 
+   3.743207445852605*^9}, 3.743207479417965*^9, 3.743209666852367*^9, 
+   3.7432097389937887`*^9, 3.743209774448863*^9, 3.743209827511777*^9},
+ CellLabel->
+  "Out[1879]=",ExpressionUUID->"a103b9b0-dbcd-4bef-b0a0-a4cfa6a126f1"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"1910\"\>", "\[Rule]", "212920"}], ",", 
+   RowBox[{"\<\"1920\"\>", "\[Rule]", "242223"}], ",", 
+   RowBox[{"\<\"1930\"\>", "\[Rule]", "283275"}], ",", 
+   RowBox[{"\<\"1940\"\>", "\[Rule]", "300005"}], ",", 
+   RowBox[{"\<\"1950\"\>", "\[Rule]", "349934"}], ",", 
+   RowBox[{"\<\"1960\"\>", "\[Rule]", "419236"}], ",", 
+   RowBox[{"\<\"1970\"\>", "\[Rule]", "471756"}], ",", 
+   RowBox[{"\<\"1980\"\>", "\[Rule]", "515822"}], ",", 
+   RowBox[{"\<\"1990\"\>", "\[Rule]", "565793"}], ",", 
+   RowBox[{"\<\"2000\"\>", "\[Rule]", "646371"}], ",", 
+   RowBox[{"\<\"2010\"\>", "\[Rule]", "705688"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.7432071735393753`*^9, 3.7432071939467297`*^9}, {
+   3.7432073236913548`*^9, 3.743207329137287*^9}, {3.7432074361358557`*^9, 
+   3.743207445852605*^9}, 3.743207479417965*^9, 3.743209666852367*^9, 
+   3.7432097389937887`*^9, 3.743209774448863*^9, 3.743209827523943*^9},
+ CellLabel->
+  "Out[1880]=",ExpressionUUID->"bb105430-5f70-4165-b379-4b489d73565c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"peoplePerRep", "[", "stateName_", "]"}], " ", ":=", " ", 
+  RowBox[{"(", "\n", "\t", 
+   RowBox[{
+    RowBox[{"state", " ", "=", " ", 
+     RowBox[{"stateAssociation", "[", "stateName", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"populations", " ", "="}]}], " \t", "\n", "\n", ")"}]}]], "Code",
+ CellChangeTimes->{
+  3.743197109153159*^9},ExpressionUUID->"2d43018f-e66d-4d95-8e15-\
+cfb9f6b8102c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Save", "[", 
+   RowBox[{"\"\<./data/state_info.wl\>\"", ",", " ", "states"}], "]"}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.742751806219122*^9, 3.742751827916297*^9}, 
+   3.7427518704221888`*^9, {3.742752431698402*^9, 3.742752432416422*^9}, {
+   3.742860729214265*^9, 3.7428607331871347`*^9}, {3.7428607976631927`*^9, 
+   3.74286079921247*^9}, {3.742861175720172*^9, 3.742861176484377*^9}, {
+   3.7428626865924797`*^9, 3.7428627054310217`*^9}, {3.743122623428153*^9, 
+   3.743122624113432*^9}},
+ CellLabel->
+  "In[1114]:=",ExpressionUUID->"a88f1b78-d2c8-43c5-a40a-ecb0f227fa05"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"CloudPut", "[", 
+   RowBox[{"states", ",", " ", "\"\<Data/state_info\>\""}], "]"}], " ", 
+  "*)"}]], "Code",
+ CellChangeTimes->{{3.742751910773954*^9, 3.742751946422406*^9}, 
+   3.742860739757889*^9, {3.742860789038526*^9, 3.742860791292691*^9}, {
+   3.7428627103868227`*^9, 3.742862711110684*^9}, {3.743122672868018*^9, 
+   3.743122673591817*^9}, {3.7431266838919783`*^9, 3.743126689665154*^9}, {
+   3.743126880471977*^9, 3.743126881029043*^9}, {3.7431271624078608`*^9, 
+   3.743127168428487*^9}, {3.743127968896635*^9, 3.7431279718771133`*^9}},
+ CellLabel->
+  "In[1116]:=",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1102, 751},
+WindowMargins->{{100, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 320, 8, 72, "Code",ExpressionUUID->"51f7fabf-a19e-46ae-a232-ae4256460272"],
+Cell[CellGroupData[{
+Cell[903, 32, 202, 3, 67, "Section",ExpressionUUID->"5c265e36-345e-4974-904a-1da5da32b77c"],
+Cell[CellGroupData[{
+Cell[1130, 39, 208, 4, 54, "Subsection",ExpressionUUID->"6b928c99-d631-41cd-bf70-7727040d30d5"],
+Cell[CellGroupData[{
+Cell[1363, 47, 297, 7, 32, "Item",ExpressionUUID->"89e225a9-3188-430e-b19e-12e645541e1b"],
+Cell[1663, 56, 258, 6, 32, "Item",ExpressionUUID->"fd68910d-eb2f-4ab9-a61f-f568f6d82f0f"],
+Cell[1924, 64, 311, 7, 32, "Item",ExpressionUUID->"21530cfd-244a-41b0-be3e-f16cb1f80410"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2284, 77, 234, 5, 54, "Subsection",ExpressionUUID->"d4b3c92c-a1c9-4fd6-a432-75594463da29"],
+Cell[CellGroupData[{
+Cell[2543, 86, 887, 24, 72, "Code",ExpressionUUID->"43aad3c2-440a-4160-a777-1899cb5207ae"],
+Cell[3433, 112, 1160, 24, 102, "Print",ExpressionUUID->"e372d2a2-41d9-4caa-9d30-0d311d6daf60"]
+}, Open  ]],
+Cell[4608, 139, 327, 7, 35, "Text",ExpressionUUID->"6cccf251-830f-43da-ab81-d55bf7dc47fe"],
+Cell[4938, 148, 1638, 45, 91, "Code",ExpressionUUID->"28baf75e-ca77-4ec4-a069-87f47635d425"],
+Cell[6579, 195, 185, 3, 35, "Text",ExpressionUUID->"9995b470-46e1-47a0-ae09-b2bafb82a78e"],
+Cell[6767, 200, 582, 13, 52, "Code",ExpressionUUID->"c5c92ed1-b51e-4250-8bc7-068b97185c22"],
+Cell[7352, 215, 11321, 193, 106, "Text",ExpressionUUID->"a6f65d22-c621-4098-adb6-8a4664a12e57"],
+Cell[18676, 410, 390, 9, 52, "Code",ExpressionUUID->"d56c87f6-9880-491c-aad0-69c483bd39f4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19103, 424, 202, 3, 54, "Subsection",ExpressionUUID->"94f9ba47-cc91-43ab-b375-8d78ee9fdf4d"],
+Cell[19308, 429, 375, 8, 35, "Text",ExpressionUUID->"2616e681-3758-4708-a2da-d5a4a2bd4763"],
+Cell[19686, 439, 279, 6, 35, "Text",ExpressionUUID->"c62b76ab-d6d7-4551-bbb1-060c1bd80bdf"],
+Cell[CellGroupData[{
+Cell[19990, 449, 877, 22, 91, "Code",ExpressionUUID->"df1721ef-069a-4154-a503-66d39e445b2e"],
+Cell[20870, 473, 1104, 19, 77, "Output",ExpressionUUID->"7a04c5d5-7bbb-4b42-bb99-bb7a8120ebdf"]
+}, Open  ]],
+Cell[21989, 495, 341, 7, 35, "Text",ExpressionUUID->"bf6a4654-b52c-4316-8705-2056f2e96d6b"],
+Cell[22333, 504, 784, 15, 52, "Code",ExpressionUUID->"c824aa3d-4066-4583-9781-3a9fcb41e1d4"],
+Cell[23120, 521, 178, 3, 35, "Text",ExpressionUUID->"ef639815-1c2a-4bc7-98a1-0c388e4fd4b8"],
+Cell[CellGroupData[{
+Cell[23323, 528, 1029, 27, 72, "Code",ExpressionUUID->"0fa17f27-6d95-4d31-ad29-01229b5f8701"],
+Cell[24355, 557, 1612, 28, 135, "Output",ExpressionUUID->"5348d811-3608-4c19-b674-bba678d10459"]
+}, Open  ]],
+Cell[25982, 588, 209, 4, 35, "Text",ExpressionUUID->"e85af737-fead-40f0-b98c-45ab08dab28f"],
+Cell[26194, 594, 1062, 22, 110, "Code",ExpressionUUID->"21628b8f-6edb-4665-b7a0-2cca5130ace4"],
+Cell[CellGroupData[{
+Cell[27281, 620, 608, 14, 72, "Code",ExpressionUUID->"db12b134-7d19-4a8e-a2f8-cf17dffe6195"],
+Cell[CellGroupData[{
+Cell[27914, 638, 1751, 34, 82, "Print",ExpressionUUID->"9f22573e-38a1-49b8-b314-0721e4ede884"],
+Cell[29668, 674, 1789, 34, 82, "Print",ExpressionUUID->"48086f9f-653a-4e20-aa6d-2a44be3b0e86"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31518, 715, 178, 3, 54, "Subsection",ExpressionUUID->"9c342f81-e709-4bb0-82ce-313a949eff7c"],
+Cell[31699, 720, 708, 12, 58, "Text",ExpressionUUID->"739fa7ca-33f8-41cd-8091-b904eccff2a4"],
+Cell[CellGroupData[{
+Cell[32432, 736, 1064, 26, 91, "Code",ExpressionUUID->"b0b558e3-241e-451a-b263-1ba9416d6c43"],
+Cell[33499, 764, 1534, 25, 119, "Output",ExpressionUUID->"d1ac1cd1-c33d-45c6-b6d9-6964d12d700d"]
+}, Open  ]],
+Cell[35048, 792, 370, 7, 35, "Text",ExpressionUUID->"9952dd86-fe18-4501-aad3-7eec666785b5"],
+Cell[35421, 801, 708, 14, 52, "Code",ExpressionUUID->"a287c18a-72ed-4ba8-9a08-e52fd13889b0"],
+Cell[CellGroupData[{
+Cell[36154, 819, 843, 24, 72, "Code",ExpressionUUID->"9ecd564a-7efe-4ccf-8fb9-a1bcafaf1eff"],
+Cell[37000, 845, 1246, 25, 135, "Output",ExpressionUUID->"d738558a-f589-48fe-8f7f-09778574c048"]
+}, Open  ]],
+Cell[38261, 873, 214, 5, 35, "Text",ExpressionUUID->"0e7ae212-30ff-4602-947e-b3a3b1626e99"],
+Cell[38478, 880, 1316, 26, 52, "Code",ExpressionUUID->"ad59f883-72dd-460f-8dcc-3b28aa47384a"],
+Cell[39797, 908, 1191, 26, 110, "Code",ExpressionUUID->"d96f7e54-d706-47d0-b0eb-e011bc069b3b"],
+Cell[CellGroupData[{
+Cell[41013, 938, 420, 8, 72, "Code",ExpressionUUID->"408a54cf-59aa-49b0-9922-f63a0c37ffa6"],
+Cell[41436, 948, 2378, 47, 118, "Output",ExpressionUUID->"3780a79e-164a-46de-8fdb-3ec0ed88fa5d"],
+Cell[43817, 997, 2452, 49, 118, "Output",ExpressionUUID->"889cd72c-3e5d-481a-81ce-5745e3cc1552"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46318, 1052, 227, 5, 54, "Subsection",ExpressionUUID->"9e431140-0d7b-4365-b76f-5bdc4886c69d"],
+Cell[46548, 1059, 1151, 29, 110, "Code",ExpressionUUID->"f71bd52e-8d89-485e-9e58-af7387d23b12"],
+Cell[47702, 1090, 356, 8, 58, "Text",ExpressionUUID->"86f830a1-9fc4-4b6f-a9a4-cf6ea3c6a1b0"],
+Cell[48061, 1100, 1122, 23, 52, "Code",ExpressionUUID->"e5082088-e6e0-4101-9c61-4e1aa014007b"],
+Cell[49186, 1125, 339, 7, 58, "Text",ExpressionUUID->"7269d1ab-413f-463f-a636-f4510d7a28b8"],
+Cell[CellGroupData[{
+Cell[49550, 1136, 1478, 32, 110, "Code",ExpressionUUID->"a800a7e2-cf96-4faf-8a04-f211c81b2f29"],
+Cell[51031, 1170, 621, 11, 34, "Output",ExpressionUUID->"4ea7e1a4-1824-4401-b5f6-5a53717e96bd"],
+Cell[51655, 1183, 555, 10, 34, "Output",ExpressionUUID->"a103b9b0-dbcd-4bef-b0a0-a4cfa6a126f1"],
+Cell[52213, 1195, 1081, 20, 56, "Output",ExpressionUUID->"bb105430-5f70-4165-b379-4b489d73565c"]
+}, Open  ]],
+Cell[53309, 1218, 427, 10, 129, "Code",ExpressionUUID->"2d43018f-e66d-4d95-8e15-cfb9f6b8102c"],
+Cell[53739, 1230, 719, 15, 72, "Code",ExpressionUUID->"a88f1b78-d2c8-43c5-a40a-ecb0f227fa05"],
+Cell[54461, 1247, 676, 12, 52, "Code",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
