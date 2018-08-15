@@ -11,8 +11,10 @@ Playing around with Electoral College scenarios in Mathematica
 ### Notebooks
 + [Get State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getPopulationApportionment.nb)
 + [Get Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsFEC.nb)
++ [Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.nb)
+
 
 ### Data on the Cloud
-+ [State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/a0e218d1-939c-4244-a25b-665fd9471f59)
++ [State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/1a4bfb31-d5d4-49e3-9e04-4cf80e1fae1b)
 + [Election Data](https://www.wolframcloud.com/objects/29199ad6-f71e-407f-9d19-6a15cdbe34dc)
 
