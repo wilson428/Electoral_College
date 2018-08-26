@@ -2,21 +2,23 @@
 
 Playing around with Electoral College scenarios in Mathematica
 
-### Sources
+## Sources
 + [State Abbreviations](http://about.usps.com/who-we-are/postal-history/state-abbreviations.htm)
 + [Decennial population](https://www.census.gov/data/tables/2010/dec/popchange-data-text.html)
 + [Apportionment](https://www.census.gov/data/tables/2010/dec/apportionment-data-text.html)
 + [2016 Election results](https://transition.fec.gov/general/FederalElections2016.shtml)
 
+## Wolfram
 ### Notebooks
 + [Get State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getPopulationApportionment.nb)	
 + [Get Presidential Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsPresidential.nb)
 + [Get Congressional Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsCongress.nb)
-+ [Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.nb)
++ [Apportionment Package Generator](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.nb)
++ [Election Package Generator](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/elections.nb)
 
 ### Packages
-+ [Apportionment Functions](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.m)
-+ [Apportionment Functions](https://www.wolframcloud.com/objects/23696436-1787-4942-8408-b33510ed8287)
++ [Apportionment Package](https://www.wolframcloud.com/objects/23696436-1787-4942-8408-b33510ed8287)
++ [Election Package](https://www.wolframcloud.com/objects/8549bab6-7b14-4b2a-b77a-8944882d6562)
 
 ### Data on the Cloud
 + [State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/1a4bfb31-d5d4-49e3-9e04-4cf80e1fae1b)
