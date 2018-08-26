@@ -1,0 +1,1 @@
+Two important factors influence how the United States elects its presidents: First, through how it divvies up the 435 members of the House of Representatives to each state after each decennial Census, which determines how many electoral college votes that state has for the next ten years (including two more in each state for the two senators).

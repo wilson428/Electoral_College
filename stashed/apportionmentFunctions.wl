@@ -1,12 +1,15 @@
 (* ::Package:: *)
 
+(* ::Subsection:: *)
+(*Note: We'll make this into a formal package soon*)
+
+
 Clear["Global`*"];
 detectEnvironment[] := StringContainsQ[NotebookDirectory[], "wolframcloud"];
-SetDirectory@NotebookDirectory[];
 
 
 (* ::Title:: *)
-(*What's the Best Way to Allocate Members of Congress?*)
+(*Apportionment Algorithms*)
 
 
 (* ::Subsection:: *)
@@ -23,7 +26,10 @@ SetDirectory@NotebookDirectory[];
 
 statesByAbbreviation = If[detectEnvironment[],
 	CloudGet["https://www.wolframcloud.com/objects/ad3e2c70-ebd6-42c0-b038-60f937486a84"],
-	Import["./data/state_population_reps_evs.wl"]
+	(
+		SetDirectory@NotebookDirectory[];
+		Import["./data/state_population_reps_evs.wl"]
+	)
 ];
 
 
@@ -31,7 +37,8 @@ statesByAbbreviation = If[detectEnvironment[],
 (*Let's check that this loaded correctly with all the data we need*)
 
 
-statesByAbbreviation["CA"]
+(* ::Code:: *)
+(*statesByAbbreviation["CA"]*)
 
 
 stateAbbrs = Keys@statesByAbbreviation;
@@ -93,7 +100,7 @@ AllocateOne[evs_, priorities_, priorityFunc_:priorityHuntingtonHill] := (
 )
 
 calculateAllocations[total_:435, min_:1, priorityFunc_:priorityHuntingtonHill]:= (
-	stateEVs = AssociationThread[stateAbbrs50, ConstantArray[1, 50]];
+	stateEVs = AssociationThread[stateAbbrs50, ConstantArray[min, 50]];
 	statePriorities = AssociationThread[stateAbbrs50, priorityFunc[#, 1]& /@ stateAbbrs50];
 	While[Total@stateEVs < total, { stateEVs, statePriorities } = AllocateOne[stateEVs, statePriorities, priorityFunc]];
 	KeySort@stateEVs
@@ -104,16 +111,18 @@ calculateAllocations[total_:435, min_:1, priorityFunc_:priorityHuntingtonHill]:=
 (*Here goes nothing:*)
 
 
-results = calculateAllocations[];
-{ results["AL"], results["KY"], results["CA"] }
-Total@results
+(* ::Code:: *)
+(*results = calculateAllocations[]; *)
+(*{results["AL"], results["KY"], results["CA"]}*)
+(*Total[results]*)
 
 
 (* ::Text:: *)
 (*And let's see how it performs with a huge House of Representations*)
 
 
-bigHouse = calculateAllocations[2000];
+(* ::Code:: *)
+(*bigHouse = calculateAllocations[2000];*)
 
 
 (* ::Section:: *)
@@ -124,20 +133,26 @@ bigHouse = calculateAllocations[2000];
 (*Let's write a function to compare our calculated allocations to the official ones*)
 
 
+houseOfRepresentatives = AssociationThread[stateAbbrs50, statesByAbbreviation[#]["representatives"]["2010"]& /@ stateAbbrs50];
+
+
 compareAllocations[calculatedEVs_] := (
 	diffs = calculatedEVs - houseOfRepresentatives;
 	
 	(* colors *)
 	maxEV = Max[{Max[calculatedEVs], Max[houseOfRepresentatives]}];
-	{ minDiff, maxDiff } = MinMax[diffs];
+	maxDiff = Max[Abs /@ diffs];
 	colorScaleEV = ColorData[{"SiennaTones", "Reverse"}, Rescale[#1, {0, maxEV * 1.25}]]&;
-	colorScaleDiff = ColorData[{"ValentineTones", "Reverse"}, Rescale[#1, {0, maxDiff * 1.25}]]&;
+	
+	green = RGBColor["#47C045"];
+	purple = RGBColor["#E165FA"];
+	colorScaleDiff = Function[d, Blend[Transpose[{{-maxDiff, 0, maxDiff}, { green, White, purple }}], d]];
 
 	(* cells as items *)
 	header = Item[#, Alignment -> Right, ItemSize->{9, 1.5}]& /@ { "state", "actual reps", "calculated reps", "difference" };
 	houseOfRepresentativesItems = Item[#, Background->colorScaleEV[#]]& /@ houseOfRepresentatives;
 	calculatedEVItems = Item[#, Background->colorScaleEV[#]]& /@ calculatedEVs;
-	diffItems = Item[#, Background->colorScaleDiff[#], ItemSize->{2,1.5}]& /@ diffs;
+	diffItems = Item[#, Background->If[# == 0, White, colorScaleDiff[#]], ItemSize->{2,1.5}]& /@ diffs;
 	totals = Item[Style[#, Bold], ItemSize->{4.8, 1.5}]& /@ { "Total", Total@houseOfRepresentatives, Total@calculatedEVs, Total@diffs };
 
 	(* build rows of grids *)
@@ -146,14 +161,18 @@ compareAllocations[calculatedEVs_] := (
 	rows = Map[Flatten, Transpose[{ header, # }]& /@ parts, {2}];
 	Column[Grid[#, Frame -> All, ItemSize->All]& /@ rows, Spacings->0.25]
 )
-compareAllocations[results]
+
+
+(* ::Code:: *)
+(*compareAllocations[results]*)
 
 
 (* ::Text:: *)
 (*Our function worked perfectly. Let's compare reality to our "Big House"*)
 
 
-compareAllocations[bigHouse]
+(* ::Code:: *)
+(*compareAllocations[bigHouse]*)
 
 
 (* ::Section:: *)
@@ -171,15 +190,19 @@ totalUSPopulation = 308745538; (* https://www.census.gov/data/tables/2010/dec/po
 peoplePerRepresentative[allocation_] := (
 	perRep = AssociationThread[stateAbbrs50, Round[statePopulations[#] / allocation[#] * 1.0]& /@ stateAbbrs50]
 )
-houseRatio = peoplePerRepresentative[houseOfRepresentatives];
-bigHouseRatio = peoplePerRepresentative[bigHouse];
+
+
+(* ::Code:: *)
+(*houseRatio = peoplePerRepresentative[houseOfRepresentatives];*)
+(*bigHouseRatio = peoplePerRepresentative[bigHouse];*)
 
 
 (* ::Text:: *)
 (*Let's visualize the distribution of these ratios and use the standard deviation as a barometer*)
 
 
-visualizeRatio[allocation_, ratio_] := (
+visualizeRatio[allocation_] := (
+	ratio = peoplePerRepresentative[allocation];
 	total = Total@allocation;
 	ideal = Round[totalUSPopulation / total];
 	ratioWithUS = Append[ratio, "US" -> ideal];
@@ -206,10 +229,11 @@ visualizeRatio[allocation_, ratio_] := (
 		}, Alignment->Center]
 	]
 )
-visualizeRatio[houseOfRepresentatives, houseRatio]
 
 
-visualizeRatio[bigHouse, bigHouseRatio]
+(* ::Code:: *)
+(*visualizeRatio[houseOfRepresentatives, houseRatio]*)
+(*visualizeRatio[bigHouse, bigHouseRatio]*)
 
 
 (* ::Section:: *)
