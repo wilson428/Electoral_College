@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    445029,      11572]
-NotebookOptionsPosition[    440712,      11498]
-NotebookOutlinePosition[    441067,      11514]
-CellTagsIndexPosition[    441024,      11511]
+NotebookDataLength[    415808,      10673]
+NotebookOptionsPosition[    411940,      10607]
+NotebookOutlinePosition[    412295,      10623]
+CellTagsIndexPosition[    412252,      10620]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[{
    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]}], "Code",
  CellChangeTimes->{3.743972071706773*^9},
  CellLabel->
-  "In[286]:=",ExpressionUUID->"968c88cf-94e0-4d84-8e7d-dff713517a59"],
+  "In[312]:=",ExpressionUUID->"968c88cf-94e0-4d84-8e7d-dff713517a59"],
 
 Cell[CellGroupData[{
 
@@ -42,105 +42,91 @@ The functions for applying an apportionment algorithm are all contained here\
   3.743899128090222*^9}},ExpressionUUID->"31b0005f-d270-4400-be2c-\
 77d25b5dd799"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"Get", "[", 
-  "\"\<https://www.wolframcloud.com/objects/d9d85855-d591-49b8-bbd0-\
-ecb7700cc503\>\"", "]"}]], "Code",
+ RowBox[{"Get", "[", "\"\<apportionment.m\>\"", "]"}]], "Code",
  CellChangeTimes->{{3.743311033676343*^9, 3.743311046300619*^9}, {
    3.74389848435606*^9, 3.743898484981167*^9}, {3.7438988250472403`*^9, 
    3.7438988255091543`*^9}, {3.743970617694833*^9, 3.743970617828372*^9}, {
    3.743972080018374*^9, 3.7439720831120234`*^9}, {3.743977075330366*^9, 
-   3.743977096205721*^9}, 3.74397720886982*^9},
+   3.743977096205721*^9}, 3.74397720886982*^9, {3.744257134085143*^9, 
+   3.7442571458550777`*^9}},
  CellLabel->
-  "In[292]:=",ExpressionUUID->"3c0b0c78-2755-486b-a199-5f8337951995"],
-
-Cell["\<\
-Syntax::sntx: Invalid syntax in or before \"
-      <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \
-\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\"
-       ^
-     (line 1 of \
-\"https://www.wolframcloud.com/objects/d9d85855-d591-49b8-bbd0-ecb7700cc503\")\
-.\
-\>", "Message", "MSG",
- CellChangeTimes->{{3.743977077537269*^9, 3.743977096883852*^9}, 
-   3.743977209637023*^9},
- CellLabel->
-  "During evaluation of \
-In[292]:=",ExpressionUUID->"0af9abb4-f689-4c83-b480-6872b347671b"]
-}, Open  ]],
-
-Cell["Let\[CloseCurlyQuote]s start with no modified parameters", "Text",
- CellChangeTimes->{{3.7438991318020353`*^9, 
-  3.743899144088705*^9}},ExpressionUUID->"9a24a58e-6d8e-4c0f-b335-\
-b3c64fa4e491"],
+  "In[314]:=",ExpressionUUID->"3c0b0c78-2755-486b-a199-5f8337951995"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"plainResults", " ", "=", " ", 
-  RowBox[{"calculateAllocations", "[", "]"}]}]], "Code",
+Cell[BoxData["visualizeRepresentationInteractive"], "Code",
  CellChangeTimes->{{3.743898967191099*^9, 3.7438989683083067`*^9}, {
   3.743899058670362*^9, 3.743899071131935*^9}, {3.743899101931299*^9, 
-  3.743899102018147*^9}, {3.7439463729875317`*^9, 3.743946374337833*^9}},
- CellLabel->"In[58]:=",ExpressionUUID->"20492a59-5d2c-4497-aaf6-ec7c34b696d0"],
+  3.743899102018147*^9}, {3.7439463729875317`*^9, 3.743946374337833*^9}, {
+  3.744257398882556*^9, 3.744257406026579*^9}},
+ CellLabel->
+  "In[318]:=",ExpressionUUID->"20492a59-5d2c-4497-aaf6-ec7c34b696d0"],
 
 Cell[BoxData[
- RowBox[{"\[LeftAssociation]", 
-  RowBox[{
-   RowBox[{"\<\"AK\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"AL\"\>", "\[Rule]", "7"}], ",", 
-   RowBox[{"\<\"AR\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"AZ\"\>", "\[Rule]", "9"}], ",", 
-   RowBox[{"\<\"CA\"\>", "\[Rule]", "53"}], ",", 
-   RowBox[{"\<\"CO\"\>", "\[Rule]", "7"}], ",", 
-   RowBox[{"\<\"CT\"\>", "\[Rule]", "5"}], ",", 
-   RowBox[{"\<\"DE\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"FL\"\>", "\[Rule]", "27"}], ",", 
-   RowBox[{"\<\"GA\"\>", "\[Rule]", "14"}], ",", 
-   RowBox[{"\<\"HI\"\>", "\[Rule]", "2"}], ",", 
-   RowBox[{"\<\"IA\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"ID\"\>", "\[Rule]", "2"}], ",", 
-   RowBox[{"\<\"IL\"\>", "\[Rule]", "18"}], ",", 
-   RowBox[{"\<\"IN\"\>", "\[Rule]", "9"}], ",", 
-   RowBox[{"\<\"KS\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"KY\"\>", "\[Rule]", "6"}], ",", 
-   RowBox[{"\<\"LA\"\>", "\[Rule]", "6"}], ",", 
-   RowBox[{"\<\"MA\"\>", "\[Rule]", "9"}], ",", 
-   RowBox[{"\<\"MD\"\>", "\[Rule]", "8"}], ",", 
-   RowBox[{"\<\"ME\"\>", "\[Rule]", "2"}], ",", 
-   RowBox[{"\<\"MI\"\>", "\[Rule]", "14"}], ",", 
-   RowBox[{"\<\"MN\"\>", "\[Rule]", "8"}], ",", 
-   RowBox[{"\<\"MO\"\>", "\[Rule]", "8"}], ",", 
-   RowBox[{"\<\"MS\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"MT\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"NC\"\>", "\[Rule]", "13"}], ",", 
-   RowBox[{"\<\"ND\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"NE\"\>", "\[Rule]", "3"}], ",", 
-   RowBox[{"\<\"NH\"\>", "\[Rule]", "2"}], ",", 
-   RowBox[{"\<\"NJ\"\>", "\[Rule]", "12"}], ",", 
-   RowBox[{"\<\"NM\"\>", "\[Rule]", "3"}], ",", 
-   RowBox[{"\<\"NV\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"NY\"\>", "\[Rule]", "27"}], ",", 
-   RowBox[{"\<\"OH\"\>", "\[Rule]", "16"}], ",", 
-   RowBox[{"\<\"OK\"\>", "\[Rule]", "5"}], ",", 
-   RowBox[{"\<\"OR\"\>", "\[Rule]", "5"}], ",", 
-   RowBox[{"\<\"PA\"\>", "\[Rule]", "18"}], ",", 
-   RowBox[{"\<\"RI\"\>", "\[Rule]", "2"}], ",", 
-   RowBox[{"\<\"SC\"\>", "\[Rule]", "7"}], ",", 
-   RowBox[{"\<\"SD\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"TN\"\>", "\[Rule]", "9"}], ",", 
-   RowBox[{"\<\"TX\"\>", "\[Rule]", "36"}], ",", 
-   RowBox[{"\<\"UT\"\>", "\[Rule]", "4"}], ",", 
-   RowBox[{"\<\"VA\"\>", "\[Rule]", "11"}], ",", 
-   RowBox[{"\<\"VT\"\>", "\[Rule]", "1"}], ",", 
-   RowBox[{"\<\"WA\"\>", "\[Rule]", "10"}], ",", 
-   RowBox[{"\<\"WI\"\>", "\[Rule]", "8"}], ",", 
-   RowBox[{"\<\"WV\"\>", "\[Rule]", "3"}], ",", 
-   RowBox[{"\<\"WY\"\>", "\[Rule]", "1"}]}], 
-  "\[RightAssociation]"}]], "Output",
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`bonus$$ = -2, $CellContext`min$$ = 
+    3, $CellContext`title$$ = $CellContext`Chris $CellContext`Wilson, \
+$CellContext`total$$ = 435, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`title$$], "My Allocation", "Title:"}}, {{
+       Hold[$CellContext`total$$], 435, "Total Reps:"}, 50, 2000, 1}, {{
+       Hold[$CellContext`min$$], 1, "Start With:"}, 0, 40, 1}, {{
+       Hold[$CellContext`bonus$$], 0, "Add at End:"}, -5, 20, 1}, {
+      Hold[
+       Grid[{{
+          Manipulate`Place[1], SpanFromLeft, SpanFromLeft}, {
+          Manipulate`Place[2], 
+          Manipulate`Place[3], 
+          Manipulate`Place[4]}}, Alignment -> Center]], 
+      Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    900., {207., 211.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`total$308654$$ = 
+    0, $CellContext`min$308655$$ = 0, $CellContext`bonus$308656$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`bonus$$ = 0, $CellContext`min$$ = 
+        1, $CellContext`title$$ = "My Allocation", $CellContext`total$$ = 
+        435}, "ControllerVariables" :> {
+        Hold[$CellContext`total$$, $CellContext`total$308654$$, 0], 
+        Hold[$CellContext`min$$, $CellContext`min$308655$$, 0], 
+        Hold[$CellContext`bonus$$, $CellContext`bonus$308656$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`visualizeRepresentation[
+        $CellContext`calculateAllocations[$CellContext`total$$, \
+$CellContext`min$$, $CellContext`bonus$$, \
+$CellContext`priorityHuntingtonHill], $CellContext`title$$], 
+      "Specifications" :> {{{$CellContext`title$$, "My Allocation", "Title:"},
+          ControlPlacement -> 1}, {{$CellContext`total$$, 435, "Total Reps:"},
+          50, 2000, 1, Appearance -> "Open", ControlPlacement -> 
+         2}, {{$CellContext`min$$, 1, "Start With:"}, 0, 40, 1, Appearance -> 
+         "Open", ControlPlacement -> 
+         3}, {{$CellContext`bonus$$, 0, "Add at End:"}, -5, 20, 1, Appearance -> 
+         "Open", ControlPlacement -> 4}, 
+        Grid[{{
+           Manipulate`Place[1], SpanFromLeft, SpanFromLeft}, {
+           Manipulate`Place[2], 
+           Manipulate`Place[3], 
+           Manipulate`Place[4]}}, Alignment -> Center]}, 
+      "Options" :> {LabelStyle -> {FontSize -> 13}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{945., {282., 288.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
   3.743899061646253*^9, 3.7438991028848763`*^9, 3.743929486955472*^9, {
    3.743946368667924*^9, 3.743946374743424*^9}, {3.743946438550968*^9, 
@@ -148,893 +134,16 @@ Cell[BoxData[
    3.743946704732126*^9, 3.743947313466568*^9, {3.7439483581777973`*^9, 
    3.743948360851233*^9}, 3.743948403782034*^9, {3.7439650925007553`*^9, 
    3.743965094724115*^9}, 3.7439653024826317`*^9, {3.743970256264105*^9, 
-   3.7439702598011293`*^9}, 3.74397062300482*^9, 3.7439720856419573`*^9},
- CellLabel->"Out[58]=",ExpressionUUID->"fc1488df-f63f-48a9-91cf-efda079ac22a"]
+   3.7439702598011293`*^9}, 3.74397062300482*^9, 3.7439720856419573`*^9, 
+   3.744257212399373*^9, 3.7442573499741096`*^9, 3.744257407123001*^9},
+ CellLabel->
+  "Out[318]=",ExpressionUUID->"4fdebb9d-adb6-4a1c-b7f1-40fddd070fa7"]
 }, Open  ]],
 
 Cell["And compare it to the current allocation", "Text",
  CellChangeTimes->{{3.743899153073398*^9, 
   3.743899162248293*^9}},ExpressionUUID->"0ae3332a-6b96-41b2-9f2a-\
 b83afa8cdc5d"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"compareAllocations", "[", "plainResults", "]"}]], "Code",
- CellChangeTimes->{{3.743899148569479*^9, 3.743899173810071*^9}, {
-  3.743946604678061*^9, 3.743946609840453*^9}},
- CellLabel->"In[59]:=",ExpressionUUID->"a7e60841-f14d-4268-8b36-1dc3f2c8e699"],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     TagBox[GridBox[{
-        {
-         ItemBox["\<\"state\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          
-          StripOnInput->
-           False], "\<\"AK\"\>", "\<\"AL\"\>", "\<\"AR\"\>", "\<\"AZ\"\>", \
-"\<\"CA\"\>", "\<\"CO\"\>", "\<\"CT\"\>", "\<\"DE\"\>", "\<\"FL\"\>", "\<\"GA\
-\"\>", "\<\"HI\"\>", "\<\"IA\"\>", "\<\"ID\"\>"},
-        {
-         ItemBox["\<\"actual reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["53",
-          Background->RGBColor[0.7288317999999999, 0.3217638, 0.09218586],
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["27",
-          
-          Background->RGBColor[
-           0.9184323132075471, 0.6658913924528302, 0.4252719169811321],
-          StripOnInput->False], 
-         ItemBox["14",
-          
-          Background->RGBColor[
-           0.9218985509433962, 0.8055058981132076, 0.6353981811320755],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"calculated reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["53",
-          Background->RGBColor[0.7288317999999999, 0.3217638, 0.09218586],
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["27",
-          
-          Background->RGBColor[
-           0.9184323132075471, 0.6658913924528302, 0.4252719169811321],
-          StripOnInput->False], 
-         ItemBox["14",
-          
-          Background->RGBColor[
-           0.9218985509433962, 0.8055058981132076, 0.6353981811320755],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"difference\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False]}
-       },
-       AutoDelete->False,
-       ColumnsEqual->True,
-       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{},
-       RowsEqual->True],
-      "Grid"]},
-    {
-     TagBox[GridBox[{
-        {
-         ItemBox["\<\"state\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          
-          StripOnInput->
-           False], "\<\"IL\"\>", "\<\"IN\"\>", "\<\"KS\"\>", "\<\"KY\"\>", \
-"\<\"LA\"\>", "\<\"MA\"\>", "\<\"MD\"\>", "\<\"ME\"\>", "\<\"MI\"\>", "\<\"MN\
-\"\>", "\<\"MO\"\>", "\<\"MS\"\>", "\<\"MT\"\>"},
-        {
-         ItemBox["\<\"actual reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["18",
-          
-          Background->RGBColor[
-           0.9229158754716981, 0.7746619283018868, 0.5787846113207546],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["6",
-          
-          Background->RGBColor[
-           0.9164868075471698, 0.8475613849056604, 0.7355946490566038],
-          StripOnInput->False], 
-         ItemBox["6",
-          
-          Background->RGBColor[
-           0.9164868075471698, 0.8475613849056604, 0.7355946490566038],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["14",
-          
-          Background->RGBColor[
-           0.9218985509433962, 0.8055058981132076, 0.6353981811320755],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"calculated reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["18",
-          
-          Background->RGBColor[
-           0.9229158754716981, 0.7746619283018868, 0.5787846113207546],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["6",
-          
-          Background->RGBColor[
-           0.9164868075471698, 0.8475613849056604, 0.7355946490566038],
-          StripOnInput->False], 
-         ItemBox["6",
-          
-          Background->RGBColor[
-           0.9164868075471698, 0.8475613849056604, 0.7355946490566038],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["14",
-          
-          Background->RGBColor[
-           0.9218985509433962, 0.8055058981132076, 0.6353981811320755],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"difference\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False]}
-       },
-       AutoDelete->False,
-       ColumnsEqual->True,
-       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{},
-       RowsEqual->True],
-      "Grid"]},
-    {
-     TagBox[GridBox[{
-        {
-         ItemBox["\<\"state\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          
-          StripOnInput->
-           False], "\<\"NC\"\>", "\<\"ND\"\>", "\<\"NE\"\>", "\<\"NH\"\>", \
-"\<\"NJ\"\>", "\<\"NM\"\>", "\<\"NV\"\>", "\<\"NY\"\>", "\<\"OH\"\>", "\<\"OK\
-\"\>", "\<\"OR\"\>", "\<\"PA\"\>", "\<\"RI\"\>"},
-        {
-         ItemBox["\<\"actual reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["13",
-          
-          Background->RGBColor[
-           0.921222083018868, 0.8107628339622641, 0.6479227396226415],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["12",
-          
-          Background->RGBColor[
-           0.9205456150943396, 0.8160197698113207, 0.6604472981132075],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["27",
-          
-          Background->RGBColor[
-           0.9184323132075471, 0.6658913924528302, 0.4252719169811321],
-          StripOnInput->False], 
-         ItemBox["16",
-          
-          Background->RGBColor[
-           0.9232514867924528, 0.7949920264150944, 0.6103490641509434],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["18",
-          
-          Background->RGBColor[
-           0.9229158754716981, 0.7746619283018868, 0.5787846113207546],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"calculated reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["13",
-          
-          Background->RGBColor[
-           0.921222083018868, 0.8107628339622641, 0.6479227396226415],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False], 
-         ItemBox["12",
-          
-          Background->RGBColor[
-           0.9205456150943396, 0.8160197698113207, 0.6604472981132075],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["27",
-          
-          Background->RGBColor[
-           0.9184323132075471, 0.6658913924528302, 0.4252719169811321],
-          StripOnInput->False], 
-         ItemBox["16",
-          
-          Background->RGBColor[
-           0.9232514867924528, 0.7949920264150944, 0.6103490641509434],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["5",
-          
-          Background->RGBColor[
-           0.9158103396226416, 0.852818320754717, 0.7481192075471698],
-          StripOnInput->False], 
-         ItemBox["18",
-          
-          Background->RGBColor[
-           0.9229158754716981, 0.7746619283018868, 0.5787846113207546],
-          StripOnInput->False], 
-         ItemBox["2",
-          
-          Background->RGBColor[
-           0.9137809358490566, 0.8685891283018867, 0.7856928830188679],
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"difference\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False]}
-       },
-       AutoDelete->False,
-       ColumnsEqual->True,
-       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{},
-       RowsEqual->True],
-      "Grid"]},
-    {
-     TagBox[GridBox[{
-        {
-         ItemBox["\<\"state\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          
-          StripOnInput->
-           False], "\<\"SC\"\>", "\<\"SD\"\>", "\<\"TN\"\>", "\<\"TX\"\>", \
-"\<\"UT\"\>", "\<\"VA\"\>", "\<\"VT\"\>", "\<\"WA\"\>", "\<\"WI\"\>", "\<\"WV\
-\"\>", "\<\"WY\"\>", 
-         ItemBox[
-          StyleBox["\<\"Total\"\>",
-           StripOnInput->False,
-           FontWeight->Bold],
-          ItemSize->{4.8, 1.5},
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"actual reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["36",
-          
-          Background->RGBColor[
-           0.8943619509433962, 0.5514227584905661, 0.2821072611320755],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["11",
-          
-          Background->RGBColor[
-           0.9198691471698114, 0.8212767056603774, 0.6729718566037736],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["10",
-          
-          Background->RGBColor[
-           0.919192679245283, 0.826533641509434, 0.6854964150943396],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox[
-          StyleBox["435",
-           StripOnInput->False,
-           FontWeight->Bold],
-          ItemSize->{4.8, 1.5},
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"calculated reps\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["7",
-          
-          Background->RGBColor[
-           0.9171632754716982, 0.8423044490566037, 0.7230700905660377],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["9",
-          
-          Background->RGBColor[
-           0.9185162113207548, 0.8317905773584906, 0.6980209735849057],
-          StripOnInput->False], 
-         ItemBox["36",
-          
-          Background->RGBColor[
-           0.8943619509433962, 0.5514227584905661, 0.2821072611320755],
-          StripOnInput->False], 
-         ItemBox["4",
-          
-          Background->RGBColor[
-           0.9151338716981132, 0.8580752566037736, 0.7606437660377358],
-          StripOnInput->False], 
-         ItemBox["11",
-          
-          Background->RGBColor[
-           0.9198691471698114, 0.8212767056603774, 0.6729718566037736],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox["10",
-          
-          Background->RGBColor[
-           0.919192679245283, 0.826533641509434, 0.6854964150943396],
-          StripOnInput->False], 
-         ItemBox["8",
-          
-          Background->RGBColor[
-           0.9178397433962264, 0.8370475132075472, 0.7105455320754717],
-          StripOnInput->False], 
-         ItemBox["3",
-          
-          Background->RGBColor[
-           0.914457403773585, 0.8633321924528302, 0.7731683245283019],
-          StripOnInput->False], 
-         ItemBox["1",
-          
-          Background->RGBColor[
-           0.9131044679245284, 0.8738460641509433, 0.798217441509434],
-          StripOnInput->False], 
-         ItemBox[
-          StyleBox["435",
-           StripOnInput->False,
-           FontWeight->Bold],
-          ItemSize->{4.8, 1.5},
-          StripOnInput->False]},
-        {
-         ItemBox["\<\"difference\"\>",
-          Alignment->Right,
-          ItemSize->{9, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox["0",
-          Background->GrayLevel[1],
-          ItemSize->{2, 1.5},
-          StripOnInput->False], 
-         ItemBox[
-          StyleBox["0",
-           StripOnInput->False,
-           FontWeight->Bold],
-          ItemSize->{4.8, 1.5},
-          StripOnInput->False]}
-       },
-       AutoDelete->False,
-       ColumnsEqual->True,
-       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{},
-       RowsEqual->True],
-      "Grid"]}
-   },
-   DefaultBaseStyle->"Column",
-   GridBoxAlignment->{"Columns" -> {{Left}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-   GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{0.25}}}],
-  "Column"]], "Output",
- CellChangeTimes->{
-  3.743899174300227*^9, 3.743929490184277*^9, 3.7439463764125347`*^9, {
-   3.7439464406296186`*^9, 3.743946498460394*^9}, {3.743946601882107*^9, 
-   3.743946610539606*^9}, {3.743946660023698*^9, 3.743946666866661*^9}, 
-   3.7439467062583103`*^9, 3.74394731499018*^9, {3.7439483582587967`*^9, 
-   3.7439483624937*^9}, 3.743948405666511*^9, {3.743965092581031*^9, 
-   3.743965096327016*^9}, 3.743965304061358*^9, {3.743970256331044*^9, 
-   3.743970261520454*^9}, 3.7439706248077707`*^9, 3.743972087852971*^9},
- CellLabel->"Out[59]=",ExpressionUUID->"08888a91-61a6-4125-95c4-a2f305bcee60"]
-}, Open  ]],
 
 Cell["\<\
 Now let\[CloseCurlyQuote]s see what happens if we increase the size of the \
@@ -11517,61 +10626,53 @@ Cell[558, 20, 319, 8, 72, "Code",ExpressionUUID->"968c88cf-94e0-4d84-8e7d-dff713
 Cell[CellGroupData[{
 Cell[902, 32, 186, 3, 69, "Chapter",ExpressionUUID->"f60e1e17-243a-4314-b2bc-2c4623b2bb4c"],
 Cell[1091, 37, 226, 5, 35, "Text",ExpressionUUID->"31b0005f-d270-4400-be2c-77d25b5dd799"],
+Cell[1320, 44, 550, 9, 52, "Code",ExpressionUUID->"3c0b0c78-2755-486b-a199-5f8337951995"],
 Cell[CellGroupData[{
-Cell[1342, 46, 561, 10, 52, "Code",ExpressionUUID->"3c0b0c78-2755-486b-a199-5f8337951995"],
-Cell[1906, 58, 521, 13, 64, "Message",ExpressionUUID->"0af9abb4-f689-4c83-b480-6872b347671b"]
+Cell[1895, 57, 405, 6, 52, "Code",ExpressionUUID->"20492a59-5d2c-4497-aaf6-ec7c34b696d0"],
+Cell[2303, 65, 3975, 74, 589, "Output",ExpressionUUID->"4fdebb9d-adb6-4a1c-b7f1-40fddd070fa7"]
 }, Open  ]],
-Cell[2442, 74, 200, 3, 35, "Text",ExpressionUUID->"9a24a58e-6d8e-4c0f-b335-b3c64fa4e491"],
+Cell[6293, 142, 182, 3, 35, "Text",ExpressionUUID->"0ae3332a-6b96-41b2-9f2a-b83afa8cdc5d"],
+Cell[6478, 147, 267, 6, 35, "Text",ExpressionUUID->"d55bbb1c-0f96-4bd5-835a-aa4bf2b69247"],
 Cell[CellGroupData[{
-Cell[2667, 81, 404, 6, 52, "Code",ExpressionUUID->"20492a59-5d2c-4497-aaf6-ec7c34b696d0"],
-Cell[3074, 89, 3163, 62, 77, "Output",ExpressionUUID->"fc1488df-f63f-48a9-91cf-efda079ac22a"]
+Cell[6770, 157, 343, 6, 72, "Code",ExpressionUUID->"81d8892c-7d1c-4be7-85cb-f3062d062aca"],
+Cell[7116, 165, 32469, 969, 429, "Output",ExpressionUUID->"387a7548-c58f-44dd-aa64-2f354c4f4663"]
 }, Open  ]],
-Cell[6252, 154, 182, 3, 35, "Text",ExpressionUUID->"0ae3332a-6b96-41b2-9f2a-b83afa8cdc5d"],
+Cell[39600, 1137, 251, 6, 35, "Text",ExpressionUUID->"a1222fcb-348e-4680-8078-4909e8249cbf"],
 Cell[CellGroupData[{
-Cell[6459, 161, 275, 4, 52, "Code",ExpressionUUID->"a7e60841-f14d-4268-8b36-1dc3f2c8e699"],
-Cell[6737, 167, 28498, 868, 429, "Output",ExpressionUUID->"08888a91-61a6-4125-95c4-a2f305bcee60"]
+Cell[39876, 1147, 340, 5, 72, "Code",ExpressionUUID->"da63c776-ecf8-47c1-948a-00eeca123334"],
+Cell[40219, 1154, 75045, 1836, 294, "Output",ExpressionUUID->"dbce0bdb-f885-49f1-a0aa-fc1ef640797e"],
+Cell[115267, 2992, 74981, 1833, 294, "Output",ExpressionUUID->"5ab7b353-70b7-413b-8086-0493384c7a31"]
 }, Open  ]],
-Cell[35250, 1038, 267, 6, 35, "Text",ExpressionUUID->"d55bbb1c-0f96-4bd5-835a-aa4bf2b69247"],
+Cell[190263, 4828, 386, 7, 35, "Text",ExpressionUUID->"d5b00547-6632-46b4-b9a6-85804b2c8ced"],
+Cell[190652, 4837, 609, 10, 58, "Text",ExpressionUUID->"fc5e5e2f-61ad-458f-92e0-9f28db751acc"],
+Cell[191264, 4849, 377, 9, 59, "Text",ExpressionUUID->"e85e8db2-7c6b-4b96-9e2b-a52a1874252e"],
+Cell[191644, 4860, 514, 10, 74, "Text",ExpressionUUID->"53be9212-4e90-47f8-a3ae-2c79c585a9cf"],
+Cell[192161, 4872, 470, 9, 35, "Text",ExpressionUUID->"4719ad28-9304-4592-b0c7-85ec298ae996"],
+Cell[192634, 4883, 378, 7, 51, "Text",ExpressionUUID->"58149908-31ab-4fad-a6a4-5a1b70d23cff"],
+Cell[193015, 4892, 300, 6, 35, "Text",ExpressionUUID->"fc4380fb-3a08-4096-a5b2-6a36bb487f11"],
+Cell[193318, 4900, 698, 15, 72, "Code",ExpressionUUID->"a416b25d-b44b-48a8-ab96-faefcabb6c8b"],
+Cell[194019, 4917, 396, 8, 52, "Code",ExpressionUUID->"f759de2c-9a99-4060-96b4-ad0f58021578"],
 Cell[CellGroupData[{
-Cell[35542, 1048, 343, 6, 72, "Code",ExpressionUUID->"81d8892c-7d1c-4be7-85cb-f3062d062aca"],
-Cell[35888, 1056, 32469, 969, 429, "Output",ExpressionUUID->"387a7548-c58f-44dd-aa64-2f354c4f4663"]
-}, Open  ]],
-Cell[68372, 2028, 251, 6, 35, "Text",ExpressionUUID->"a1222fcb-348e-4680-8078-4909e8249cbf"],
-Cell[CellGroupData[{
-Cell[68648, 2038, 340, 5, 72, "Code",ExpressionUUID->"da63c776-ecf8-47c1-948a-00eeca123334"],
-Cell[68991, 2045, 75045, 1836, 294, "Output",ExpressionUUID->"dbce0bdb-f885-49f1-a0aa-fc1ef640797e"],
-Cell[144039, 3883, 74981, 1833, 294, "Output",ExpressionUUID->"5ab7b353-70b7-413b-8086-0493384c7a31"]
-}, Open  ]],
-Cell[219035, 5719, 386, 7, 35, "Text",ExpressionUUID->"d5b00547-6632-46b4-b9a6-85804b2c8ced"],
-Cell[219424, 5728, 609, 10, 58, "Text",ExpressionUUID->"fc5e5e2f-61ad-458f-92e0-9f28db751acc"],
-Cell[220036, 5740, 377, 9, 59, "Text",ExpressionUUID->"e85e8db2-7c6b-4b96-9e2b-a52a1874252e"],
-Cell[220416, 5751, 514, 10, 74, "Text",ExpressionUUID->"53be9212-4e90-47f8-a3ae-2c79c585a9cf"],
-Cell[220933, 5763, 470, 9, 35, "Text",ExpressionUUID->"4719ad28-9304-4592-b0c7-85ec298ae996"],
-Cell[221406, 5774, 378, 7, 51, "Text",ExpressionUUID->"58149908-31ab-4fad-a6a4-5a1b70d23cff"],
-Cell[221787, 5783, 300, 6, 35, "Text",ExpressionUUID->"fc4380fb-3a08-4096-a5b2-6a36bb487f11"],
-Cell[222090, 5791, 698, 15, 72, "Code",ExpressionUUID->"a416b25d-b44b-48a8-ab96-faefcabb6c8b"],
-Cell[222791, 5808, 396, 8, 52, "Code",ExpressionUUID->"f759de2c-9a99-4060-96b4-ad0f58021578"],
-Cell[CellGroupData[{
-Cell[223212, 5820, 224, 3, 52, "Code",ExpressionUUID->"fef2113d-c2e0-4354-b2ac-b5c00f8ef066"],
-Cell[223439, 5825, 29647, 903, 429, "Output",ExpressionUUID->"cd40e843-22a3-42e2-9a8d-39322a6a3c61"]
+Cell[194440, 4929, 224, 3, 52, "Code",ExpressionUUID->"fef2113d-c2e0-4354-b2ac-b5c00f8ef066"],
+Cell[194667, 4934, 29647, 903, 429, "Output",ExpressionUUID->"cd40e843-22a3-42e2-9a8d-39322a6a3c61"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[253123, 6733, 220, 3, 52, "Code",ExpressionUUID->"39def84e-e35e-481b-ad27-d587f10736d7"],
-Cell[253346, 6738, 75739, 1840, 295, "Output",ExpressionUUID->"19373239-b17d-436f-9ecb-bd84d89d6315"]
+Cell[224351, 5842, 220, 3, 52, "Code",ExpressionUUID->"39def84e-e35e-481b-ad27-d587f10736d7"],
+Cell[224574, 5847, 75739, 1840, 295, "Output",ExpressionUUID->"19373239-b17d-436f-9ecb-bd84d89d6315"]
 }, Open  ]],
-Cell[329100, 8581, 297, 6, 35, "Text",ExpressionUUID->"3a034fb9-9523-4973-be0b-e522bf66e271"],
+Cell[300328, 7690, 297, 6, 35, "Text",ExpressionUUID->"3a034fb9-9523-4973-be0b-e522bf66e271"],
 Cell[CellGroupData[{
-Cell[329422, 8591, 1131, 23, 110, "Code",ExpressionUUID->"f251ee68-22f8-472c-aa1c-a1c77346d7e0"],
-Cell[330556, 8616, 2332, 44, 393, "Output",ExpressionUUID->"27796ef4-5fe0-4175-acc6-2876ffb7ed3b"]
+Cell[300650, 7700, 1131, 23, 110, "Code",ExpressionUUID->"f251ee68-22f8-472c-aa1c-a1c77346d7e0"],
+Cell[301784, 7725, 2332, 44, 393, "Output",ExpressionUUID->"27796ef4-5fe0-4175-acc6-2876ffb7ed3b"]
 }, Open  ]],
-Cell[332903, 8663, 569, 11, 72, "Code",ExpressionUUID->"a0fc87e6-bf7a-443e-8987-6be5e0ba978f"],
+Cell[304131, 7772, 569, 11, 72, "Code",ExpressionUUID->"a0fc87e6-bf7a-443e-8987-6be5e0ba978f"],
 Cell[CellGroupData[{
-Cell[333497, 8678, 224, 3, 52, "Code",ExpressionUUID->"f57ed844-01f1-4d35-a2b9-3de3c2c15c28"],
-Cell[333724, 8683, 31081, 965, 429, "Output",ExpressionUUID->"c28c4c0f-da30-4b13-a90c-d446e65a1a89"]
+Cell[304725, 7787, 224, 3, 52, "Code",ExpressionUUID->"f57ed844-01f1-4d35-a2b9-3de3c2c15c28"],
+Cell[304952, 7792, 31081, 965, 429, "Output",ExpressionUUID->"c28c4c0f-da30-4b13-a90c-d446e65a1a89"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[364842, 9653, 218, 3, 52, "Code",ExpressionUUID->"c74da430-7325-433d-988e-101bf11c54fb"],
-Cell[365063, 9658, 75621, 1836, 293, "Output",ExpressionUUID->"af13b594-09db-4e7c-b06e-83812326e654"]
+Cell[336070, 8762, 218, 3, 52, "Code",ExpressionUUID->"c74da430-7325-433d-988e-101bf11c54fb"],
+Cell[336291, 8767, 75621, 1836, 293, "Output",ExpressionUUID->"af13b594-09db-4e7c-b06e-83812326e654"]
 }, Open  ]]
 }, Open  ]]
 }

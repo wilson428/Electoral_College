@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     59119,       1414]
-NotebookOptionsPosition[     53564,       1320]
-NotebookOutlinePosition[     53919,       1336]
-CellTagsIndexPosition[     53876,       1333]
+NotebookDataLength[     59116,       1414]
+NotebookOptionsPosition[     53561,       1320]
+NotebookOutlinePosition[     53916,       1336]
+CellTagsIndexPosition[     53873,       1333]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1305,16 +1305,16 @@ Cell[BoxData[
       RowBox[{"NotebookDirectory", "[", "]"}]}], ";", "\n", " ", 
      RowBox[{"Save", "[", 
       RowBox[{
-      "\"\<./data/state_population_reps_evs.wl\>\"", ",", " ", 
+      "\"\<./state_population_reps_evs.wl\>\"", ",", " ", 
        "statesAssociation"}], "]"}], ";"}]}], "\n", "]"}], ";"}]], "Code",
  CellChangeTimes->{{3.7427519107739544`*^9, 3.7427519464224057`*^9}, 
    3.742860739757889*^9, {3.742860789038526*^9, 3.7428607912926908`*^9}, {
    3.7428627103868227`*^9, 3.742862711110684*^9}, {3.7431226728680177`*^9, 
    3.743122673591817*^9}, {3.7431266838919783`*^9, 3.743126689665154*^9}, {
    3.7431268804719768`*^9, 3.7431268810290427`*^9}, {3.7431271624078608`*^9, 
-   3.743127168428487*^9}, {3.7431279688966346`*^9, 3.7431279718771133`*^9}},
- CellLabel->
-  "In[270]:=",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"]
+   3.743127168428487*^9}, {3.7431279688966346`*^9, 3.7431279718771133`*^9}, 
+   3.7442611465445547`*^9},ExpressionUUID->"d40233db-2d69-45fe-b5c3-\
+ad75097bf9f8"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1413,12 +1413,10 @@ Cell[47855, 1153, 2669, 90, 35, "Text",ExpressionUUID->"86f830a1-9fc4-4b6f-a9a4-
 Cell[50527, 1245, 1121, 23, 52, "Code",ExpressionUUID->"e5082088-e6e0-4101-9c61-4e1aa014007b"],
 Cell[51651, 1270, 190, 3, 35, "Text",ExpressionUUID->"292a7b09-ed70-43fb-9a5d-f89372b0b876"],
 Cell[51844, 1275, 557, 15, 72, "Code",ExpressionUUID->"32a90561-583e-47c2-ae86-d46ce82655e6"],
-Cell[52404, 1292, 1132, 24, 129, "Code",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"]
+Cell[52404, 1292, 1129, 24, 129, "Code",ExpressionUUID->"d40233db-2d69-45fe-b5c3-ad75097bf9f8"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

@@ -10,15 +10,22 @@ Playing around with Electoral College scenarios in Mathematica
 
 ### Notebooks
 + [Get State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getPopulationApportionment.nb)	
-+ [Get Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsFEC.nb)
++ [Get Presidential Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsPresidential.nb)
++ [Get Congressional Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsCongress.nb)
 + [Apportionment](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.nb)
 
 ### Packages
-+ [Apportionment Functions](https://www.wolframcloud.com/objects/7669b0e6-befc-4d15-a607-89be4a553fc8)
++ [Apportionment Functions](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.m)
++ [Apportionment Functions](https://www.wolframcloud.com/objects/23696436-1787-4942-8408-b33510ed8287)
 
 ### Data on the Cloud
 + [State Abbreviations, Population and Apportionment](https://www.wolframcloud.com/objects/1a4bfb31-d5d4-49e3-9e04-4cf80e1fae1b)
-+ [Election Data](https://www.wolframcloud.com/objects/29199ad6-f71e-407f-9d19-6a15cdbe34dc)
++ [Presidential Election Data, 2016](https://www.wolframcloud.com/objects/085af547-95c3-4daa-9c88-aa7bc343100f)
++ [Congressional Election Data, 2016](https://www.wolframcloud.com/objects/ece1bd42-6504-4add-b62a-f70989f29f3f)
++ [Members of the 115th Congress, as elected in November 2016](https://www.wolframcloud.com/objects/102b44d1-555c-4ea9-aad2-8710d9658ec8)
++ [5000 generated random numbers](https://www.wolframcloud.com/objects/1a771829-1628-4a59-bff0-a61ebb76f7fc)
 
 ### Notes
 + ["A New Method for Congressional Apportionment"](http://www.pnas.org/content/pnas/71/11/4602.full.pdf)
++ ["Partisan Gerrymandering and the Efficiency Gap"](https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=1946&context=public_law_and_legal_theory)
++ ["Infoviz on the efficiency gap"](https://www.azavea.com/blog/2017/07/19/gerrymandered-states-ranked-efficiency-gap-seat-advantage/)
