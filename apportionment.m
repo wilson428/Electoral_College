@@ -26,11 +26,11 @@ stateAbbrs = Keys@statesByAbbreviation;
 stateAbbrs50 = Select[stateAbbrs, # != "DC"&];
 
 
-priorityHuntingtonHill[stateAbbr_, stateReps_] := 
+PriorityHuntingtonHill[stateAbbr_, stateReps_] := 
 	1.0 * statesByAbbreviation[stateAbbr]["population_decennial"]["2010"] / Sqrt[stateReps * (stateReps + 1)]
 
 
-AllocateOne[reps_, priorities_, priorityFunc_:priorityHuntingtonHill] := (
+AllocateOne[reps_, priorities_, priorityFunc_:PriorityHuntingtonHill] := (
 	topPriority = First[Keys[Reverse[Sort[priorities]]]];
 	updatedPriorities = priorities;
 	updatedReps = reps;
@@ -39,7 +39,7 @@ AllocateOne[reps_, priorities_, priorityFunc_:priorityHuntingtonHill] := (
 	{ updatedReps, updatedPriorities }
 );
 
-calculateAllocations[totalBase_:435, min_:1, bonus_:0, priorityFunc_:priorityHuntingtonHill]:= (
+CalculateAllocations[totalBase_:435, min_:1, bonus_:0, priorityFunc_:PriorityHuntingtonHill]:= (
 	total = totalBase + 50 * -bonus; (* we need to add the post-facto bonus to the total so that it doesn't count against it *)
 	stateReps = AssociationThread[stateAbbrs50, ConstantArray[min, 50]];
 	statePriorities = AssociationThread[stateAbbrs50, priorityFunc[#, 1]& /@ stateAbbrs50];
@@ -58,11 +58,11 @@ houseOfRepresentatives = AssociationThread[
 ];
 
 
-getDiffs[calculatedReps_] := calculatedReps - houseOfRepresentatives;
+GetDiffs[calculatedReps_] := calculatedReps - houseOfRepresentatives;
 
 
-makeRows[calculatedReps_, sortBy_:"alpha", ascendDescend_:-1] := (
-	diffs = getDiffs[calculatedReps];
+MakeRows[calculatedReps_, sortBy_:"alpha", ascendDescend_:-1] := (
+	diffs = GetDiffs[calculatedReps];
 	stateKeys = Keys@houseOfRepresentatives;
 	
 	(* now we can sort. This is like a `Switch` statement, but a little easier to read *)
@@ -108,17 +108,18 @@ makeRows[calculatedReps_, sortBy_:"alpha", ascendDescend_:-1] := (
 )
 
 
-horizontalGrid[rows_, perRow_:13] := (
+HorizontalGrid[calculatedReps_, perRow_:13] := (
+	rows = MakeRows[calculatedReps];
 	(* build rows of grids *)
-	headers = Item[#, Alignment -> Right, ItemSize->{4, 1}]& /@ { "state", "Actual", "Yours", "delta" };
+	headers = Item[#, Alignment -> Right, ItemSize->{4, 1}]& /@ { "state", "actual", "yours", "delta" };
 	parts = First@Partition[rows, { 4, UpTo@perRow }];
 	headerRows = Map[Flatten, Transpose[{ headers, # }]& /@ parts, {2}];
 	Column[Grid[#, Frame -> All, ItemSize->All, Spacings->{0.2, 0.8}]& /@ headerRows, Spacings -> -0.1]
 )
 
 
-mapDiffs[calculatedReps_] := (
-	entityDiffs = KeyMap[statesByAbbreviation[#]["entity"]&, getDiffs[calculatedReps]];
+MapDiffs[calculatedReps_] := (
+	entityDiffs = KeyMap[statesByAbbreviation[#]["entity"]&, GetDiffs[calculatedReps]];
 	green = RGBColor["#47C045"];
 	purple = RGBColor["#E165FA"];
 	max = Max[entityDiffs];
@@ -136,8 +137,7 @@ mapDiffs[calculatedReps_] := (
 				Row[{ak,hi}, ImageSize->500]
 			}],
 			BarLegend[{colorScheme, {-max, max}}, LegendMarkerSize->300]
-		}],
-		horizontalGrid[makeRows[calculatedReps], 17]
+		}]
 	}]
 )
 
@@ -149,7 +149,7 @@ statePopulations = AssociationThread[
 totalUSPopulation = Total@statePopulations; (* won't count DC or PR since we have no reps *)
 
 
-peoplePerRepresentative[allocation_] := (
+PeoplePerRepresentative[allocation_] := (
 	perRep = AssociationThread[
 		stateAbbrs50,
 		Round[statePopulations[#] / allocation[#] * 1.0]& /@ stateAbbrs50
@@ -157,15 +157,15 @@ peoplePerRepresentative[allocation_] := (
 )
 
 
-visualizeRepresentation[allocation_, title_:""] := (
+VisualizeRepresentation[allocation_, title_:""] := (
 	(* data and stats *)	
 	total = Total@allocation;
 	ideal = Round[totalUSPopulation / total];
-	ratio = peoplePerRepresentative[allocation];
+	ratio = PeoplePerRepresentative[allocation];
 	sd = StandardDeviation[ratio] * 1.0;
 	cov = sd / Mean@ratio;
 	sdPrint = NumberForm[Round[sd], DigitBlock->3];	
-	ratioWithUS = Append[peoplePerRepresentative[allocation], "US" -> ideal];
+	ratioWithUS = Append[PeoplePerRepresentative[allocation], "US" -> ideal];
 
 	colorScale = ColorData["Rainbow", Rescale[#1, MinMax@ratio]]&;
 	colorFunction = Function[v, If[v == ideal, Yellow, colorScale[v]]];		
@@ -206,7 +206,7 @@ visualizeRepresentation[allocation_, title_:""] := (
 
 
 visualizeRepresentationInteractive = Manipulate[
-	visualizeRepresentation[calculateAllocations[total, min, bonus, priorityHuntingtonHill], title],
+	VisualizeRepresentation[CalculateAllocations[total, min, bonus, PriorityHuntingtonHill], title],
 	Grid[{
 		{ Control[{{title, "My Allocation", "Title:"}}], SpanFromLeft, SpanFromLeft },
 		{

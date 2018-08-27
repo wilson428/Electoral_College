@@ -19,14 +19,14 @@
 
 
 
-CloudGet["https://www.wolframcloud.com/objects/23696436-1787-4942-8408-b33510ed8287"]; (* the algorithms for apportionment *)
+CloudGet["https://www.wolframcloud.com/objects/e38bf09f-1de6-41d3-864c-eaaf7e320513"];
 
 
 electionDataPresident = CloudGet["https://www.wolframcloud.com/objects/085af547-95c3-4daa-9c88-aa7bc343100f"];
 electionDataCongress = CloudGet["https://www.wolframcloud.com/objects/ece1bd42-6504-4add-b62a-f70989f29f3f"];
 
 
-electionWinner[stateAbbr_, stateEVs_:-1] := (
+RerunElectionPresidentState[stateAbbr_, stateEVs_:-1] := (
 	results = electionDataPresident[stateAbbr];
 	EVs = If[stateEVs == -1, statesByAbbreviation[stateAbbr]["evs"]["2010"], stateEVs];
 	partial = If[stateAbbr == "ME", Floor[EVs / 4.0], 0];
@@ -37,9 +37,9 @@ electionWinner[stateAbbr_, stateEVs_:-1] := (
 )
 
 
-runElection[allocation_:houseOfRepresentatives, evsDC_:3] := (
+RerunElectionPresident[allocation_:houseOfRepresentatives, evsDC_:3] := (
 	evs = KeySort@Append[allocation + 2, "DC" -> evsDC];
-	states = electionWinner[#, evs[#]]& /@ Keys@evs;
+	states = RerunElectionPresidentState[#, evs[#]]& /@ Keys@evs;
 	totalD = Total[#["D"]& /@ states];
 	totalR = Total[#["R"]& /@ states];
 	<| "result" -> <| "R" -> totalR, "D" -> totalD, "Total" -> (totalD + totalR) |>, "states" -> AssociationThread[Keys@evs, states] |>	
@@ -49,7 +49,7 @@ runElection[allocation_:houseOfRepresentatives, evsDC_:3] := (
 { blue, red, green } = { RGBColor["#00B2FF"], RGBColor["#F15C53"], RGBColor["#01CF0E"] }
 
 
-chartElection[electionResults_, perRow_:14] := (
+ChartPresidentialElection[electionResults_, perRow_:27] := (
 	evsR = #["R"]& /@ electionResults["states"];
 	evsD = #["D"]& /@ electionResults["states"];
 	evsTotal = #["evs"]& /@ electionResults["states"];
@@ -64,7 +64,6 @@ chartElection[electionResults_, perRow_:14] := (
 	|>;
 
 	(* convert the seating data to items for grid, adding header and footer *)	
-
 	dataAssociations = { AssociationThread[stateAbbrs, stateAbbrs], evsD, evsR, evsTotal };
 
 	itemWidth = 2;
@@ -83,32 +82,32 @@ chartElection[electionResults_, perRow_:14] := (
 	];
 
 	totals = { 
-		Item[Style["Total", FontSize->fontSize, TextAlignment->Center], Background->White, ItemSize->{ itemWidth * 2, itemHeight }, Alignment -> Bottom],
-		Item[Style[Total@evsD, FontSize->fontSize, TextAlignment->Center], Background->colorScales["D"][Total@evsD], ItemSize->{ itemWidth * 2, itemHeight }, Alignment -> Bottom],
-		Item[Style[Total@evsR, FontSize->fontSize, TextAlignment->Center], Background->colorScales["R"][Total@evsR], ItemSize->{ itemWidth * 2, itemHeight }, Alignment -> Bottom],
-		Item[Style[Total@evsTotal, FontSize->fontSize, TextAlignment->Center], Background->colorScales["total"][Total@evsTotal], ItemSize->{ itemWidth * 2, itemHeight }, Alignment -> Bottom]
+		Item[Style["Total", FontSize->fontSize, TextAlignment->Center], Background->White, ItemSize->{ itemWidth * 3, itemHeight }, Alignment -> Bottom],
+		Item[Style[Total@evsD, FontSize->fontSize, TextAlignment->Center], Background->colorScales["D"][Total@evsD], ItemSize->{ itemWidth * 3, itemHeight }, Alignment -> Bottom],
+		Item[Style[Total@evsR, FontSize->fontSize, TextAlignment->Center], Background->colorScales["R"][Total@evsR], ItemSize->{ itemWidth * 3, itemHeight }, Alignment -> Bottom],
+		Item[Style[Total@evsTotal, FontSize->fontSize, TextAlignment->Center], Background->colorScales["total"][Total@evsTotal], ItemSize->{ itemWidth * 3, itemHeight }, Alignment -> Bottom]
 	};
 
 	rows = Append[itemizedRows[[#]], totals[[#]]]& /@ Range[4];
+	rows[[1]] = Style[#, Bold]& /@ rows[[1]];
 	
 	parts = First@Partition[rows, { 4, UpTo@perRow }];
-				
+
 	headers = {
-		Item[Style["State", FontSize->fontSize, TextAlignment->Right], ItemSize->{itemWidth * 2, itemHeight}],
+		Item[Style["State", FontSize->fontSize, TextAlignment->Right, Bold], ItemSize->{itemWidth * 2, itemHeight}],
 		Item[Style["Clinton", FontSize->fontSize, TextAlignment->Right], ItemSize->{itemWidth * 2, itemHeight}],
 		Item[Style["Trump", FontSize->fontSize, TextAlignment->Right], ItemSize->{itemWidth * 2, itemHeight}],
 		Item[Style["Total", FontSize->fontSize, TextAlignment->Right], ItemSize->{itemWidth * 2, itemHeight}]
 	};
 
 	headerRows = Map[Flatten, Transpose[{ headers, # }]& /@ parts, {2}];
-
-	Column[Grid[#, Frame -> All, ItemSize->All, Spacings->{0.2, 0.8}]& /@ headerRows, Spacings -> -0.1]
+	Column[Grid[#, Frame -> All, ItemSize->All, Spacings->{0.2, 0.8}]& /@ headerRows, Spacings -> 0.1]
 )
 
 
 imageTrump = ImageCrop[Entity["Person","DonaldTrump::6vv3q"]["Image"], { 75, 75 }, Bottom];
 imageClinton = ImageCrop[Entity["Person","HillaryClinton::538v8"]["Image"], { 75, 75 }, {0, -0.6}];
-resultBox[result_] := (
+ResultBox[result_] := (
 	colorTrump = If[result["D"] < result["R"], Lighter@red, White];
 	colorClinton = If[result["D"] < result["R"], White, Lighter@blue];
 	Row[{
@@ -119,7 +118,7 @@ resultBox[result_] := (
 )
 
 
-mapElection[electionResults_] := (
+MapElection[electionResults_] := (
 	(* We need the election results as a List of Entity \[Rule] result *)
 	entityMap = AssociationThread[#["entity"]& /@ Values@electionResults["states"], Values@electionResults["states"]];
 	margins = #["entity"] -> (#["D"] - #["R"])& /@ Values@entityMap;
@@ -134,7 +133,7 @@ mapElection[electionResults_] := (
 	ak = GeoRegionValuePlot[margins, GeoRange->Entity["AdministrativeDivision",{"Alaska","UnitedStates"}], PlotLegends->None, ImageSize->249, ColorRules->colorRules];
 	hi = GeoRegionValuePlot[margins, GeoRange->Entity["AdministrativeDivision",{"Hawaii","UnitedStates"}], PlotLegends->None, GeoRangePadding -> {Quantity[30,"Kilometers"], Quantity[50,"Kilometers"]}, ImagePadding->{{5,0},{0,0}}, ImageSize->249, ColorRules->colorRules];
 	Column[{
-		resultBox[electionResults["result"]],
+		ResultBox[electionResults["result"]],
 		Row[{
 			Column[{
 				Row[{ contentinal }, ImageSize->500],
@@ -145,6 +144,109 @@ mapElection[electionResults_] := (
 	}]
 
 )
+
+
+RerunElectionCongressState[abbr_, seats_] := (
+	remainingSeats = seats;
+	repsD = 0; repsR = 0;
+	info = electionDataCongress[abbr];
+	actualSeats = Round[info["repCount"]];
+	quarter = Round[actualSeats / 4];
+	firstPass = Min[seats, actualSeats];
+	repsD += Round[firstPass * info["percentRepsD"]];
+	repsR += firstPass - repsD;
+	remainingSeats -= firstPass;
+	secondPass = Min[remainingSeats, quarter * 4];
+	factor = 0.25;
+	While[secondPass > 0 && factor <= 1, (
+		oddsD = (1 - factor) * info["percentRepsD"] + factor * info["percentVoteD"];
+		newD = Round[quarter * oddsD];
+		newR = quarter - newD;
+		repsD += newD;
+		repsR += newR;
+		secondPass -= quarter;
+		factor += 0.25;
+		remainingSeats -= quarter;
+	)];
+	newD = Round[info["percentVoteD"] * remainingSeats];
+	newR = remainingSeats - newD;
+	repsD += newD;
+	repsR += newR;
+	<| "abbr" -> abbr, "D" -> repsD, "R" -> repsR, "total" -> (repsD + repsR) |>
+)
+
+
+RerunElectionCongress[allocation_:houseOfRepresentatives] := (
+	electionResults = RerunElectionCongressState[#, allocation[#]]& /@ stateAbbrs50;
+	totalD = Total[#["D"]& /@ electionResults];
+	totalR = Total[#["R"]& /@ electionResults];
+	<| "result" -> <| "R" -> totalR, "D" -> totalD, "Total" -> (totalD + totalR) |>, "states" -> AssociationThread[#["abbr"]& /@ electionResults, electionResults] |>	
+)
+
+
+electionCongress2016 = RerunElectionCongress[houseOfRepresentatives];
+
+
+bigElectionCongress2016 = RerunElectionCongress[bigHouse];
+bigElectionCongress2016["result"]
+
+
+ChartElectionCongress[newElection_, width_:500] := (
+	newElectionPercentD = Round[100 * newElection["result"]["D"] / newElection["result"]["Total"]];
+	newElectionPercentR = Round[100 * newElection["result"]["R"] / newElection["result"]["Total"]];
+	election2016PercentD = Round[100 * electionCongress2016["result"]["D"] / electionCongress2016["result"]["Total"]];
+	election2016PercentR = Round[100 * electionCongress2016["result"]["R"] / electionCongress2016["result"]["Total"]];
+
+	bars = BarChart[{
+		Labeled[
+			{ 
+				Labeled[
+					newElectionPercentD,
+					Style[ToString@newElection["result"]["D"] <> " (" <> ToString@newElectionPercentD <> "%)" , White, FontSize->12, Bold],
+					Left
+				],
+				Labeled[
+					newElectionPercentR,
+					Style["(" <> ToString@newElectionPercentR <> "%) " <> ToString@newElection["result"]["R"], White, FontSize->12, Bold],
+					Right
+				]
+			},
+			Style["This Apportionment", FontSize->14],
+			Above
+		],
+		Labeled[
+			{ 
+				Labeled[
+					election2016PercentD,
+					Style[ToString@electionCongress2016["result"]["D"] <> " (" <> ToString@election2016PercentD <> "%)" , White, FontSize->12, Bold],
+					Left
+				],
+				Labeled[
+					election2016PercentR,
+					Style["(" <> ToString@election2016PercentR <> "%) " <> ToString@electionCongress2016["result"]["R"], White, FontSize->12, Bold],
+					Right
+				]
+			},
+			Style["2016 Election", FontSize->14],
+			Above
+		]},
+		BarOrigin->Left,
+		ChartStyle->{blue, red},
+		ChartLayout->"Stacked",
+		BarSpacing->0.8,
+		ImageSize->width,
+		PlotRangePadding -> { 0, -0.7 },
+		AspectRatio -> 100 / width,
+		Frame -> True,
+		FrameStyle->{{Directive[Black], Directive[Transparent]}, { Directive[Black], Directive[Transparent] }},
+		FrameTicks->{{True,None},{ True, None }},
+		PlotLabel->Style["Congressional Estimate", FontSize->18, Bold]		
+	];
+
+	lineA = Line[{{50, 0.7}, {50, 1.3}}];
+	lineB = Line[{{50, 1.7}, {50, 2.3}}];
+	Show[bars, Graphics[{AbsoluteThickness[3], lineA }], Graphics[{AbsoluteThickness[3], lineB }]]
+);
 
 
 
