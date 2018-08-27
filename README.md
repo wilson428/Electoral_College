@@ -32,3 +32,4 @@ Playing around with Electoral College scenarios in Mathematica
 + ["A New Method for Congressional Apportionment"](http://www.pnas.org/content/pnas/71/11/4602.full.pdf)
 + ["Partisan Gerrymandering and the Efficiency Gap"](https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=1946&context=public_law_and_legal_theory)
 + ["Infoviz on the efficiency gap"](https://www.azavea.com/blog/2017/07/19/gerrymandered-states-ranked-efficiency-gap-seat-advantage/)
++ [Brookings Institution: Dividing the House: Why Congress Should Reinstate an Old Reapportionment Formula](https://www.brookings.edu/research/dividing-the-house-why-congress-should-reinstate-an-old-reapportionment-formula/)
