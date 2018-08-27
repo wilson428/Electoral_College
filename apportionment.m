@@ -199,8 +199,8 @@ VisualizeRepresentation[allocation_, title_:""] := (
 		PlotRange -> { 0, Automatic },
 		PlotRangePadding -> { 0, 0 },
 		PlotRange->{ Automatic, Max[sorted] * 1.1 },
-		Frame -> True,
-		PlotLabel -> Grid[plotLabels, Alignment->Center]
+		Frame -> True
+		(* PlotLabel \[Rule] Grid[plotLabels, Alignment\[Rule]Center] *)
 	]
 )
 

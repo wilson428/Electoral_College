@@ -1,0 +1,436 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18122,        428]
+NotebookOptionsPosition[     17264,        405]
+NotebookOutlinePosition[     17620,        421]
+CellTagsIndexPosition[     17577,        418]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Code",
+ CellChangeTimes->{3.744369433863924*^9},
+ CellLabel->
+  "In[565]:=",ExpressionUUID->"e271e759-079e-48f2-875a-aa8c6f574a86"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"interactive", " ", "=", " ", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"(", "\n", "\t", 
+     RowBox[{
+      RowBox[{
+      "CloudGet", "[", 
+       "\"\<https://www.wolframcloud.com/objects/8549bab6-7b14-4b2a-b77a-\
+8944882d6562\>\"", "]"}], ";", "\n", "\n", "\t", 
+      RowBox[{
+       RowBox[{"MeasureDisenfranchisedAllocation", "[", 
+        RowBox[{"allocation_", ",", " ", "houseSize_"}], "]"}], " ", ":=", 
+       " ", 
+       RowBox[{"(", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"targetPeoplePerRep", " ", "=", " ", 
+          RowBox[{"totalPopulation", " ", "/", " ", "houseSize"}]}], ";", 
+         "\n", "\t\t", 
+         RowBox[{"peoplePerRepDiff", " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"PeoplePerRepresentative", "[", "allocation", "]"}], " ", 
+            "*", " ", "1.0"}], " ", "-", " ", "targetPeoplePerRep"}]}], ";", 
+         "\n", "\t\t", 
+         RowBox[{"weightedData", " ", "=", " ", 
+          RowBox[{"WeightedData", "[", 
+           RowBox[{
+            RowBox[{"Values", "@", "peoplePerRepDiff"}], ",", " ", 
+            RowBox[{"Values", "@", "statePopulations"}]}], "]"}]}], ";", "\n",
+          "\t\t", 
+         RowBox[{"Mean", "@", "weightedData"}]}], "\n", "\t", ")"}]}], ";", 
+      "\n", "\n", "\t", 
+      RowBox[{"statePopulations", " ", "=", " ", 
+       RowBox[{"AssociationThread", "[", 
+        RowBox[{"stateAbbrs50", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"statesByAbbreviation", "[", "#", "]"}], "[", 
+             "\"\<population_decennial\>\"", "]"}], "[", "\"\<2010\>\"", 
+            "]"}], "&"}], " ", "/@", " ", "stateAbbrs50"}]}], "]"}]}], ";", 
+      "\n", "\t", 
+      RowBox[{"totalPopulation", " ", "=", " ", 
+       RowBox[{"Total", "@", "statePopulations"}]}], ";", "\n", "\n", "\t", 
+      RowBox[{"allocation", " ", "=", " ", 
+       RowBox[{"CalculateAllocations", "[", 
+        RowBox[{
+        "total", ",", " ", "1", ",", " ", "0", ",", " ", 
+         "PriorityHuntingtonHill"}], "]"}]}], ";", "\n", "\t", 
+      RowBox[{"grid", " ", "=", " ", 
+       RowBox[{"HorizontalGrid", "[", 
+        RowBox[{"allocation", ",", " ", "26"}], "]"}]}], ";", "\n", "\t", 
+      RowBox[{"electionResultsPresident", " ", "=", " ", 
+       RowBox[{"RerunElectionPresident", "[", 
+        RowBox[{"allocation", ",", " ", "3"}], "]"}]}], ";", "\t", "\n", "\t", 
+      RowBox[{"resultBox", " ", "=", " ", 
+       RowBox[{"ResultBox", "[", 
+        RowBox[{"electionResultsPresident", "[", "\"\<result\>\"", "]"}], 
+        "]"}]}], ";", "\n", "\t", 
+      RowBox[{"perRepChart", " ", "=", " ", 
+       RowBox[{"VisualizeRepresentation", "[", "allocation", "]"}]}], ";", 
+      "\n", "\t", 
+      RowBox[{"electionResultsCongress", " ", "=", " ", 
+       RowBox[{"RerunElectionCongress", "[", "allocation", "]"}]}], ";", "\n",
+       "\t", 
+      RowBox[{"houseChart", " ", "=", " ", 
+       RowBox[{
+       "ChartElectionCongress", "[", "electionResultsCongress", "]"}]}], ";", 
+      "\n", "\t", 
+      RowBox[{"prezChart", " ", "=", " ", 
+       RowBox[{
+       "ChartPresidentialElection", "[", "electionResultsPresident", "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"ratio", " ", "=", " ", 
+       RowBox[{"PeoplePerRepresentative", "[", "allocation", "]"}]}], ";", 
+      "\n", "\t", 
+      RowBox[{"sd", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"StandardDeviation", "[", "ratio", "]"}], " ", "*", " ", 
+        "1.0"}]}], ";", "\n", "\t", 
+      RowBox[{"cov", " ", "=", " ", 
+       RowBox[{"sd", " ", "/", " ", 
+        RowBox[{"Mean", "@", "ratio"}]}]}], ";", "\n", "\t", 
+      RowBox[{"sdPrint", " ", "=", " ", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"Round", "[", "sd", "]"}], ",", " ", 
+         RowBox[{"DigitBlock", "\[Rule]", "3"}]}], "]"}]}], ";", "\n", "\t", 
+      RowBox[{"dIndex", " ", "=", " ", 
+       RowBox[{"MeasureDisenfranchisedAllocation", "[", 
+        RowBox[{"allocation", ",", " ", "total"}], "]"}]}], ";", "\n", "\n", 
+      "\t", 
+      RowBox[{"Grid", "[", 
+       RowBox[{
+        RowBox[{"{", "\n", "\t\t", 
+         RowBox[{
+          RowBox[{"{", " ", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ToString", "@", "total"}], " ", "<>", " ", 
+              "\"\< Seats\>\""}], ",", " ", 
+             RowBox[{"FontSize", "\[Rule]", "24"}], ",", " ", "Bold"}], "]"}],
+            " ", "}"}], ",", "\n", "\t\t", 
+          RowBox[{"{", "\n", "\t\t\t", 
+           RowBox[{"Grid", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"{", "\n", "\t\t\t\t", 
+               RowBox[{
+                RowBox[{"Framed", "[", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<Standard Deviation: \>\"", " ", "<>", " ", 
+                    RowBox[{"ToString", "@", "sdPrint"}]}], ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "13"}]}], "]"}], ",", " ", 
+                  
+                  RowBox[{"Background", "\[Rule]", "LightYellow"}], ",", " ", 
+                  
+                  RowBox[{"FrameMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"8", ",", "8"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+                "\n", "\t\t\t\t", 
+                RowBox[{"Framed", "[", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<Covariance: \>\"", " ", "<>", " ", 
+                    RowBox[{"ToString", "@", "cov"}]}], ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "13"}]}], "]"}], ",", " ", 
+                  
+                  RowBox[{"Background", "\[Rule]", "LightYellow"}], ",", " ", 
+                  
+                  RowBox[{"FrameMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"8", ",", "8"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+                "\n", "\t\t\t\t", 
+                RowBox[{"Framed", "[", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{
+                    "\"\<Disenfranchishment Index: \>\"", " ", "<>", " ", 
+                    RowBox[{"ToString", "@", "dIndex"}]}], ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "13"}]}], "]"}], ",", " ", 
+                  
+                  RowBox[{"Background", "\[Rule]", "LightYellow"}], ",", " ", 
+                  
+                  RowBox[{"FrameMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"8", ",", "8"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"3", ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+               "\n", "\t\t\t", "}"}], "}"}], ",", " ", 
+             RowBox[{"Spacings", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{"2", ",", "5"}], "}"}]}]}], "]"}], "\n", "\t\t", "}"}],
+           ",", "\n", "\t\t", 
+          RowBox[{"{", " ", "perRepChart", " ", "}"}], ",", "\n", "\t\t", 
+          RowBox[{"{", " ", "grid", " ", "}"}], ",", "\n", "\t\t", 
+          RowBox[{"{", " ", 
+           RowBox[{"Item", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<The Political Implications\>\"", ",", " ", 
+               RowBox[{"FontSize", "\[Rule]", "18"}], ",", " ", "Bold", ",", 
+               " ", 
+               RowBox[{"TextAlignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+             " ", 
+             RowBox[{"ItemSize", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Automatic", ",", " ", "5"}], "}"}]}]}], "]"}], " ", 
+           "}"}], ",", "\n", "\t\t", 
+          RowBox[{"{", " ", "resultBox", " ", "}"}], ",", "\n", "\t\t", 
+          RowBox[{"{", " ", "houseChart", " ", "}"}]}], "\n", "\t", "}"}], 
+        ",", " ", 
+        RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], ")"}], ",", 
+    "\n", "\t", 
+    RowBox[{"Grid", "[", 
+     RowBox[{
+      RowBox[{"{", "\n", "\t\t", 
+       RowBox[{"{", "\n", "\t\t\t", 
+        RowBox[{"Control", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", " ", 
+            RowBox[{
+            "total", ",", " ", "435", ",", " ", "\"\<Total Reps:\>\""}], 
+            "}"}], ",", " ", "50", ",", " ", "2000", ",", " ", "1", ",", " ", 
+           
+           RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Open\>\""}]}], " ",
+           "}"}], "]"}], "\n", "\t\t", "}"}], "\n", "\t", "}"}], ",", " ", 
+      RowBox[{"Alignment", "\[Rule]", "Center"}], ",", " ", 
+      RowBox[{"ItemSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"73", ",", " ", "5"}], "}"}]}]}], "]"}], ",", "\n", "\t", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", " ", 
+      RowBox[{"FontSize", " ", "\[Rule]", " ", "13"}], " ", "}"}]}]}], "\n", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{
+  3.744369394981121*^9, {3.744369551311208*^9, 3.744369567399302*^9}, {
+   3.7443696052561207`*^9, 3.744369609400186*^9}, 3.744369717361679*^9},
+ CellLabel->
+  "In[570]:=",ExpressionUUID->"914b6f25-0f9e-47c0-95bb-e20b23f841e3"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`total$$ = 435, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`total$$], 435, "Total Reps:"}, 50, 2000, 1}, {
+      Hold[
+       Grid[{{
+          Manipulate`Place[1]}}, Alignment -> Center, ItemSize -> {73, 5}]], 
+      Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    900., {446.134033203125, 451.865966796875}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`total$720296$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, "Variables" :> {$CellContext`total$$ = 435}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`total$$, $CellContext`total$720296$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (
+       CloudGet[
+        "https://www.wolframcloud.com/objects/8549bab6-7b14-4b2a-b77a-\
+8944882d6562"]; $CellContext`MeasureDisenfranchisedAllocation[
+          Pattern[$CellContext`allocation, 
+           Blank[]], 
+          Pattern[$CellContext`houseSize, 
+           
+           Blank[]]] := ($CellContext`targetPeoplePerRep = \
+$CellContext`totalPopulation/$CellContext`houseSize; \
+$CellContext`peoplePerRepDiff = \
+$CellContext`PeoplePerRepresentative[$CellContext`allocation] 
+            1. - $CellContext`targetPeoplePerRep; $CellContext`weightedData = 
+          WeightedData[
+            Values[$CellContext`peoplePerRepDiff], 
+            Values[$CellContext`statePopulations]]; 
+         Mean[$CellContext`weightedData]); $CellContext`statePopulations = 
+        AssociationThread[$CellContext`stateAbbrs50, 
+          
+          Map[$CellContext`statesByAbbreviation[#]["population_decennial"][
+           
+           "2010"]& , $CellContext`stateAbbrs50]]; \
+$CellContext`totalPopulation = 
+        Total[$CellContext`statePopulations]; $CellContext`allocation = \
+$CellContext`CalculateAllocations[$CellContext`total$$, 1, 
+          0, $CellContext`PriorityHuntingtonHill]; $CellContext`grid = \
+$CellContext`HorizontalGrid[$CellContext`allocation, 
+          26]; $CellContext`electionResultsPresident = \
+$CellContext`RerunElectionPresident[$CellContext`allocation, 
+          3]; $CellContext`resultBox = $CellContext`ResultBox[
+          $CellContext`electionResultsPresident[
+          "result"]]; $CellContext`perRepChart = \
+$CellContext`VisualizeRepresentation[$CellContext`allocation]; \
+$CellContext`electionResultsCongress = \
+$CellContext`RerunElectionCongress[$CellContext`allocation]; \
+$CellContext`houseChart = \
+$CellContext`ChartElectionCongress[$CellContext`electionResultsCongress]; \
+$CellContext`prezChart = \
+$CellContext`ChartPresidentialElection[$CellContext`electionResultsPresident]; \
+$CellContext`ratio = \
+$CellContext`PeoplePerRepresentative[$CellContext`allocation]; \
+$CellContext`sd = 
+        StandardDeviation[$CellContext`ratio] 
+         1.; $CellContext`cov = $CellContext`sd/
+         Mean[$CellContext`ratio]; $CellContext`sdPrint = NumberForm[
+          Round[$CellContext`sd], DigitBlock -> 
+          3]; $CellContext`dIndex = \
+$CellContext`MeasureDisenfranchisedAllocation[$CellContext`allocation, \
+$CellContext`total$$]; Grid[{{
+           Style[
+            StringJoin[
+             ToString[$CellContext`total$$], " Seats"], FontSize -> 24, 
+            Bold]}, {
+           Grid[{{
+              Framed[
+               Style[
+                StringJoin["Standard Deviation: ", 
+                 ToString[$CellContext`sdPrint]], FontSize -> 13], Background -> 
+               LightYellow, FrameMargins -> {{8, 8}, {3, 3}}], 
+              Framed[
+               Style[
+                StringJoin["Covariance: ", 
+                 ToString[$CellContext`cov]], FontSize -> 13], Background -> 
+               LightYellow, FrameMargins -> {{8, 8}, {3, 3}}], 
+              Framed[
+               Style[
+                StringJoin["Disenfranchishment Index: ", 
+                 ToString[$CellContext`dIndex]], FontSize -> 13], Background -> 
+               LightYellow, FrameMargins -> {{8, 8}, {3, 3}}]}}, 
+            Spacings -> {2, 
+             5}]}, {$CellContext`perRepChart}, {$CellContext`grid}, {
+           Item[
+            Style[
+            "The Political Implications", FontSize -> 18, Bold, TextAlignment -> 
+             Center], 
+            ItemSize -> {
+             Automatic, 
+              5}]}, {$CellContext`resultBox}, {$CellContext`houseChart}}, 
+         Alignment -> Center]), 
+      "Specifications" :> {{{$CellContext`total$$, 435, "Total Reps:"}, 50, 
+         2000, 1, Appearance -> "Open", ControlPlacement -> 1}, 
+        Grid[{{
+           Manipulate`Place[1]}}, Alignment -> Center, ItemSize -> {73, 5}]}, 
+      "Options" :> {LabelStyle -> {FontSize -> 13}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{945., {516., 522.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.744369522956703*^9, 3.744369612249564*^9, 
+  3.744369723097797*^9},
+ CellLabel->
+  "Out[570]=",ExpressionUUID->"95dade75-d8f7-445d-8404-ac598ef4f183"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.744369590247533*^9, 
+  3.744369599725657*^9}},ExpressionUUID->"f310973d-b379-4932-8858-\
+02210d7c752f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"interactive", ",", " ", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.7443696590602627`*^9, 3.744369672657915*^9}},
+ CellLabel->
+  "In[571]:=",ExpressionUUID->"c932d0ba-e768-475e-921f-cbb200553a1f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/objects/bf5206dd-56fe-46e6-8825-\
+49e6b79d1134\"",
+     "https://www.wolframcloud.com/objects/bf5206dd-56fe-46e6-8825-\
+49e6b79d1134"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/bf5206dd-56fe-46e6-8825-49e6b79d1134"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.7443696755787687`*^9, 3.744369737090938*^9},
+ CellLabel->
+  "Out[571]=",ExpressionUUID->"de7b2dbd-b0c8-4145-8d63-e594778911d6"]
+}, Open  ]]
+},
+WindowSize->{1213, 753},
+WindowMargins->{{106, Automatic}, {Automatic, 31}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 215, 5, 52, "Code",ExpressionUUID->"e271e759-079e-48f2-875a-aa8c6f574a86"],
+Cell[CellGroupData[{
+Cell[798, 29, 9597, 217, 965, "Code",ExpressionUUID->"914b6f25-0f9e-47c0-95bb-e20b23f841e3"],
+Cell[10398, 248, 5785, 122, 1057, "Output",ExpressionUUID->"95dade75-d8f7-445d-8404-ac598ef4f183"]
+}, Open  ]],
+Cell[16198, 373, 152, 3, 30, InheritFromParent,ExpressionUUID->"f310973d-b379-4932-8858-02210d7c752f"],
+Cell[CellGroupData[{
+Cell[16375, 380, 305, 6, 52, "Code",ExpressionUUID->"c932d0ba-e768-475e-921f-cbb200553a1f"],
+Cell[16683, 388, 565, 14, 37, "Output",ExpressionUUID->"de7b2dbd-b0c8-4145-8d63-e594778911d6"]
+}, Open  ]]
+}
+]
+*)
+

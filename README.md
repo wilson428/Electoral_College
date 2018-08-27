@@ -16,9 +16,11 @@ Playing around with Electoral College scenarios in Mathematica
 + [Get Congressional Election Results](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/getElectionResultsCongress.nb)
 + [Apportionment Package Generator](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/apportionment.nb)
 + [Election Package Generator](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/elections.nb)
++ [First Blog Post](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/AlgorithmsForDemocracy.nb)
++ [First Post](https://www.wolframcloud.com/objects/e8f4de60-b463-4443-bf5b-552488042484)
 
 ### Packages
-+ [Apportionment Package](https://www.wolframcloud.com/objects/e38bf09f-1de6-41d3-864c-eaaf7e320513)
++ [Apportionment Package](https://www.wolframcloud.com/objects/fd2c2b79-c756-4bb7-8ec2-6d220411b1a0)
 + [Election Package](https://www.wolframcloud.com/objects/8549bab6-7b14-4b2a-b77a-8944882d6562)
 
 ### Data on the Cloud
